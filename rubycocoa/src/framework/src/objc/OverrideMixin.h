@@ -9,7 +9,7 @@
  *   the GNU Lesser General Public License version 2.
  *
  **/
-#import <objc/objc-class.h>
+#import <objc/runtime.h>
 #import <Foundation/NSObject.h>
 
 long override_mixin_ivar_list_size();
@@ -18,3 +18,5 @@ struct objc_ivar_list* override_mixin_ivar_list();
 struct objc_method_list* override_mixin_method_list();
 struct objc_method_list* override_mixin_class_method_list();
 
+void install_method_list(Class c);
+void install_class_method_list(Class c);

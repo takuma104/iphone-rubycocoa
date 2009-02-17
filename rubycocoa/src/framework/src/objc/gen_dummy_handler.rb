@@ -18,20 +18,25 @@ def collect_src_headers(src_path, re_pat)
   File.open(src_path) {|f|
     f.map {|s|
       if m = re_pat.match(s) then
-	File.join(File.dirname(src_path), m[1])
+	      path = File.join(File.dirname(src_path), m[1])
+	      if FileTest.file?(path)
+	        path
+	      else
+	        nil
+        end
       end
     }.compact.uniq
   }
 end
 
 def collect_appkit_headers
-  path = "/System/Library/Frameworks/AppKit.framework/Headers/AppKit.h"
-  re = %r{^\s*#import\s*<AppKit/(\w+\.h)>}
+  path = "/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS2.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.h"
+  re = %r{^\s*#import\s*<UIKit/(\w+\.h)>}
   collect_src_headers(path, re)
 end
 
 def collect_foundation_headers
-  path = '/System/Library/Frameworks/Foundation.framework/Headers/Foundation.h'
+  path = '/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS2.0.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.h'
   re = %r{^\s*#import\s*<Foundation/(\w+\.h)>}
   collect_src_headers(path, re)
 end

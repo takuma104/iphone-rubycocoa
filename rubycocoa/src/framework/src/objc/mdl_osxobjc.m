@@ -168,6 +168,9 @@ rb_obj_ocid(VALUE rcv)
 static VALUE
 osx_mf_objc_symbol_to_obj(VALUE mdl, VALUE const_name, VALUE const_type)
 {
+    rb_raise(rb_eRuntimeError, "osx_mf_objc_symbol_to_obj not implemented.");
+	return Qnil;
+/*	
   VALUE result = Qnil;
   char buf[BUFSIZ];
   NSSymbol sym = NULL;
@@ -195,6 +198,7 @@ osx_mf_objc_symbol_to_obj(VALUE mdl, VALUE const_name, VALUE const_type)
     rb_raise(rb_eRuntimeError, "cannot convert to rbobj for type '%s'.", STR2CSTR(const_type));
 
   return result;
+*/
 }
 
 static void

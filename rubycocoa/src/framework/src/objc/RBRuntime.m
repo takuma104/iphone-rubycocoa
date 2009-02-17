@@ -98,14 +98,17 @@ RBApplicationMain(const char* rb_main_name, int argc, const char* argv[])
 {
   int ruby_argc;
   const char** ruby_argv;
-
+	
   ruby_argc = prepare_argv(argc, argv, rb_main_name, &ruby_argv);
-
-  ruby_init();
-  ruby_options(ruby_argc, (char**) ruby_argv);
-  RBRubyCocoaInit();
-  load_path_unshift(resource_path()); // add a ruby part of oneself to $LOAD_PATH
-  ruby_run();
+	
+  {
+    RUBY_INIT_STACK
+    ruby_init();
+    ruby_options(ruby_argc, (char**) ruby_argv);
+    RBRubyCocoaInit();
+    load_path_unshift(resource_path()); // add a ruby part of oneself to $LOAD_PATH
+    ruby_run();
+  }
   return 0;
 }
 
@@ -116,7 +119,6 @@ RBRubyCocoaInit()
 
   if (init_p) return 0;
 
-  ruby_init();
   initialize_mdl_osxobjc();	// initialize an objc part of rubycocoa
   load_path_unshift(framework_ruby_path()); // add a ruby part of rubycocoa to $LOAD_PATH
   init_p = 1;

@@ -10,7 +10,7 @@
  *
  **/
 
-#import <objc/objc-class.h>
+#import <objc/runtime.h>
 #import <Foundation/Foundation.h>
 #import "ocdata_conv.h"
 #import "RBObject.h"
@@ -22,21 +22,21 @@ static VALUE rbclass_nsrect()
 {
   VALUE mOSX = osx_s_module();
   if (!mOSX) return Qnil;
-  return rb_const_get(mOSX, rb_intern("NSRect"));
+  return rb_const_get(mOSX, rb_intern("CGRect"));
 }
 
 static VALUE rbclass_nspoint()
 {
   VALUE mOSX = osx_s_module();
   if (!mOSX) return Qnil;
-  return rb_const_get(mOSX, rb_intern("NSPoint"));
+  return rb_const_get(mOSX, rb_intern("CGPoint"));
 }
 
 static VALUE rbclass_nssize()
 {
   VALUE mOSX = osx_s_module();
   if (!mOSX) return Qnil;
-  return rb_const_get(mOSX, rb_intern("NSSize"));
+  return rb_const_get(mOSX, rb_intern("CGSize"));
 }
 
 static VALUE rbclass_nsrange()
@@ -55,14 +55,15 @@ to_octype(const char* octype_str)
   if (octype_str[0] == 'r') octype_str++;
   oct = *octype_str;
 
-  if (octype_str[0] == '{' && octype_str[1] == '_') {
-    if (strcmp(octype_str, @encode(NSRect)) == 0) {
+  //if (octype_str[0] == '{' && octype_str[1] == '_') {
+  if (octype_str[0] == '{') {
+    if (strcmp(octype_str, @encode(CGRect)) == 0) {
       oct = _PRIV_C_NSRECT;
     }
-    else if (strcmp(octype_str, @encode(NSPoint)) == 0) {
+    else if (strcmp(octype_str, @encode(CGPoint)) == 0) {
       oct = _PRIV_C_NSPOINT;
     }
-    else if (strcmp(octype_str, @encode(NSSize)) == 0) {
+    else if (strcmp(octype_str, @encode(CGSize)) == 0) {
       oct = _PRIV_C_NSSIZE;
     }
     else if (strcmp(octype_str, @encode(NSRange)) == 0) {
@@ -122,13 +123,13 @@ ocdata_size(int octype, const char* octype_str)
     result = 0; break;
 
   case _PRIV_C_NSRECT:
-    result = sizeof(NSRect); break;
+    result = sizeof(CGRect); break;
     
   case _PRIV_C_NSPOINT:
-    result = sizeof(NSPoint); break;
+    result = sizeof(CGPoint); break;
 
   case _PRIV_C_NSSIZE:
-    result = sizeof(NSSize); break;
+    result = sizeof(CGSize); break;
 
   case _PRIV_C_NSRANGE:
     result = sizeof(NSRange); break;
@@ -230,7 +231,7 @@ ocdata_to_rbobj(VALUE context_obj,
     rbval = rb_str_new2(*(char**)ocdata); break;
 
   case _PRIV_C_NSRECT: {
-    NSRect* vp = (NSRect*)ocdata;
+    CGRect* vp = (CGRect*)ocdata;
     VALUE klass = rbclass_nsrect();
     if (klass != Qnil)
       rbval = rb_funcall(klass, rb_intern("new"), 4,
@@ -244,7 +245,7 @@ ocdata_to_rbobj(VALUE context_obj,
   }
 
   case _PRIV_C_NSPOINT: {
-    NSPoint* vp = (NSPoint*)ocdata;
+    CGPoint* vp = (CGPoint*)ocdata;
     VALUE klass = rbclass_nspoint();
     if (klass != Qnil)
       rbval = rb_funcall(klass, rb_intern("new"), 2,
@@ -256,7 +257,7 @@ ocdata_to_rbobj(VALUE context_obj,
   }
 
   case _PRIV_C_NSSIZE: {
-    NSSize* vp = (NSSize*)ocdata;
+    CGSize* vp = (CGSize*)ocdata;
     VALUE klass = rbclass_nssize();
     if (klass != Qnil)
       rbval = rb_funcall(klass, rb_intern("new"), 2,
@@ -535,7 +536,7 @@ static BOOL rbobj_to_idptr(VALUE obj, id** idptr)
   return YES;
 }
 
-static BOOL rbobj_to_nspoint(VALUE obj, NSPoint* result)
+static BOOL rbobj_to_nspoint(VALUE obj, CGPoint* result)
 {
   if (TYPE(obj) != T_ARRAY)
     obj = rb_funcall(obj, rb_intern("to_a"), 0);
@@ -545,7 +546,7 @@ static BOOL rbobj_to_nspoint(VALUE obj, NSPoint* result)
   return YES;
 }
 
-static BOOL rbobj_to_nssize(VALUE obj, NSSize* result)
+static BOOL rbobj_to_nssize(VALUE obj, CGSize* result)
 {
   if (TYPE(obj) != T_ARRAY)
     obj = rb_funcall(obj, rb_intern("to_a"), 0);
@@ -579,7 +580,7 @@ static BOOL rbobj_to_nsrange(VALUE obj, NSRange* result)
   return YES;
 }
 
-static BOOL rbobj_to_nsrect(VALUE obj, NSRect* result)
+static BOOL rbobj_to_nsrect(VALUE obj, CGRect* result)
 {
   if (TYPE(obj) != T_ARRAY)
     obj = rb_funcall(obj, rb_intern("to_a"), 0);
@@ -687,23 +688,23 @@ rbobj_to_ocdata(VALUE obj, int octype, void* ocdata)
   }
 
   case _PRIV_C_NSRECT: {
-    NSRect nsval;
+    CGRect nsval;
     f_success = rbobj_to_nsrect(obj, &nsval);
-    if (f_success) *(NSRect*)ocdata = nsval;
+    if (f_success) *(CGRect*)ocdata = nsval;
     break;
   }
 
   case _PRIV_C_NSPOINT: {
-    NSPoint nsval;
+    CGPoint nsval;
     f_success = rbobj_to_nspoint(obj, &nsval);
-    if (f_success) *(NSPoint*)ocdata = nsval;
+    if (f_success) *(CGPoint*)ocdata = nsval;
     break;
   }
 
   case _PRIV_C_NSSIZE: {
-    NSSize nsval;
+    CGSize nsval;
     f_success = rbobj_to_nssize(obj, &nsval);
-    if (f_success) *(NSSize*)ocdata = nsval;
+    if (f_success) *(CGSize*)ocdata = nsval;
     break;
   }
 

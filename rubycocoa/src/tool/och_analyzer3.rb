@@ -8,36 +8,20 @@
 #  the GNU Lesser General Public License version 2.
 #
 
-['/usr/bin/cpp3', '/usr/bin/cpp-3.3', '/usr/bin/cpp-4.0'].each do |cpp|
-  if test(?x, cpp) 
-    CPP = cpp
-    break
-  end
-end
-unless defined? CPP
-  raise "cpp not found"
-end
-if File.basename(CPP) =~ /\Acpp-4/
-  CPPFLAGS = "-x objective-c -D__APPLE_CPP__"
-else 
-  CPPFLAGS = "-x objective-c -D__GNUC__ -D__APPLE_CPP__"
-end
+CPP = '/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/arm-apple-darwin9-gcc-4.0.1'
+
+CPPFLAGS = " -DTARGET_OS_MAC -DTARGET_CPU_PPC -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS2.0.sdk -E"
 
 class OCHeaderAnalyzer
 
-  attr_reader :path, :cpp_result, :framework, :externname
+  attr_reader :path, :cpp_result, :framework
 
   def initialize(path)
     @path = path
     @cpp_result = OCHeaderAnalyzer.do_cpp(path)
-    @externname = "extern"
     if ma = /\b(\w+)\.framework\b/.match(path) then
       @framework = ma[1]
     end
-  end
-
-  def setExternName(str)
-    @externname = str
   end
 
   def filename
@@ -72,8 +56,10 @@ class OCHeaderAnalyzer
 
   def externs
     if @externs.nil? then
-      re = /^#{@externname}\s+\b(.*);.*$/
+      re = /^extern\s+\b(.*);.*$/
       @externs = @cpp_result.scan(re).map {|m| m[0].strip }
+      re = /^extern\s__attribute__\(\(visibility\s\(\"default\"\)\)\)\s+\b(.*);.*$/
+      @externs += @cpp_result.scan(re).map {|m| m[0].strip }
     end
     @externs
   end
@@ -110,7 +96,10 @@ class OCHeaderAnalyzer
 	return_type = mm ? mm[2].strip : 'id'
 	selector = i.split(':').map do |ii|
 	  mmm = /(\b\w+|\.{3})$/.match(ii.strip)
-	  p ii if mmm.nil?
+	  if mmm.nil?
+	    p ii 
+	    next
+    end
 	  mmm[0]
 	end
 	selector = if selector.size <= 1 then

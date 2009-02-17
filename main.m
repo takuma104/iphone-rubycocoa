@@ -1,12 +1,8 @@
-#import <UIKit/UIKit.h>
-#import "ruby.h"
+#import "RBRuntime.h"
 
-int main(int argc, char *argv[]) {
-    {
-        RUBY_INIT_STACK
-        ruby_init();
-        ruby_options(argc, argv);
-        ruby_run();
-    }
-    return 0;
+int main(int argc, const char *argv[]) {
+	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+	int ret = RBApplicationMain("main.rb", argc, argv);
+	[pool release];
+	return ret;
 }

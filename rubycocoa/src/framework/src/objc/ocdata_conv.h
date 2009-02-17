@@ -10,7 +10,7 @@
  *
  **/
 
-#import <objc/objc-class.h>
+#import <objc/runtime.h>
 #import <stdarg.h>
 #import "osx_ruby.h"
 

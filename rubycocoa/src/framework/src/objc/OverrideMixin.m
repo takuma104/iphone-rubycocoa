@@ -9,7 +9,6 @@
  *   the GNU Lesser General Public License version 2.
  *
  **/
-#import <Cocoa/Cocoa.h>
 #import <stdarg.h>
 #import "OverrideMixin.h"
 #import "RBObject.h"
@@ -35,16 +34,6 @@
 static void* alloc_from_default_zone(unsigned int size)
 {
   return NSZoneMalloc(NSDefaultMallocZone(), size);
-}
-
-static struct objc_method_list* method_list_alloc(long cnt)
-{
-  struct objc_method_list* mlp;
-  mlp = alloc_from_default_zone(sizeof(struct objc_method_list)
-				+ (cnt-1) * sizeof(struct objc_method));
-  mlp->obsolete = NULL;
-  mlp->method_count = 0;
-  return mlp;
 }
 
 static SEL super_selector(SEL a_sel)
@@ -263,51 +252,25 @@ static id imp_c_allocWithZone(Class klass, SEL method, NSZone* zone)
 
 static id imp_c_addRubyMethod(Class klass, SEL method, SEL arg0)
 {
-  Method me;
-  struct objc_method_list* mlp = method_list_alloc(2);
-
-  me = class_getInstanceMethod(klass, arg0);
-
-  // warn if trying to override a method that isn't a member of the specified class
-  if(me == NULL) {
-    rb_raise( rb_eRuntimeError, 
-	      "could not add '%s' to class '%s': "
-	      "Objective-C cannot find it in the superclass",
-	      (char *) arg0, klass->name );
-  }
-  else {
-    // override method
-    mlp->method_list[0].method_name = me->method_name;
-    mlp->method_list[0].method_types = strdup(me->method_types);
-    mlp->method_list[0].method_imp = handle_ruby_method;
-    mlp->method_count += 1;
-
-    // super method
-    mlp->method_list[1].method_name = super_selector(me->method_name);
-    mlp->method_list[1].method_types = strdup(me->method_types);
-    mlp->method_list[1].method_imp = me->method_imp;
-    mlp->method_count += 1;
-  }
-
-  class_addMethods(klass, mlp);
-  return nil;
+	rb_raise( rb_eRuntimeError, 
+			 "Not implemented: imp_c_addRubyMethod");
+	return nil;
 }
 
 static id imp_c_addRubyMethod_withType(Class klass, SEL method, SEL arg0, const char *type)
 {
-  struct objc_method_list* mlp = method_list_alloc(1);
-
-  // add method
-  mlp->method_list[0].method_name = sel_registerName((const char*)arg0);
-  mlp->method_list[0].method_types = strdup(type);
-  mlp->method_list[0].method_imp = handle_ruby_method;
-  mlp->method_count += 1;
-
-  class_addMethods(klass, mlp);
+  class_addMethod(klass, arg0, (IMP)handle_ruby_method, strdup(type));
   return nil;
 }
 
-
+struct objc_ivar {
+    char *ivar_name                                          OBJC2_UNAVAILABLE;
+    char *ivar_type                                          OBJC2_UNAVAILABLE;
+    int ivar_offset                                          OBJC2_UNAVAILABLE;
+#ifdef __LP64__
+    int space                                                OBJC2_UNAVAILABLE;
+#endif
+}                                                            OBJC2_UNAVAILABLE;
 
 static struct objc_ivar imp_ivars[] = {
   {				// struct objc_ivar {
@@ -332,6 +295,12 @@ static const char* imp_method_names[] = {
   "valueForUndefinedKey:",
   "setValue:forUndefinedKey:",
 };
+
+struct objc_method {
+    SEL method_name                                          OBJC2_UNAVAILABLE;
+    char *method_types                                       OBJC2_UNAVAILABLE;
+    IMP method_imp                                           OBJC2_UNAVAILABLE;
+}                                                            OBJC2_UNAVAILABLE;
 
 static struct objc_method imp_methods[] = {
   { NULL,
@@ -393,7 +362,7 @@ static struct objc_method imp_c_methods[] = {
     (IMP)imp_c_addRubyMethod_withType
   }
 };
-
+/*
 long override_mixin_ivar_list_size()
 {
   long cnt = sizeof(imp_ivars) / sizeof(struct objc_ivar);
@@ -410,40 +379,32 @@ struct objc_ivar_list* override_mixin_ivar_list()
     imp_ilp = alloc_from_default_zone(override_mixin_ivar_list_size());
     imp_ilp->ivar_count = sizeof(imp_ivars) / sizeof(struct objc_ivar);
     for (i = 0; i < imp_ilp->ivar_count; i++) {
-      imp_ilp->ivar_list[i] = imp_ivars[i];
+      memcpy(&imp_ilp->ivar_list[i], &imp_ivars[i], sizeof(struct objc_ivar));
     }
   }
   return imp_ilp;
 }
-
-struct objc_method_list* override_mixin_method_list()
+*/
+void install_method_list(Class c)
 {
-  static struct objc_method_list* imp_mlp = NULL;
-  if (imp_mlp == NULL) {
-    int i;
     long cnt = sizeof(imp_methods) / sizeof(struct objc_method);
-    imp_mlp = method_list_alloc(cnt);
-    for (i = 0; i < cnt; i++) {
-      imp_mlp->method_list[i] = imp_methods[i];
-      imp_mlp->method_list[i].method_name = sel_getUid(imp_method_names[i]);
-      imp_mlp->method_count += 1;
+	int i;
+	for (i = 0; i < cnt; i++) {
+		SEL sel = sel_registerName(imp_method_names[i]);
+		IMP imp = imp_methods[i].method_imp;
+		const char *type = imp_methods[i].method_types;
+		class_addMethod(c, sel, imp, type);
     }
-  }
-  return imp_mlp;
 }
 
-struct objc_method_list* override_mixin_class_method_list()
+void install_class_method_list(Class c)
 {
-  static struct objc_method_list* imp_c_mlp = NULL;
-  if (imp_c_mlp == NULL) {
     int i;
     long cnt = sizeof(imp_c_methods) / sizeof(struct objc_method);
-    imp_c_mlp = method_list_alloc(cnt);
     for (i = 0; i < cnt; i++) {
-      imp_c_mlp->method_list[i]  = imp_c_methods[i];
-      imp_c_mlp->method_list[i].method_name = sel_getUid(imp_c_method_names[i]);
-      imp_c_mlp->method_count += 1;
+		SEL sel = sel_registerName(imp_c_method_names[i]);
+		IMP imp = imp_c_methods[i].method_imp;
+		const char *type = imp_c_methods[i].method_types;
+		class_addMethod(c->isa, sel, imp, type);
     }
-  }
-  return imp_c_mlp;
 }

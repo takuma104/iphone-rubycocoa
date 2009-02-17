@@ -51,7 +51,7 @@ _oc_exception_new(VALUE exc, id rcv, SEL sel, const char *fmt, va_list args)
 {
   char buf_a[BUFSIZ];
   char buf_b[BUFSIZ];
-  snprintf(buf_a, BUFSIZ, "%s#%s - %s", rcv->isa->name, (char*)sel, fmt);
+  snprintf(buf_a, BUFSIZ, "%s#%s - %s", class_getName(rcv->isa), (char*)sel, fmt);
   vsnprintf(buf_b, BUFSIZ, buf_a, args);
   return rb_exc_new2(exc, buf_b);
 }
@@ -76,7 +76,7 @@ oc_err_new(id rcv, SEL sel, NSException* nsexcp)
   if (klass == Qnil) klass = _oc_exception_class ("OCException");
   pool = [[NSAutoreleasePool alloc] init];
   snprintf(buf, BUFSIZ, "%s#%s - %s - %s",
-	   rcv->isa->name, (char*)sel, [[nsexcp name] UTF8String], [[nsexcp reason] UTF8String]);
+	   class_getName(rcv), (char*)sel, [[nsexcp name] UTF8String], [[nsexcp reason] UTF8String]);
   [pool release];
   return rb_funcall(klass, rb_intern("new"), 2, ocid_to_rbobj(Qnil, nsexcp), rb_str_new2(buf));
 }
@@ -381,7 +381,9 @@ wrapper_to_s (VALUE rcv)
 static void
 _ary_push_objc_methods (VALUE ary, Class cls)
 {
-  struct objc_method_list** list;
+	rb_raise(rb_eRuntimeError, "_ary_push_objc_methods not implemented.");
+
+/*  struct objc_method_list** list;
   int i, cnt;
   struct objc_method* methods;
 
@@ -397,6 +399,7 @@ _ary_push_objc_methods (VALUE ary, Class cls)
   if (cls->super_class)
     _ary_push_objc_methods (ary, cls->super_class);
   rb_funcall(ary, rb_intern("uniq!"), 0);
+*/
 }
 
 static VALUE
@@ -414,7 +417,9 @@ wrapper_objc_methods (VALUE rcv)
 static const char*
 _objc_method_type (Class cls, const char* name)
 {
-  struct objc_method_list** list;
+	rb_raise(rb_eRuntimeError, "_objc_method_type not implemented.");
+
+/*  struct objc_method_list** list;
   int i, cnt;
   struct objc_method* methods;
 
@@ -431,7 +436,7 @@ _objc_method_type (Class cls, const char* name)
   }
   if (cls->super_class)
     return _objc_method_type (cls->super_class, name);
-  return NULL;
+*/  return NULL;
 }
 
 static VALUE

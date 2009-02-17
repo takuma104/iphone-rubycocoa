@@ -13,9 +13,7 @@
 #import "RBClassUtils.h"
 #import <Foundation/Foundation.h>
 
-#import <objc/objc.h>
-#import <objc/objc-class.h>
-#import <objc/objc-runtime.h>
+#import <objc/runtime.h>
 
 #import "RBObject.h"
 #import "OverrideMixin.h"
@@ -36,62 +34,6 @@ static struct objc_method_list** method_list_alloc(int cnt)
     mlp[i] = NULL;
   mlp[cnt-1] = (struct objc_method_list*)-1; // END_OF_METHODS_LIST
   return mlp;
-}
-
-static Class objc_class_alloc(const char* name, Class super_class)
-{
-  Class c = alloc_from_default_zone(sizeof(struct objc_class));
-  Class isa = alloc_from_default_zone(sizeof(struct objc_class));
-  struct objc_method_list **mlp0, **mlp1;
-  mlp0 = method_list_alloc(16);
-  mlp1 = method_list_alloc(4);
-
-  c->isa = isa;
-  c->super_class = super_class;
-  c->name = strdup(name);
-  c->version = 0;
-  c->info = CLS_CLASS + CLS_METHOD_ARRAY;
-  c->instance_size = super_class->instance_size;
-  c->ivars = NULL;
-  c->methodLists = mlp0;
-  c->cache = NULL;
-  c->protocols = NULL;
-
-  isa->isa = super_class->isa->isa;
-  isa->super_class = super_class->isa;
-  isa->name = c->name;
-  isa->version = 5;
-  isa->info = CLS_META + CLS_INITIALIZED + CLS_METHOD_ARRAY;
-  isa->instance_size = super_class->isa->instance_size;
-  isa->ivars = NULL;
-  isa->methodLists = mlp1;
-  isa->cache = NULL;
-  isa->protocols = NULL;
-  return c;
-}
-
-static void install_ivar_list(Class c)
-{
-  int i;
-  struct objc_ivar_list* ivlp = alloc_from_default_zone(override_mixin_ivar_list_size());
-  *ivlp = *(override_mixin_ivar_list());
-  for (i = 0; i < ivlp->ivar_count; i++) {
-    const char* tp = ivlp->ivar_list[i].ivar_type;
-    int octype = to_octype(ivlp->ivar_list[i].ivar_type);
-    ivlp->ivar_list[i].ivar_offset = c->instance_size;
-    c->instance_size += ocdata_size(octype, tp);
-  }
-  c->ivars = ivlp;
-}
-
-static void install_method_list(Class c)
-{
-  class_addMethods(c, override_mixin_method_list());
-}
-
-static void install_class_method_list(Class c)
-{
-  class_addMethods((c->isa), override_mixin_class_method_list());
 }
 
 
@@ -172,8 +114,8 @@ Class RBObjcClassNew(VALUE kls, const char* name, Class super_class)
 {
   Class c;
 
-  c = objc_class_alloc(name, super_class);
-  objc_addClass(c);
+  c = objc_allocateClassPair(super_class, name, sizeof(int)*16);
+  objc_registerClassPair(c);
   class_map_dic_add (name, kls);
   return c;
 }
@@ -182,10 +124,10 @@ Class RBObjcDerivedClassNew(VALUE kls, const char* name, Class super_class)
 {
   Class c;
 
-  c = objc_class_alloc(name, super_class);
+  c = objc_allocateClassPair(super_class, name, sizeof(int)*32);
 
   // init instance variable (m_proxy)
-  install_ivar_list(c);
+  class_addIvar(c, "m_slave", sizeof(int), 0, "@");
 
   // init instance methods
   install_method_list(c);
@@ -194,7 +136,7 @@ Class RBObjcDerivedClassNew(VALUE kls, const char* name, Class super_class)
   install_class_method_list(c);
 
   // add class to runtime system
-  objc_addClass(c);
+  objc_registerClassPair(c);
   class_map_dic_add (name, kls);
   return c;
 }

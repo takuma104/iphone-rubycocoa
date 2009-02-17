@@ -10,8 +10,9 @@
 
 FORCE_MODE = (ARGV.size > 0 && ARGV[0] == "-f")
 FRAMEWORKS = {
-  'Foundation' => '/System/Library/Frameworks/Foundation.framework/Headers/Foundation.h',
-  'AppKit' => '/System/Library/Frameworks/AppKit.framework/Headers/AppKit.h'}
+  'Foundation' => '/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS2.0.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.h',
+  'UIKit' => '/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS2.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.h'
+}
 
 if `uname -r`.to_f >= 6.0 then
   require '../../../../tool/och_analyzer3'
@@ -23,7 +24,12 @@ def collect_src_headers(src_path, re_pat)
   File.open(src_path) {|f|
     f.map {|s|
       if m = re_pat.match(s) then
-	File.join(File.dirname(src_path), m[1])
+ 	 path = File.join(File.dirname(src_path), m[1])
+	 if FileTest.file?(path)
+	   path
+	 else
+	   nil
+        end
       end
     }.compact.uniq
   }

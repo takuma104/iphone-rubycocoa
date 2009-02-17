@@ -32,6 +32,23 @@
 		F1CE7AC20F4B1C17006BAA18 /* strscan.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F1CE7A970F4B1C15006BAA18 /* strscan.a */; };
 		F1CE7AC40F4B1C17006BAA18 /* syck.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F1CE7A9A0F4B1C15006BAA18 /* syck.a */; };
 		F1CE7AC50F4B1C18006BAA18 /* thread.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F1CE7A9C0F4B1C15006BAA18 /* thread.a */; };
+		F1CE7AFD0F4B2649006BAA18 /* init_cocoa.m in Sources */ = {isa = PBXBuildFile; fileRef = F1CE7AD50F4B2649006BAA18 /* init_cocoa.m */; };
+		F1CE7AFF0F4B2649006BAA18 /* rb_Foundation.m in Sources */ = {isa = PBXBuildFile; fileRef = F1CE7AD70F4B2649006BAA18 /* rb_Foundation.m */; };
+		F1CE7B000F4B2649006BAA18 /* rb_UIKit.m in Sources */ = {isa = PBXBuildFile; fileRef = F1CE7AD80F4B2649006BAA18 /* rb_UIKit.m */; };
+		F1CE7B030F4B2649006BAA18 /* ocdata_conv.m in Sources */ = {isa = PBXBuildFile; fileRef = F1CE7ADD0F4B2649006BAA18 /* ocdata_conv.m */; };
+		F1CE7B040F4B2649006BAA18 /* DummyProtocolHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = F1CE7ADE0F4B2649006BAA18 /* DummyProtocolHandler.m */; };
+		F1CE7B050F4B2649006BAA18 /* RBSlaveObject.m in Sources */ = {isa = PBXBuildFile; fileRef = F1CE7ADF0F4B2649006BAA18 /* RBSlaveObject.m */; };
+		F1CE7B060F4B2649006BAA18 /* RBThreadSwitcher.m in Sources */ = {isa = PBXBuildFile; fileRef = F1CE7AE20F4B2649006BAA18 /* RBThreadSwitcher.m */; };
+		F1CE7B070F4B2649006BAA18 /* cls_objcid.m in Sources */ = {isa = PBXBuildFile; fileRef = F1CE7AE30F4B2649006BAA18 /* cls_objcid.m */; };
+		F1CE7B0A0F4B2649006BAA18 /* OverrideMixin.m in Sources */ = {isa = PBXBuildFile; fileRef = F1CE7AEB0F4B2649006BAA18 /* OverrideMixin.m */; };
+		F1CE7B0C0F4B2649006BAA18 /* RBRuntime.m in Sources */ = {isa = PBXBuildFile; fileRef = F1CE7AEE0F4B2649006BAA18 /* RBRuntime.m */; };
+		F1CE7B0D0F4B2649006BAA18 /* mdl_objwrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = F1CE7AEF0F4B2649006BAA18 /* mdl_objwrapper.m */; };
+		F1CE7B0E0F4B2649006BAA18 /* RBObject.m in Sources */ = {isa = PBXBuildFile; fileRef = F1CE7AF00F4B2649006BAA18 /* RBObject.m */; };
+		F1CE7B0F0F4B2649006BAA18 /* mdl_osxobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = F1CE7AF10F4B2649006BAA18 /* mdl_osxobjc.m */; };
+		F1CE7B100F4B2649006BAA18 /* RBClassUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F1CE7AF30F4B2649006BAA18 /* RBClassUtils.m */; };
+		F1CE7B110F4B2649006BAA18 /* cls_objcptr.m in Sources */ = {isa = PBXBuildFile; fileRef = F1CE7AF70F4B2649006BAA18 /* cls_objcptr.m */; };
+		F1CE7B510F4B2CB2006BAA18 /* main.rb in Resources */ = {isa = PBXBuildFile; fileRef = F1CE7B500F4B2CB2006BAA18 /* main.rb */; };
+		F1CE7B530F4B2CCB006BAA18 /* rubycocoa.rb in Resources */ = {isa = PBXBuildFile; fileRef = F1CE7B520F4B2CCB006BAA18 /* rubycocoa.rb */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,6 +86,39 @@
 		F1CE7A970F4B1C15006BAA18 /* strscan.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = strscan.a; sourceTree = "<group>"; };
 		F1CE7A9A0F4B1C15006BAA18 /* syck.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = syck.a; sourceTree = "<group>"; };
 		F1CE7A9C0F4B1C15006BAA18 /* thread.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = thread.a; sourceTree = "<group>"; };
+		F1CE7AD50F4B2649006BAA18 /* init_cocoa.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = init_cocoa.m; sourceTree = "<group>"; };
+		F1CE7AD70F4B2649006BAA18 /* rb_Foundation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rb_Foundation.m; sourceTree = "<group>"; };
+		F1CE7AD80F4B2649006BAA18 /* rb_UIKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rb_UIKit.m; sourceTree = "<group>"; };
+		F1CE7ADA0F4B2649006BAA18 /* RBClassUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RBClassUtils.h; path = rubycocoa/src/framework/src/objc/RBClassUtils.h; sourceTree = "<group>"; };
+		F1CE7ADC0F4B2649006BAA18 /* OverrideMixin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OverrideMixin.h; path = rubycocoa/src/framework/src/objc/OverrideMixin.h; sourceTree = "<group>"; };
+		F1CE7ADD0F4B2649006BAA18 /* ocdata_conv.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ocdata_conv.m; path = rubycocoa/src/framework/src/objc/ocdata_conv.m; sourceTree = "<group>"; };
+		F1CE7ADE0F4B2649006BAA18 /* DummyProtocolHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DummyProtocolHandler.m; path = rubycocoa/src/framework/src/objc/DummyProtocolHandler.m; sourceTree = "<group>"; };
+		F1CE7ADF0F4B2649006BAA18 /* RBSlaveObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RBSlaveObject.m; path = rubycocoa/src/framework/src/objc/RBSlaveObject.m; sourceTree = "<group>"; };
+		F1CE7AE00F4B2649006BAA18 /* DummyProtocolHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DummyProtocolHandler.h; path = rubycocoa/src/framework/src/objc/DummyProtocolHandler.h; sourceTree = "<group>"; };
+		F1CE7AE10F4B2649006BAA18 /* mdl_osxobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mdl_osxobjc.h; path = rubycocoa/src/framework/src/objc/mdl_osxobjc.h; sourceTree = "<group>"; };
+		F1CE7AE20F4B2649006BAA18 /* RBThreadSwitcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RBThreadSwitcher.m; path = rubycocoa/src/framework/src/objc/RBThreadSwitcher.m; sourceTree = "<group>"; };
+		F1CE7AE30F4B2649006BAA18 /* cls_objcid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = cls_objcid.m; path = rubycocoa/src/framework/src/objc/cls_objcid.m; sourceTree = "<group>"; };
+		F1CE7AE40F4B2649006BAA18 /* mdl_objwrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mdl_objwrapper.h; path = rubycocoa/src/framework/src/objc/mdl_objwrapper.h; sourceTree = "<group>"; };
+		F1CE7AE60F4B2649006BAA18 /* Version.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Version.h; path = rubycocoa/src/framework/src/objc/Version.h; sourceTree = "<group>"; };
+		F1CE7AE70F4B2649006BAA18 /* RBThreadSwitcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RBThreadSwitcher.h; path = rubycocoa/src/framework/src/objc/RBThreadSwitcher.h; sourceTree = "<group>"; };
+		F1CE7AE90F4B2649006BAA18 /* cls_objcid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cls_objcid.h; path = rubycocoa/src/framework/src/objc/cls_objcid.h; sourceTree = "<group>"; };
+		F1CE7AEA0F4B2649006BAA18 /* RBRuntime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RBRuntime.h; path = rubycocoa/src/framework/src/objc/RBRuntime.h; sourceTree = "<group>"; };
+		F1CE7AEB0F4B2649006BAA18 /* OverrideMixin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OverrideMixin.m; path = rubycocoa/src/framework/src/objc/OverrideMixin.m; sourceTree = "<group>"; };
+		F1CE7AED0F4B2649006BAA18 /* cls_objcptr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cls_objcptr.h; path = rubycocoa/src/framework/src/objc/cls_objcptr.h; sourceTree = "<group>"; };
+		F1CE7AEE0F4B2649006BAA18 /* RBRuntime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RBRuntime.m; path = rubycocoa/src/framework/src/objc/RBRuntime.m; sourceTree = "<group>"; };
+		F1CE7AEF0F4B2649006BAA18 /* mdl_objwrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = mdl_objwrapper.m; path = rubycocoa/src/framework/src/objc/mdl_objwrapper.m; sourceTree = "<group>"; };
+		F1CE7AF00F4B2649006BAA18 /* RBObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RBObject.m; path = rubycocoa/src/framework/src/objc/RBObject.m; sourceTree = "<group>"; };
+		F1CE7AF10F4B2649006BAA18 /* mdl_osxobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = mdl_osxobjc.m; path = rubycocoa/src/framework/src/objc/mdl_osxobjc.m; sourceTree = "<group>"; };
+		F1CE7AF20F4B2649006BAA18 /* osx_intern.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = osx_intern.h; path = rubycocoa/src/framework/src/objc/osx_intern.h; sourceTree = "<group>"; };
+		F1CE7AF30F4B2649006BAA18 /* RBClassUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RBClassUtils.m; path = rubycocoa/src/framework/src/objc/RBClassUtils.m; sourceTree = "<group>"; };
+		F1CE7AF40F4B2649006BAA18 /* ocdata_conv.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ocdata_conv.h; path = rubycocoa/src/framework/src/objc/ocdata_conv.h; sourceTree = "<group>"; };
+		F1CE7AF50F4B2649006BAA18 /* RBObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RBObject.h; path = rubycocoa/src/framework/src/objc/RBObject.h; sourceTree = "<group>"; };
+		F1CE7AF60F4B2649006BAA18 /* RBSlaveObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RBSlaveObject.h; path = rubycocoa/src/framework/src/objc/RBSlaveObject.h; sourceTree = "<group>"; };
+		F1CE7AF70F4B2649006BAA18 /* cls_objcptr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = cls_objcptr.m; path = rubycocoa/src/framework/src/objc/cls_objcptr.m; sourceTree = "<group>"; };
+		F1CE7AF80F4B2649006BAA18 /* RubyCocoa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RubyCocoa.h; path = rubycocoa/src/framework/src/objc/RubyCocoa.h; sourceTree = "<group>"; };
+		F1CE7AFA0F4B2649006BAA18 /* osx_ruby.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = osx_ruby.h; path = rubycocoa/src/framework/src/objc/osx_ruby.h; sourceTree = "<group>"; };
+		F1CE7B500F4B2CB2006BAA18 /* main.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = main.rb; sourceTree = "<group>"; };
+		F1CE7B520F4B2CCB006BAA18 /* rubycocoa.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; name = rubycocoa.rb; path = rubycocoa/src/framework/src/ruby/rubycocoa.rb; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +190,8 @@
 			isa = PBXGroup;
 			children = (
 				8D1107310486CEB800E47090 /* Info.plist */,
+				F1CE7B520F4B2CCB006BAA18 /* rubycocoa.rb */,
+				F1CE7B500F4B2CB2006BAA18 /* main.rb */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -167,6 +219,35 @@
 		F1CE7A530F4B1BEB006BAA18 /* rubycocoa */ = {
 			isa = PBXGroup;
 			children = (
+				F1CE7AD20F4B2649006BAA18 /* cocoa */,
+				F1CE7ADA0F4B2649006BAA18 /* RBClassUtils.h */,
+				F1CE7ADC0F4B2649006BAA18 /* OverrideMixin.h */,
+				F1CE7ADD0F4B2649006BAA18 /* ocdata_conv.m */,
+				F1CE7ADE0F4B2649006BAA18 /* DummyProtocolHandler.m */,
+				F1CE7ADF0F4B2649006BAA18 /* RBSlaveObject.m */,
+				F1CE7AE00F4B2649006BAA18 /* DummyProtocolHandler.h */,
+				F1CE7AE10F4B2649006BAA18 /* mdl_osxobjc.h */,
+				F1CE7AE20F4B2649006BAA18 /* RBThreadSwitcher.m */,
+				F1CE7AE30F4B2649006BAA18 /* cls_objcid.m */,
+				F1CE7AE40F4B2649006BAA18 /* mdl_objwrapper.h */,
+				F1CE7AE60F4B2649006BAA18 /* Version.h */,
+				F1CE7AE70F4B2649006BAA18 /* RBThreadSwitcher.h */,
+				F1CE7AE90F4B2649006BAA18 /* cls_objcid.h */,
+				F1CE7AEA0F4B2649006BAA18 /* RBRuntime.h */,
+				F1CE7AEB0F4B2649006BAA18 /* OverrideMixin.m */,
+				F1CE7AED0F4B2649006BAA18 /* cls_objcptr.h */,
+				F1CE7AEE0F4B2649006BAA18 /* RBRuntime.m */,
+				F1CE7AEF0F4B2649006BAA18 /* mdl_objwrapper.m */,
+				F1CE7AF00F4B2649006BAA18 /* RBObject.m */,
+				F1CE7AF10F4B2649006BAA18 /* mdl_osxobjc.m */,
+				F1CE7AF20F4B2649006BAA18 /* osx_intern.h */,
+				F1CE7AF30F4B2649006BAA18 /* RBClassUtils.m */,
+				F1CE7AF40F4B2649006BAA18 /* ocdata_conv.h */,
+				F1CE7AF50F4B2649006BAA18 /* RBObject.h */,
+				F1CE7AF60F4B2649006BAA18 /* RBSlaveObject.h */,
+				F1CE7AF70F4B2649006BAA18 /* cls_objcptr.m */,
+				F1CE7AF80F4B2649006BAA18 /* RubyCocoa.h */,
+				F1CE7AFA0F4B2649006BAA18 /* osx_ruby.h */,
 			);
 			name = rubycocoa;
 			sourceTree = "<group>";
@@ -389,6 +470,17 @@
 			path = thread;
 			sourceTree = "<group>";
 		};
+		F1CE7AD20F4B2649006BAA18 /* cocoa */ = {
+			isa = PBXGroup;
+			children = (
+				F1CE7AD50F4B2649006BAA18 /* init_cocoa.m */,
+				F1CE7AD70F4B2649006BAA18 /* rb_Foundation.m */,
+				F1CE7AD80F4B2649006BAA18 /* rb_UIKit.m */,
+			);
+			name = cocoa;
+			path = rubycocoa/src/framework/src/objc/cocoa;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -431,6 +523,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1CE7B510F4B2CB2006BAA18 /* main.rb in Resources */,
+				F1CE7B530F4B2CCB006BAA18 /* rubycocoa.rb in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -442,6 +536,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
+				F1CE7AFD0F4B2649006BAA18 /* init_cocoa.m in Sources */,
+				F1CE7AFF0F4B2649006BAA18 /* rb_Foundation.m in Sources */,
+				F1CE7B000F4B2649006BAA18 /* rb_UIKit.m in Sources */,
+				F1CE7B030F4B2649006BAA18 /* ocdata_conv.m in Sources */,
+				F1CE7B040F4B2649006BAA18 /* DummyProtocolHandler.m in Sources */,
+				F1CE7B050F4B2649006BAA18 /* RBSlaveObject.m in Sources */,
+				F1CE7B060F4B2649006BAA18 /* RBThreadSwitcher.m in Sources */,
+				F1CE7B070F4B2649006BAA18 /* cls_objcid.m in Sources */,
+				F1CE7B0A0F4B2649006BAA18 /* OverrideMixin.m in Sources */,
+				F1CE7B0C0F4B2649006BAA18 /* RBRuntime.m in Sources */,
+				F1CE7B0D0F4B2649006BAA18 /* mdl_objwrapper.m in Sources */,
+				F1CE7B0E0F4B2649006BAA18 /* RBObject.m in Sources */,
+				F1CE7B0F0F4B2649006BAA18 /* mdl_osxobjc.m in Sources */,
+				F1CE7B100F4B2649006BAA18 /* RBClassUtils.m in Sources */,
+				F1CE7B110F4B2649006BAA18 /* cls_objcptr.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
