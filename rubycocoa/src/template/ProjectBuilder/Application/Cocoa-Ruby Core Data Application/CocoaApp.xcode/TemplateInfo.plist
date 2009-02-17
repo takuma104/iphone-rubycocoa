@@ -1,0 +1,17 @@
+{
+	FilesToRename = {
+		"CocoaApp_Prefix.pch" = "ÇPROJECTNAMEÈ_Prefix.pch";
+		"AppDelegate.rb" = "ÇPROJECTNAMEASIDENTIFIERÈAppDelegate.rb";
+		"CocoaApp.xcdatamodel" = "ÇPROJECTNAMEÈ_DataModel.xcdatamodel";
+	};
+	FilesToMacroExpand = (
+		"ÇPROJECTNAMEÈ_Prefix.pch",
+		"ÇPROJECTNAMEASIDENTIFIERÈAppDelegate.rb",
+		"Info.plist",
+		"English.lproj/InfoPlist.strings",
+		"English.lproj/MainMenu.nib/keyedobjects.nib",
+		"English.lproj/MainMenu.nib/classes.nib",
+		"main.m",
+	);
+	Description = "This project builds a Core Data application.";
+}

@@ -1,0 +1,371 @@
+<?xml version='1.0' encoding='EUC-JP'?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html lang='ja' xml:lang='ja' xmlns='http://www.w3.org/1999/xhtml'>
+
+<head>
+  <title>RubyCocoa - RubyCocoaプログラミング</title>
+  <meta content='text/html; charset=euc-jp' http-equiv='Content-type'/>
+  <meta name='Content-Language' content='ja'/>
+  <link href='rubycocoasite.css' rel='stylesheet' type='text/css'/>
+</head>
+
+<body>
+
+<!-- main table -->
+<table cellspacing='0' cellpadding='0' width='100%'>
+<colgroup><col width='100%'/></colgroup>
+
+<!-- body/header - title -->
+<tr class='site-title'><td width='100%'>
+RubyCocoa<font size='-1'> - A Ruby/Objective-C Bridge for Mac OS X with Cocoa</font>
+</td></tr>
+
+<!-- body/header - menubar -->
+<tr class='site-menubar'><td width='100%'>
+<table cellspacing='0' cellpadding='2' width='100%'>
+  <colgroup><col width='80%'/><col width='20%'/></colgroup>
+  <tr id='site-menubar'>
+  <td class='site-menubar' align='left' width='80%'>
+    <a href='index.ja.html'>RubyCocoaとは？</a> | <a href='getting.ja.html'>ダウンロード</a> | <a href='build.ja.html'>ソースから構築</a> | <a href='trysamples.ja.html'>サンプルを試す</a> | <a href='programming.ja.html'>プログラミング</a> | <a href='references.ja.html'>リファレンス</a> | <a href='changes.ja.html'>変更点</a> | <a href='faq.ja.html'>FAQ</a> | <a href='links.ja.html'>リンク集</a>
+  </td>
+  <td class='site-menubar' align='right' width='20%'>
+    <a href='index.en.html'>[英語]</a> [日本語]
+  </td>
+</tr>
+</table>
+</td></tr>
+
+<!-- body/main -->
+<tr><td width='100%'>
+<table cellspacing='0' cellpadding='12' width='100%'>
+  <colgroup><col width='80%'/><col width='20%'/></colgroup>
+  <tr>
+
+<!-- body/main/contents -->
+<td class='body-contents' id='body-contents' valign='top'>
+<h1><a name='label-0' id='label-0'>RubyCocoaプログラミング</a></h1><!-- RDLabel: "RubyCocoaプログラミング" -->
+<h2><a name='label-1' id='label-1'>目次</a></h2><!-- RDLabel: "目次" -->
+<ul>
+<li><a href='#label-2'>irb - インターラクティブ Ruby</a></li>
+<li><a href='#label-3'>ライブラリのロード</a></li>
+<li><a href='#label-4'>動いた実感を味わえる例</a></li>
+<li><a href='#label-5'>Cocoaクラス</a></li>
+<li><a href='#label-6'>Cocoaオブジェクトの生成</a></li>
+<li><a href='#label-7'>オーナーシップとメモリ管理</a></li>
+<li><a href='#label-8'>メソッドの返す値</a></li>
+<li><a href='#label-9'>メソッド名の決定方法とバリエーション</a></li>
+<li><a href='#label-10'>メソッドの引数は可能な限り変換する</a></li>
+<li><a href='#label-11'>メソッド名が重複するときに使う接頭辞 "oc_"</a></li>
+<li><a href='#label-12'>Cocoaクラスの派生クラスとそのインスタンス</a></li>
+<li><a href='#label-13'>Cocoa派生クラスの定義</a></li>
+<li><a href='#label-14'>アウトレット</a></li>
+<li><a href='#label-15'>メソッドのオーバーライド</a></li>
+<li><a href='#label-16'>Cocoa派生クラスのインスタンス生成</a></li>
+<li><a href='#label-17'>インスタンス生成時の初期化コードはどこに書くべきか?</a></li>
+<li><a href='#label-18'>RubyCocoaアプリケーションのデバッグ</a></li>
+</ul>
+<h2><a name='label-2' id='label-2'>irb - インターラクティブ Ruby</a></h2><!-- RDLabel: "irb - インターラクティブ Ruby" -->
+<p>ここにあるスクリプトの切れ端を試してみるのに irb を使うとよいでしょう。
+irb はコマンドラインで対話的に Ruby インタープリタを使う Ruby付属のコ
+マンドです。以下のよう起動します。</p>
+<pre>% irb -r osx/cocoa</pre>
+<p>(注) Mac OS X 10.1 では irb と RubyCocoa をいっしょに使うとしばしば
+バスエラーが発生します。Mac OS X 10.2 またはそれ以降での使用をお勧めします。</p>
+<h2><a name='label-3' id='label-3'>ライブラリのロード</a></h2><!-- RDLabel: "ライブラリのロード" -->
+<p>RubyCocoaのライブラリは以下のようにロードします。</p>
+<pre>require 'osx/cocoa'</pre>
+<h2><a name='label-4' id='label-4'>動いた実感を味わえる例</a></h2><!-- RDLabel: "動いた実感を味わえる例" -->
+<p>まずは動いた実感を味わえる(音が鳴る)簡単な例です。irb を使って試してみ
+ましょう。</p>
+<pre>include OSX
+files = `ls /System/Library/Sounds/*.aiff`.split
+NSSound.alloc.initWithContentsOfFile_byReference (files[0], true).play
+NSSound.alloc.initWithContentsOfFile_byReference (files[1], true).play
+NSSound.alloc.initWithContentsOfFile_byReference (files[2], true).play</pre>
+<p>以降は、地味だけど理解の助けになると思われる例をあげていきます。説明の
+中で "# =&gt; "の右側は実行結果として標準出力される文字列です。</p>
+<h2><a name='label-5' id='label-5'>Cocoaクラス</a></h2><!-- RDLabel: "Cocoaクラス" -->
+<pre>p OSX::NSObject # =&gt; OSX::NSObject
+obj = OSX::NSObject.description
+p obj      # =&gt; #&lt;OSX::OCObject:0x5194e8 class='NSCFString' id=A97910&gt;
+obj = OSX::NSObject.alloc.init
+p obj      # =&gt; #&lt;OSX::NSObject:0x51f5b4 class='NSObject' id=976D90&gt;</pre>
+<p>RubyCocoaでは、CocoaクラスはOSXモジュール配下のクラスとして定義されて
+います(0.2.0以降)。CocoaクラスはRubyのクラスであると同時にCocoaのオブ
+ジェクトとしても振る舞います。</p>
+<h2><a name='label-6' id='label-6'>Cocoaオブジェクトの生成</a></h2><!-- RDLabel: "Cocoaオブジェクトの生成" -->
+<p>Cocoaオブジェクトの生成には、Cocoaの各クラスのメソッドをそのまま使いま
+す。</p>
+<pre>obj = OSX::NSObject.alloc.init
+str = OSX::NSString.stringWithString "hello"
+str = OSX::NSString.alloc.initWithString "world"</pre>
+<p>生成されたCocoaオブジェクトは、RubyCocoa内部でOSX::ObjcIDというクラス
+のオブジェクトに包まれています。通常、OSX::ObjcIDクラスの存在を意識す
+る必要はありません。</p>
+<h2><a name='label-7' id='label-7'>オーナーシップとメモリ管理</a></h2><!-- RDLabel: "オーナーシップとメモリ管理" -->
+<p>OSX::ObjcIDのインスタンスはかならず自身が包んでいるCocoaオブジェクトの
+オーナーシップを持ちます。オーナーシップはOSX::ObjcIDのインスタンスが
+GCに掃除されるときに自動的になくなります。したがってRubyCocoaでは、オー
+ナーシップなどのメモリ管理を気にする必要はありません。また、通常
+OSX::ObjcIDというクラスの存在を意識する必要もありません。</p>
+<pre>str = OSX::NSString.stringWithString "hello"
+str = OSX::NSString.alloc.initWithString "world"</pre>
+<p>上記２行は、Objective-Cではオーナーシップを発生させるかさせないかとい
+う違いがありますが、オーナーシップを意識する必要のない RubyCocoa では
+たいして違いがありません。release、autorelease、retainなどのメソッドは
+基本的に呼ぶ必要はありませんし、NSAutoreleasePoolを作る必要もありませ
+ん。</p>
+<ul>
+<li>Cocoaオブジェクトの生成にはCocoaクラスに対してCocoaのメソッドを使う</li>
+<li>Cocoaオブジェクトは作りっぱなしで良い、メモリ管理は不要</li>
+</ul>
+<h2><a name='label-8' id='label-8'>メソッドの返す値</a></h2><!-- RDLabel: "メソッドの返す値" -->
+<pre>nstr = OSX::NSString.description
+p nstr      # =&gt; #&lt;OCObject:0x7233e class='NSCFString' id=687610&gt;
+p nstr.to_s # =&gt; "NSString"
+
+nstr = OSX::NSString.stringWithString "Hello World !"
+p nstr      # =&gt; #&lt;OCObject:0x71970 class='NSCFString' id=688E90&gt;
+p nstr.to_s # =&gt; "Hello World !"
+
+nstr = OSX::NSString.stringWithString(`pwd`.chop)
+nary = nstr.pathComponents
+p nary      # =&gt; #&lt;OCObject:0x6bb2e class='NSCFArray' id=3C0150&gt;
+
+ary = nary.to_a
+p ary       # =&gt; [#&lt;OCObject:0x6a9b8 class='NSCFString' id=3C2B50&gt;,...]
+
+ary.map! {|i| i.to_s }
+p ary       # =&gt; ["/", "Users", "hisa", "src", "ruby", "osxobjc"]</pre>
+<p>これらの例から推測できるようにRubyCocoaでは、NSStringやNSArrayなど
+Objective-Cオブジェクトを返すメソッドをCocoaオブジェクトとして返します。
+積極的にRubyの対応するオブジェクト(例えばStringなど)には変換しません。
+文字列と配列に関しては to_s や to_a が定義されているのでそれを使うこと
+ができます。</p>
+<h2><a name='label-9' id='label-9'>メソッド名の決定方法とバリエーション</a></h2><!-- RDLabel: "メソッド名の決定方法とバリエーション" -->
+<pre># システム音を順番に鳴らす (2)
+sndfiles.each do |path|
+  snd = OSX::NSSound.alloc.initWithContentsOfFile(path, :byReference, true)
+  snd.play
+  sleep 0.25 while snd.isPlaying?
+end</pre>
+<p>これはさきほど示した音をならす例の別バージョンです。Objective-Cのメッ
+セージセレクタと引数をRuby風に表記する別の方法を示しています。
+Objective-Cの</p>
+<pre>[obj hogeAt: a0 withParamA: a1 withParamB: a2]</pre>
+<p>に対していくつかの呼び出し方法が用意されています。基本は、メッセージセ
+レクタの":"を"_"に置き換えたものがRuby側でのメソッド名となります。</p>
+<pre>obj.hogeAt_withParamA_withParamB_ (a0, a1, a2)</pre>
+<p>ただし、このままではカッコ悪すぎなので最後の"_"は省略することができま
+す。</p>
+<pre>obj.hogeAt_withParamA_withParamB (a0, a1, a2)</pre>
+<p>また長いメソッド名の場合など、メッセージセレクタのキーワードと引数の関
+係がわかりにくいため、あまり美しくありませんが、苦肉の策として次のよう
+な方法も使うことができます。</p>
+<pre>obj.hogeAt (a0, :withParamA, a1, :withParamB, a2)</pre>
+<p>BOOLを返すメソッド(述語)の場合には、メソッド名の最後に"?"を付けてくだ
+さい。RubyCocoaでは、'?'の有無でメソッドが論理値を返すものかどうか判
+断しています。付けない場合にはObjective-Cが返した数値(0:NO, 1:YES)が返
+りますが、これらの値はRuby の論理値としてどちらも真になります。</p>
+<pre>nary = OSX::NSMutableArray.alloc.init
+p nary.containsObject("hoge")   # =&gt; 0
+p nary.containsObject?("hoge")  # =&gt; false
+nary.addObject("hoge")
+p nary.containsObject("hoge")   # =&gt; 1
+p nary.containsObject?("hoge")  # =&gt; true</pre>
+<h2><a name='label-10' id='label-10'>メソッドの引数は可能な限り変換する</a></h2><!-- RDLabel: "メソッドの引数は可能な限り変換する" -->
+<p>上の例のcontainsObjectのように、引数の値としてObjective-Cオブジェクト
+をとるメソッドの場合に、Rubyオブジェクトをそのまま渡しても可能な限り変
+換を試みます。</p>
+<h2><a name='label-11' id='label-11'>メソッド名が重複するときに使う接頭辞 "oc_"</a></h2><!-- RDLabel: "メソッド名が重複するときに使う接頭辞 "oc_"" -->
+<pre>klass = OSX::NSObject.class
+p klass     # =&gt; Class
+klass = OSX::NSObject.oc_class
+p klass     # =&gt; OSX::NSObject</pre>
+<p>"Object#class"のようにRubyとObjective-Cでメソッド名(セレクタ)が全く同
+じ場合には、Rubyのメソッドが呼ばれます。このような場合には、メソッド名
+の頭に"oc_"という接頭辞をつけると、Objective-Cオブジェクトに対してメッ
+セージが送られます。"oc_" を付けてもRuby側にメソッドがある場合は？どう
+しようもありません(裏技はあるのでソースを読める人はどうぞ) 。</p>
+<h2><a name='label-12' id='label-12'>Cocoaクラスの派生クラスとそのインスタンス</a></h2><!-- RDLabel: "Cocoaクラスの派生クラスとそのインスタンス" -->
+<p>ここまでは既存のCocoaクラスとそのインスタンスに関するトピックを扱いま
+した。ここからは、RubyCocoaアプリケーションを書く場合に必要となるCocoa 
+派生クラスの定義やそのインスタンスに関するトピックを扱います。Cocoaの
+派生クラスはややトリッキーな実装により実現しているため、多少の制約や癖
+がありますが、それも含めて見ていきましょう。</p>
+<h2><a name='label-13' id='label-13'>Cocoa派生クラスの定義</a></h2><!-- RDLabel: "Cocoa派生クラスの定義" -->
+<p>Interface Builderで作成したGUI定義ファイル(nibファイル)の中で設定した
+Cocoaオブジェクトのクラスなどは派生クラスとして定義します(0.2.0以降)。
+例えばCocoaの入門書やチュートリアルなどで最初の方に出てくるようなMVCモ
+デルのコントローラは</p>
+<pre>class AppController &lt; OSX::NSObject
+
+  ib_outlets :messageField
+
+  def btnClicked(sender)
+    @messageField.setStringValue "Merry Xmas !"
+  end
+
+end</pre>
+<p>のように定義します。RubyCocoaにおけるCocoaの派生クラス定義は、このよう
+に通常のRubyでの派生クラス定義と同様に記述します。</p>
+<h2><a name='label-14' id='label-14'>アウトレット</a></h2><!-- RDLabel: "アウトレット" -->
+<p>nibファイル中でクラスに設定したアウトレットは派生クラスの定義の中で</p>
+<pre>ns_outlets :rateField, :dollerField</pre>
+<p>と書きます。ns_outletsは実際には Module#attr_writer と同じです。したがっ
+て代わりに</p>
+<pre>def rateField= (new_val)
+  @rateField = new_val
+end</pre>
+<p>のように定義することもできます。ns_outlets には ib_outlets という別名
+もあります。</p>
+<h2><a name='label-15' id='label-15'>メソッドのオーバーライド</a></h2><!-- RDLabel: "メソッドのオーバーライド" -->
+<p>親クラスで定義されているメソッドをオーバーライドする場合、ns_overrides
+(別名ib_overrides)を使ってオーバーライドしたことを宣言する必要がありま
+す。</p>
+<pre>class MyCustomView &lt; OSX::NSView
+  ns_overrides :drawRect_, 'mouseUp:'
+
+  def drawRect(frame)
+  end
+
+  ...
+end</pre>
+<p>ns_overrides の引数には Objective-C のメッセージセレクタを文字列または
+シンボルで表現したものを与えます。ただし「メソッド名の決定方法とバリエー
+ション」で説明した末尾を省略する記法を使うことはできません。引数の数に
+合わせて正確に記述する必要があります。</p>
+<p>オーバーライドしているメソッドの定義の中でスーパークラスの同じメソッド
+を呼ぶ場合にはメソッド名に "super_" 接頭辞を付けて呼びます。</p>
+<pre>class MyCustomView &lt; OSX::NSView
+
+  ns_overrides :drawRect_
+
+  def drawRect (frame)
+    p frame
+    super_drawRect(frame)   # NSViewのdrawRectを実行
+  end
+
+end</pre>
+<h2><a name='label-16' id='label-16'>Cocoa派生クラスのインスタンス生成</a></h2><!-- RDLabel: "Cocoa派生クラスのインスタンス生成" -->
+<p>Cocoa派生クラスのインスタンスをRubyスクリプト中で生成する必要がある場
+合には、既存のCocoaクラスの場合と同様に</p>
+<pre>AppController.alloc.init  # use this</pre>
+<p>のように書きます。Rubyでのもっとも一般的な書き方である</p>
+<pre>AppController.new  # don't use this</pre>
+<p>を使うことはできません(例外を発生するようにしてあります)。これにはいろ
+いろ事情があるのですが長くなるのでここでは詳しい説明は省きます。この制
+約はインスタンス生成が</p>
+<ul>
+<li>alloc (Objective-C側)</li>
+<li>alloc内でRubyオブジェクト生成(ここでinitializeメソッドが呼ばれる)</li>
+</ul>
+<p>という順番で行われることに深い関連があります。</p>
+<h2><a name='label-17' id='label-17'>インスタンス生成時の初期化コードはどこに書くべきか?</a></h2><!-- RDLabel: "インスタンス生成時の初期化コードはどこに書くべきか?" -->
+<p>一般にRubyではinitializeメソッドの中に初期化のコードを書きますが、
+Cocoa派生クラスではどちらかいえばあまり奨められません。理由は先に述べ
+たインスタンス生成時のinitializeメソッドが呼ばれるタイミングにより、そ
+の時点でCocoaオブジェクトとしてはメモリが割り当てられただけで初期化さ
+れていないからです。もっともCocoa側メソッドを呼ばない限りにおいてはと
+くに問題は発生しないと考えられます。</p>
+<p>nibファイルからロードされるような場合には awakeFromNib メソッドで初期
+化するのがもっとも無難です。実際にCocoaの派生クラスを定義する必要があ
+るのもこのケースがもっとも多いのではないでしょうか。</p>
+<p>その他の場合には、Cocoaの流儀で "init" 接頭辞を持つメソッドに書くのが
+よいでしょう。メソッドがselfを返すようにすることを忘れないでください。</p>
+<h2><a name='label-18' id='label-18'>RubyCocoaアプリケーションのデバッグ</a></h2><!-- RDLabel: "RubyCocoaアプリケーションのデバッグ" -->
+<p>今のところ(2003-01-05)、RubyCocoaアプリケーションに対応する
+ProjectBuilderのプラグインモジュールが存在しないため、ProjectBuilder上
+でRubyのデバッガを使うことはできません。</p>
+<p>しかし、RubyCocoaアプリケーションをシェルなどからオプション付きで起動
+することにより、Rubyに付属のデバッガなどを使うことは可能です。Emacs使
+いであれば、rubydbコマンドを使ってデバッグできます。</p>
+<p>以下は、simpleapp(サンプル)を題材に、Ruby付属デバッガを使ってRubyCocoa 
+アプリケーションをブレークさせるときの様子です。</p>
+<pre>$ cd sample/simpleapp/
+$ pbxbuild
+$ build/SimpleApp.app/Contents/MacOS/SimpleApp -r debug
+(rdb:1) b AppController.rb:24    # ブレークポイントを設定
+Set breakpoint 1 at AppController.rb:24
+(rdb:1) c
+Breakpoint 1, aboutApp at AppController.rb:24
+AppController.rb:24:
+(rdb:1) l
+[19, 28] in AppController.rb
+   19      @myView.set_alpha(@slider.floatValue)
+   20      @myView.set_color(@colorWell.color)
+   21    end
+   22  
+   23    def aboutApp (sender)
+=&gt; 24      NSApp().orderFrontStandardAboutPanelWithOptions(
+   25        "Copyright" =&gt; "RubyCocoa #{RUBYCOCOA_VERSION}",
+   26        "ApplicationVersion" =&gt; "Ruby #{VERSION}")
+   27    end
+   28  
+   29    def colorBtnClicked (sender)
+(rdb:1) sender
+#&lt;OSX::NSMenuItem:0xd439e class='NSMenuItem' id=0x3e27d0&gt;
+(rdb:1) q
+Really quit? (y/n) y</pre>
+<p>$Date: 2005-11-10 00:11:57 +0900 (���, 10 11 2005) $</p>
+
+</td>
+
+<!-- body/main/sidebar -->
+<td class='body-sidebar' valign='top'>
+
+<!-- body/main/sidebar/news -->
+<div id='sidebar-news'>
+</div>
+
+<!-- body/main/sidebar/contents -->
+<div id='sidebar-contents'>
+  <h2 class='body-sidebar'>コンテンツ</h2>
+  <ul class='body-sidebar'>
+    <li><a href='index.ja.html'>RubyCocoaとは？</a></li>
+    <li><a href='getting.ja.html'>ダウンロード</a></li>
+    <li><a href='build.ja.html'>ソースから構築</a></li>
+    <li><a href='trysamples.ja.html'>サンプルを試す</a></li>
+    <li><a href='programming.ja.html'>プログラミング</a></li>
+    <li><a href='references.ja.html'>リファレンス</a></li>
+    <li><a href='changes.ja.html'>変更点</a></li>
+    <li><a href='changelog.html'>変更ログ</a></li>
+    <li><a href='faq.ja.html'>FAQ</a></li>
+    <li><a href='news.ja.html'>ニュース</a></li>
+    <li><a href='links.ja.html'>関連リンク集</a></li>
+  </ul>
+</div>
+
+<!-- body/main/sidebar/links -->
+<div id='sidebar-links'>
+  <h2 class='body-sidebar'><a href='links.ja.html'>リンク</a></h2>
+  <ul class='body-sidebar'>
+    <li><a href='http://rubycocoa.sourceforge.net/'>RubyCocoa</a></li>
+    <li><a href='http://www.fobj.com/rubyaeosa/'>RubyAEOSA</a></li>
+    <li><a href='http://www.freeml.com/info/rubycocoa@freeml.com'>メーリングリスト (日本語)</a></li>
+    <li><a href='http://sourceforge.net/mail/?group_id=44114'>メーリングリスト (英語)</a></li>
+    <li><a href='http://sourceforge.net/projects/rubycocoa/'>RubyCocoaプロジェクト</a></li>
+    <li><a href='http://rubycocoa.sourceforge.net/w.ja'>RubyCocoa Wiki (日本語)</a></li>
+    <li><a href='http://rubycocoa.sourceforge.net/w.en'>RubyCocoa Wiki (英語)</a></li>
+    <li><a href='http://www.mouseup.net/rubycocoa/calc_app1.html'>チュートリアル</a></li>
+  </ul>
+</div>
+
+</td> <!-- end of body/main/sidebar -->
+
+</tr></table></td></tr> <!-- end of body/main -->
+
+<!-- body/footer -->
+<tr class='body-footer'><td width='100%'>
+<table cellspacing='4' cellpadding='0' width='100%'>
+  <tr>
+    <td align='left'>
+      <a href='http://sourceforge.net'>
+	<img src='http://sourceforge.net/sflogo.php?group_id=44114&amp;type=4' border='0' height='37' alt='SourceForge.net Logo' width='125'/>
+	</a>
+      </td>
+  </tr>
+</table>
+</td></tr>
+
+</table> <!-- end of main table -->
+</body>
+</html>

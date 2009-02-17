@@ -1,0 +1,217 @@
+<?xml version='1.0' encoding='EUC-JP'?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html lang='ja' xml:lang='ja' xmlns='http://www.w3.org/1999/xhtml'>
+
+<head>
+  <title>RubyCocoa - A Ruby/Objective-C Bridge for Mac OS X with Cocoa</title>
+  <meta content='text/html; charset=euc-jp' http-equiv='Content-type'/>
+  <meta name='Content-Language' content='ja'/>
+  <link href='rubycocoasite.css' rel='stylesheet' type='text/css'/>
+</head>
+
+<body>
+
+<!-- main table -->
+<table cellspacing='0' cellpadding='0' width='100%'>
+<colgroup><col width='100%'/></colgroup>
+
+<!-- body/header - title -->
+<tr class='site-title'><td width='100%'>
+RubyCocoa<font size='-1'> - A Ruby/Objective-C Bridge for Mac OS X with Cocoa</font>
+</td></tr>
+
+<!-- body/header - menubar -->
+<tr class='site-menubar'><td width='100%'>
+<table cellspacing='0' cellpadding='2' width='100%'>
+  <colgroup><col width='80%'/><col width='20%'/></colgroup>
+  <tr id='site-menubar'>
+  <td class='site-menubar' align='left' width='80%'>
+    <a href='index.ja.html'>RubyCocoaとは？</a> | <a href='getting.ja.html'>ダウンロード</a> | <a href='build.ja.html'>ソースから構築</a> | <a href='trysamples.ja.html'>サンプルを試す</a> | <a href='programming.ja.html'>プログラミング</a> | <a href='references.ja.html'>リファレンス</a> | <a href='changes.ja.html'>変更点</a> | <a href='faq.ja.html'>FAQ</a> | <a href='links.ja.html'>リンク集</a>
+  </td>
+  <td class='site-menubar' align='right' width='20%'>
+    <a href='index.en.html'>[英語]</a> [日本語]
+  </td>
+</tr>
+</table>
+</td></tr>
+
+<!-- body/main -->
+<tr><td width='100%'>
+<table cellspacing='0' cellpadding='12' width='100%'>
+  <colgroup><col width='80%'/><col width='20%'/></colgroup>
+  <tr>
+
+<!-- body/main/contents -->
+<td class='body-contents' id='body-contents' valign='top'>
+<h2><a name='label-0' id='label-0'>RubyCocoaとは？</a></h2><!-- RDLabel: "RubyCocoaとは？" -->
+<p>RubyCocoaは、
+オブジェクト指向スクリプト言語<a href='http://www.ruby-lang.org/'>Ruby</a>での
+<a href='http://developer.apple.com/cocoa/'>Cocoa</a>プログラミングを可能とする、
+<a href='http://www.apple.co.jp/macosx/'>Mac OS X</a>のフレームワークです。</p>
+<p>RubyCocoaを使って、CocoaアプリケーションをRubyで書いたり、Rubyスクリプトで
+Cocoaオブジェクトを生成して機能を利用することができます。
+Cocoaアプリケーションでは、RubyとObjective-Cのソースが混在するCocoa
+アプリケーションを作ることも可能です。</p>
+<p>次のようなときにRubyCocoaを使えます:</p>
+<ul>
+<li>irbで対話的にCocoaオブジェクトの性質を探求</li>
+<li>Cocoaアプリケーションのブロトタイピング・開発</li>
+<li>RubyとObjective-C双方の長所を活かしたCocoaアプリケーション</li>
+<li>RubyスクリプトにMac OS X風のユーザインターフェースをかぶせる</li>
+</ul>
+<h2><a name='label-1' id='label-1'>スクリーンショット</a></h2><!-- RDLabel: "スクリーンショット" -->
+<p>RubyスクリプトとInterface BuilderのNibファイルのみで書かれたRubyCocoa
+アプリケーションが動作しているところのスクリーンショットです。</p>
+<a href='http://www.fobj.com/rubycocoa/doc/simpleapp.jpg'>
+<img src='simpleapp-sml.jpg' height='192' alt='screenshot' width='256'/></a>
+
+<h2><a name='label-2' id='label-2'>スクリプト例</a></h2><!-- RDLabel: "スクリプト例" -->
+<p>以下の例はシステムの音を順番に鳴らすスクリプトです。</p>
+<pre>require 'osx/cocoa'
+snd_files =`ls /System/Library/Sounds/*.aiff`.split
+snd_files.each do |path|
+  snd = OSX::NSSound.alloc.
+    initWithContentsOfFile_byReference (path, true)
+  snd.play
+  sleep 0.5
+end</pre>
+<p>以下の例はマックにテキストを読み上げさせるスクリプトです(OSX 10.2以降用)。</p>
+<pre>require 'osx/cocoa'
+include OSX
+def speak (str)
+  str.gsub! (/"/, '\"')
+  src = %(say "#{str}")
+  NSAppleScript.alloc.initWithSource(src).executeAndReturnError(nil)
+end
+speak "Hello World!"
+speak "Kon nich Wah. Ogan key desu ka?" # "Hi. How are you." in Japanese
+speak "Fuji Yamah, Nin Jya, Sukiyaki, Ten pora, Sushi."</pre>
+<p>以下の例はインターフェースビルダーで作成したnibファイル内のクラスと関
+連づけられたクラス定義のサンプルです。</p>
+<pre>require 'osx/cocoa'
+
+class AppCtrl &lt; OSX::NSObject
+
+  ib_outlets :monthField, :dayField, :mulField
+
+  def awakeFromNib
+    @monthField.setIntValue  Time.now.month
+    @dayField.setIntValue Time.now.day
+    convert
+  end
+
+  def convert (sender = nil)
+    val = @monthField.intValue * @dayField.intValue
+    @mulField.setIntValue (val)
+    @monthField.selectText (self)
+  end
+
+  def windowShouldClose (sender = nil)
+    OSX.NSApp.stop (self)
+    true
+  end    
+
+end</pre>
+<h2><a name='label-3' id='label-3'>ライセンス</a></h2><!-- RDLabel: "ライセンス" -->
+<p><a href='http://www.gnu.org/licenses/lgpl.html'>GNU Lesser General Public License version 2. LGPL
+</a></p>
+<h2><a name='label-4' id='label-4'>謝辞</a></h2><!-- RDLabel: "謝辞" -->
+<p>まずChris Thomasさん、Luc "lucsky" Heinrichさん、S.Sawadaさんに感謝いたします。</p>
+<p>さらに</p>
+<p>Gesse Gam, Hiroyuki Shimura, John Platte, kimura wataru, Masaki Yatsu,
+Masatoshi Seki, Michael Miller, Ogino Junya, Ralph Broom, Rich Kilmer,
+Shirai Kaoru, Tetsuhumi Takaishi, Tosh, Matthew Fero, Rod Schmidt,
+Jonathan Paisley, Norberto Ortigoza</p>
+<p>をはじめとする多くの方々に感謝いたします。</p>
+<h2><a name='label-5' id='label-5'>コンタクト</a></h2><!-- RDLabel: "コンタクト" -->
+<p>バグリポート、こんなアイコン作りました、コメントなどお気軽に
+お寄せください。</p>
+<p>作者は仕事を探しています。</p>
+<ul>
+<li>RubyCocoaの開発・応用開発・サポート活動の支援・事業化</li>
+<li>RubyCocoaのスポンサーになりたい</li>
+<li>RubyCocoaベースの開発ツールの開発</li>
+<li>その他なんでも (RubyCocoaじゃなくても)</li>
+<li>何か仕事を依頼したい</li>
+</ul>
+<p>などに関心のある企業・団体・個人の方がいらっしゃれば、お気軽に 
+<a href='mailto:contact.rubycocoa@fobj.com'>こちら</a> 
+までご連絡ください。</p>
+<p>藤本尚邦, &lt;hisa at fobj.com&gt;, $Date: 2005-11-10 00:11:57 +0900 (���, 10 11 2005) $</p>
+
+</td>
+
+<!-- body/main/sidebar -->
+<td class='body-sidebar' valign='top'>
+
+<!-- body/main/sidebar/news -->
+<div id='sidebar-news'>
+<h2 class='body-sidebar'><a href='news.ja.html'>ニュース</a></h2>
+<ul class='body-sidebar'>
+<li><a href='news.ja.html#20051110'>RubyCocoa 0.4.2をリリース！ (2005-11-10)</a></li>
+<li><a href='news.ja.html#20050325'>RubyCocoa 0.4.1をリリース！ (2005-03-25)</a></li>
+<li><a href='news.ja.html#20050324'>RubyCocoa の Web サイトを引っ越しました (2005-03-25)</a></li>
+<li><a href='news.ja.html#20040628'>RubyCocoa の Web サイトを引っ越しました (2004-06-28)</a></li>
+<li><a href='news.ja.html#1059364663'>RubyCocoa.framework 0.4.1d8 を公開 (2003-07-28)</a></li>
+<li><a href='news.ja.html#1059366471'>uptime - RubyCocoaアプリケーション (2003-07-28)</a></li>
+<li><a href='news.ja.html#1059131865'>RubyCocoaで実装されたRubyクラスブラウザ (2003-07-25)</a></li>
+<li><a href='news.ja.html#1059131505'>オライリーMac OS XカンファレンスでRubyCocoaのセッション (2003-07-25)</a></li>
+<li><a href='news.ja.html#1059129687'>RubyCocoaでWebKit (2003-07-25)</a></li>
+<li><a href='news.ja.html#1042301135'>FreeRIDE スクリーンショット (2003-01-12)</a></li>
+<li><a href='news.ja.html#1042297376'>Ruby 1.6.8 で config エラーを直すパッチ (2003-01-12)</a></li>
+<li><a href='news.ja.html#1041750137'>デバッグ方法について (2003-01-05)</a></li>
+<li><a href='news.ja.html#1041154613'>RubyCocoa 0.4をリリース！ (2002-12-28)</a></li>
+</ul>
+</div>
+
+<!-- body/main/sidebar/contents -->
+<div id='sidebar-contents'>
+  <h2 class='body-sidebar'>コンテンツ</h2>
+  <ul class='body-sidebar'>
+    <li><a href='index.ja.html'>RubyCocoaとは？</a></li>
+    <li><a href='getting.ja.html'>ダウンロード</a></li>
+    <li><a href='build.ja.html'>ソースから構築</a></li>
+    <li><a href='trysamples.ja.html'>サンプルを試す</a></li>
+    <li><a href='programming.ja.html'>プログラミング</a></li>
+    <li><a href='references.ja.html'>リファレンス</a></li>
+    <li><a href='changes.ja.html'>変更点</a></li>
+    <li><a href='changelog.html'>変更ログ</a></li>
+    <li><a href='faq.ja.html'>FAQ</a></li>
+    <li><a href='news.ja.html'>ニュース</a></li>
+    <li><a href='links.ja.html'>関連リンク集</a></li>
+  </ul>
+</div>
+
+<!-- body/main/sidebar/links -->
+<div id='sidebar-links'>
+  <h2 class='body-sidebar'><a href='links.ja.html'>リンク</a></h2>
+  <ul class='body-sidebar'>
+    <li><a href='http://rubycocoa.sourceforge.net/'>RubyCocoa</a></li>
+    <li><a href='http://www.fobj.com/rubyaeosa/'>RubyAEOSA</a></li>
+    <li><a href='http://www.freeml.com/info/rubycocoa@freeml.com'>メーリングリスト (日本語)</a></li>
+    <li><a href='http://sourceforge.net/mail/?group_id=44114'>メーリングリスト (英語)</a></li>
+    <li><a href='http://sourceforge.net/projects/rubycocoa/'>RubyCocoaプロジェクト</a></li>
+    <li><a href='http://rubycocoa.sourceforge.net/w.ja'>RubyCocoa Wiki (日本語)</a></li>
+    <li><a href='http://rubycocoa.sourceforge.net/w.en'>RubyCocoa Wiki (英語)</a></li>
+    <li><a href='http://www.mouseup.net/rubycocoa/calc_app1.html'>チュートリアル</a></li>
+  </ul>
+</div>
+
+</td> <!-- end of body/main/sidebar -->
+
+</tr></table></td></tr> <!-- end of body/main -->
+
+<!-- body/footer -->
+<tr class='body-footer'><td width='100%'>
+<table cellspacing='4' cellpadding='0' width='100%'>
+  <tr>
+    <td align='left'>
+      <a href='http://sourceforge.net'>
+	<img src='http://sourceforge.net/sflogo.php?group_id=44114&amp;type=4' border='0' height='37' alt='SourceForge.net Logo' width='125'/>
+	</a>
+      </td>
+  </tr>
+</table>
+</td></tr>
+
+</table> <!-- end of main table -->
+</body>
+</html>

@@ -1,0 +1,7 @@
+{
+	FilesToMacroExpand = (
+		"English.lproj/InfoPlist.strings",
+		"main.m",
+		"rb_main.rb"
+	);
+}

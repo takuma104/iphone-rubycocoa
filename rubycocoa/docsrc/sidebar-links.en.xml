@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="us-ascii" ?>
+<div id="sidebar-links">
+  <h2 class="body-sidebar"><a href="links.en.html">Links</a></h2>
+  <ul class="body-sidebar">
+    <li><a href="http://rubycocoa.sourceforge.net/">RubyCocoa</a></li>
+    <li><a href="http://www.fobj.com/rubyaeosa/">RubyAEOSA</a></li>
+    <li><a href="http://www.freeml.com/info/rubycocoa@freeml.com">Maling List (Japanese)</a></li>
+    <li><a href="http://sourceforge.net/mail/?group_id=44114">Maling list (English)</a></li>
+    <li><a href="http://sourceforge.net/projects/rubycocoa/">RubyCocoa Project</a></li>
+    <li><a href="http://rubycocoa.sourceforge.net/w.ja">RubyCocoa Wiki (Japanese)</a></li>
+    <li><a href="http://rubycocoa.sourceforge.net/w.en">RubyCocoa Wiki (English)</a></li>
+    <li><a href="http://www.mouseup.net/rubycocoa/calc_app1.html">Tutorial (Japanese)</a></li>
+  </ul>
+</div>

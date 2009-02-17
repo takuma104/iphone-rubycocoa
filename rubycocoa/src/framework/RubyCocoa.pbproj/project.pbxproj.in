@@ -1,0 +1,1085 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 38;
+	objects = {
+		014CEA440018CDF011CA2923 = {
+			buildRules = (
+			);
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				OPTIMIZATION_CFLAGS = "-O0";
+			};
+			isa = PBXBuildStyle;
+			name = Development;
+		};
+		014CEA450018CDF011CA2923 = {
+			buildRules = (
+			);
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+			};
+			isa = PBXBuildStyle;
+			name = Deployment;
+		};
+//010
+//011
+//012
+//013
+//014
+//030
+//031
+//032
+//033
+//034
+		034768DFFF38A50411DB9C8B = {
+			children = (
+				034768E0FF38A50411DB9C8B,
+			);
+			isa = PBXGroup;
+			name = Products;
+			refType = 4;
+		};
+		034768E0FF38A50411DB9C8B = {
+			isa = PBXFrameworkReference;
+			path = "%%%framework_name%%%.framework";
+			refType = 3;
+		};
+//030
+//031
+//032
+//033
+//034
+//080
+//081
+//082
+//083
+//084
+		0867D690FE84028FC02AAC07 = {
+			buildStyles = (
+				014CEA440018CDF011CA2923,
+				014CEA450018CDF011CA2923,
+			);
+			hasScannedForEncodings = 1;
+			isa = PBXProject;
+			mainGroup = 0867D691FE84028FC02AAC07;
+			productRefGroup = 034768DFFF38A50411DB9C8B;
+			projectDirPath = "";
+			targets = (
+				0867D69CFE84028FC02AAC07,
+			);
+		};
+		0867D691FE84028FC02AAC07 = {
+			children = (
+				E8E03A17035D04E103E1EA43,
+				089C1665FE841158C02AAC07,
+				0867D69AFE84028FC02AAC07,
+				034768DFFF38A50411DB9C8B,
+			);
+			isa = PBXGroup;
+			name = RubyCocoa;
+			refType = 4;
+		};
+		0867D69AFE84028FC02AAC07 = {
+			children = (
+				1058C7B0FEA5585E11CA2CBB,
+				1058C7B2FEA5585E11CA2CBB,
+				E88C6D21035BACFD031D1B90,
+			);
+			isa = PBXGroup;
+			name = "External Frameworks and Libraries";
+			refType = 4;
+		};
+		0867D69BFE84028FC02AAC07 = {
+			isa = PBXFrameworkReference;
+			name = Foundation.framework;
+			path = /System/Library/Frameworks/Foundation.framework;
+			refType = 0;
+		};
+		0867D69CFE84028FC02AAC07 = {
+			buildPhases = (
+				0867D69DFE84028FC02AAC07,
+				0867D69EFE84028FC02AAC07,
+				E84D81F303ADA2EC03A81C6F,
+				E8B05557035C00D003E2294E,
+				0867D69FFE84028FC02AAC07,
+				0867D6A0FE84028FC02AAC07,
+				0867D6A2FE84028FC02AAC07,
+			);
+			buildSettings = {
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_SEARCH_PATHS = "";
+				FRAMEWORK_VERSION = A;
+				HEADER_SEARCH_PATHS = "%%%ruby_header_dir%%%";
+				INSTALL_PATH = "@executable_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = "%%%libruby_path_dirname%%%";
+				OBJROOT = "$SRCROOT/build";
+				OTHER_CFLAGS = "-fno-common";
+				OTHER_LDFLAGS = "-undefined suppress -flat_namespace";
+				PREBINDING = NO;
+				PRODUCT_NAME = "%%%framework_name%%%";
+				SECTORDER_FLAGS = "";
+				SINGLE_MODULE = NO;
+				SYMROOT = "$SRCROOT/build";
+				WARNING_CFLAGS = "-Wmost -Wno-four-char-constants -Wno-unknown-pragmas";
+				WRAPPER_EXTENSION = framework;
+			};
+			dependencies = (
+			);
+			isa = PBXFrameworkTarget;
+			name = RubyCocoa;
+			productInstallPath = /Library/Frameworks;
+			productName = RubyCocoa;
+			productReference = 034768E0FF38A50411DB9C8B;
+			productSettingsXML = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
+<!DOCTYPE plist PUBLIC \"-//Apple Computer//DTD PLIST 1.0//EN\" \"http://www.apple.com/DTDs/PropertyList-1.0.dtd\">
+<plist version=\"1.0\">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleExecutable</key>
+	<string>RubyCocoa</string>
+	<key>CFBundleIconFile</key>
+	<string></string>
+	<key>CFBundleIdentifier</key>
+	<string></string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundlePackageType</key>
+	<string>FMWK</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleVersion</key>
+	<string>0.4.0d0</string>
+	<key>NSPrincipalClass</key>
+	<string></string>
+</dict>
+</plist>
+";
+		};
+		0867D69DFE84028FC02AAC07 = {
+			buildActionMask = 2147483647;
+			files = (
+				E88C6DE1035BB1F6031D1B90,
+				E88C6DE3035BB1F6031D1B90,
+				E88C6DE5035BB1F6031D1B90,
+				E88C6DE8035BB1F6031D1B90,
+				E88C6DEC035BB1F6031D1B90,
+				E88C6DEE035BB1F6031D1B90,
+				E88C6DF0035BB1F6031D1B90,
+				E88C6DF3035BB1F6031D1B90,
+				E88C6DF5035BB1F6031D1B90,
+				E88C6DF6035BB1F6031D1B90,
+				E8FA5ED7035BB5A5035CBD51,
+				E8FA5ED8035BB5A5035CBD51,
+				E813DE9C036CC9C1033794D5,
+				E813DEA1036D122F033794D5,
+				E813DEA3036D122F033794D5,
+			);
+			isa = PBXHeadersBuildPhase;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0867D69EFE84028FC02AAC07 = {
+			buildActionMask = 2147483647;
+			files = (
+				089C1668FE841158C02AAC07,
+			);
+			isa = PBXResourcesBuildPhase;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0867D69FFE84028FC02AAC07 = {
+			buildActionMask = 2147483647;
+			files = (
+				E88C6DE2035BB1F6031D1B90,
+				E88C6DE4035BB1F6031D1B90,
+				E88C6DE6035BB1F6031D1B90,
+				E88C6DE7035BB1F6031D1B90,
+				E88C6DE9035BB1F6031D1B90,
+				E88C6DED035BB1F6031D1B90,
+				E88C6DEF035BB1F6031D1B90,
+				E88C6DF1035BB1F6031D1B90,
+				E88C6DF2035BB1F6031D1B90,
+				E88C6DF4035BB1F6031D1B90,
+				E88C6DF8035BB1F6031D1B90,
+				A5244F7F0595D2CE00FB7045,
+				A5244F800595D2CE00FB7045,
+				E813DEA2036D122F033794D5,
+				E813DEA4036D122F033794D5,
+			);
+			isa = PBXSourcesBuildPhase;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0867D6A0FE84028FC02AAC07 = {
+			buildActionMask = 2147483647;
+			files = (
+				1058C7B3FEA5585E11CA2CBB,
+				E88C6D22035BACFD031D1B90,
+			);
+			isa = PBXFrameworksBuildPhase;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0867D6A2FE84028FC02AAC07 = {
+			buildActionMask = 2147483647;
+			files = (
+			);
+			isa = PBXRezBuildPhase;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0867D6A5FE840307C02AAC07 = {
+			isa = PBXFrameworkReference;
+			name = AppKit.framework;
+			path = /System/Library/Frameworks/AppKit.framework;
+			refType = 0;
+		};
+		089C1665FE841158C02AAC07 = {
+			children = (
+				089C1666FE841158C02AAC07,
+			);
+			isa = PBXGroup;
+			name = Resources;
+			path = "";
+			refType = 4;
+		};
+		089C1666FE841158C02AAC07 = {
+			children = (
+				089C1667FE841158C02AAC07,
+			);
+			isa = PBXVariantGroup;
+			name = InfoPlist.strings;
+			refType = 4;
+		};
+		089C1667FE841158C02AAC07 = {
+			isa = PBXFileReference;
+			name = English;
+			path = English.lproj/InfoPlist.strings;
+			refType = 4;
+		};
+		089C1668FE841158C02AAC07 = {
+			fileRef = 089C1666FE841158C02AAC07;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+//080
+//081
+//082
+//083
+//084
+//100
+//101
+//102
+//103
+//104
+		1058C7B0FEA5585E11CA2CBB = {
+			children = (
+				1058C7B1FEA5585E11CA2CBB,
+				0867D69BFE84028FC02AAC07,
+			);
+			isa = PBXGroup;
+			name = "Linked Frameworks";
+			refType = 4;
+		};
+		1058C7B1FEA5585E11CA2CBB = {
+			isa = PBXFrameworkReference;
+			name = Cocoa.framework;
+			path = /System/Library/Frameworks/Cocoa.framework;
+			refType = 0;
+		};
+		1058C7B2FEA5585E11CA2CBB = {
+			children = (
+				0867D6A5FE840307C02AAC07,
+			);
+			isa = PBXGroup;
+			name = "Other Frameworks";
+			refType = 4;
+		};
+		1058C7B3FEA5585E11CA2CBB = {
+			fileRef = 1058C7B1FEA5585E11CA2CBB;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+//100
+//101
+//102
+//103
+//104
+//A50
+//A51
+//A52
+//A53
+//A54
+		A5244F7D0595D2CE00FB7045 = {
+			isa = PBXFileReference;
+			path = rb_AppKit.m;
+			refType = 4;
+		};
+		A5244F7E0595D2CE00FB7045 = {
+			isa = PBXFileReference;
+			path = rb_Foundation.m;
+			refType = 4;
+		};
+		A5244F7F0595D2CE00FB7045 = {
+			fileRef = A5244F7D0595D2CE00FB7045;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		A5244F800595D2CE00FB7045 = {
+			fileRef = A5244F7E0595D2CE00FB7045;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+//A50
+//A51
+//A52
+//A53
+//A54
+//E80
+//E81
+//E82
+//E83
+//E84
+		E813DE9B036CC9C1033794D5 = {
+			isa = PBXFileReference;
+			path = RBSlaveObject.h;
+			refType = 4;
+		};
+		E813DE9C036CC9C1033794D5 = {
+			fileRef = E813DE9B036CC9C1033794D5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		E813DE9D036D122F033794D5 = {
+			isa = PBXFileReference;
+			path = mdl_osxobjc.h;
+			refType = 4;
+		};
+		E813DE9E036D122F033794D5 = {
+			isa = PBXFileReference;
+			path = mdl_osxobjc.m;
+			refType = 4;
+		};
+		E813DE9F036D122F033794D5 = {
+			isa = PBXFileReference;
+			path = RBClassUtils.h;
+			refType = 4;
+		};
+		E813DEA0036D122F033794D5 = {
+			isa = PBXFileReference;
+			path = RBClassUtils.m;
+			refType = 4;
+		};
+		E813DEA1036D122F033794D5 = {
+			fileRef = E813DE9D036D122F033794D5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		E813DEA2036D122F033794D5 = {
+			fileRef = E813DE9E036D122F033794D5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		E813DEA3036D122F033794D5 = {
+			fileRef = E813DE9F036D122F033794D5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		E813DEA4036D122F033794D5 = {
+			fileRef = E813DEA0036D122F033794D5;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		E84D81EB03ADA29603A81C6F = {
+			isa = PBXFileReference;
+			path = addressbook.rb;
+			refType = 4;
+		};
+		E84D81EC03ADA29603A81C6F = {
+			isa = PBXFileReference;
+			path = appkit.rb;
+			refType = 4;
+		};
+		E84D81ED03ADA29603A81C6F = {
+			isa = PBXFileReference;
+			path = cocoa.rb;
+			refType = 4;
+		};
+		E84D81EE03ADA29603A81C6F = {
+			isa = PBXFileReference;
+			path = foundation.rb;
+			refType = 4;
+		};
+		E84D81EE13ADA29603A81C6F = {
+			isa = PBXFileReference;
+			path = coredata.rb;
+			refType = 4;
+		};
+		E84D81EF03ADA29603A81C6F = {
+			fileRef = E84D81EB03ADA29603A81C6F;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		E84D81F003ADA29603A81C6F = {
+			fileRef = E84D81EC03ADA29603A81C6F;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		E84D81F103ADA29603A81C6F = {
+			fileRef = E84D81ED03ADA29603A81C6F;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		E84D81F203ADA29603A81C6F = {
+			fileRef = E84D81EE03ADA29603A81C6F;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		E84D81F203ADA29603A81C6F = {
+			fileRef = E84D81EE13ADA29603A81C6F;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		E84D81F303ADA2EC03A81C6F = {
+			buildActionMask = 2147483647;
+			dstPath = ruby/osx;
+			dstSubfolderSpec = 7;
+			files = (
+				E84D81EF03ADA29603A81C6F,
+				E84D81F003ADA29603A81C6F,
+				E84D81F103ADA29603A81C6F,
+				E84D81F203ADA29603A81C6F,
+			);
+			isa = PBXCopyFilesBuildPhase;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E88C6D21035BACFD031D1B90 = {
+			isa = PBXFileReference;
+			name = "%%%libruby_path_basename%%%";
+			path = "%%%libruby_path%%%";
+			refType = 0;
+		};
+		E88C6D22035BACFD031D1B90 = {
+			fileRef = E88C6D21035BACFD031D1B90;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		E88C6D57035BB1F5031D1B90 = {
+			children = (
+				E8FA5ED5035BB5A5035CBD51,
+				E8FA5ED6035BB5A5035CBD51,
+				E813DE9D036D122F033794D5,
+				E813DE9E036D122F033794D5,
+				E88C6D58035BB1F5031D1B90,
+				E88C6D59035BB1F5031D1B90,
+				E88C6D5A035BB1F5031D1B90,
+				E88C6D5B035BB1F5031D1B90,
+				E88C6D5E035BB1F5031D1B90,
+				E88C6D5F035BB1F5031D1B90,
+				E88C6D60035BB1F5031D1B90,
+				E88C6D67035BB1F5031D1B90,
+				E88C6D68035BB1F5031D1B90,
+				E813DE9F036D122F033794D5,
+				E813DEA0036D122F033794D5,
+				E88C6D65035BB1F5031D1B90,
+				E88C6D66035BB1F5031D1B90,
+				E813DE9B036CC9C1033794D5,
+				E88C6D69035BB1F5031D1B90,
+				E88C6D6A035BB1F5031D1B90,
+				E88C6D6B035BB1F5031D1B90,
+				E88C6D5C035BB1F5031D1B90,
+				E88C6D5D035BB1F5031D1B90,
+				E88C6D63035BB1F5031D1B90,
+				E88C6D64035BB1F5031D1B90,
+				E88C6D6C035BB1F5031D1B90,
+				E88C6D6D035BB1F5031D1B90,
+				E88C6E69035BB255031D1B90,
+				E88C6E6A035BB255031D1B90,
+				E88C6D6E035BB1F5031D1B90,
+			);
+			isa = PBXGroup;
+			name = objc;
+			path = src/objc;
+			refType = 2;
+		};
+		E88C6D58035BB1F5031D1B90 = {
+			isa = PBXFileReference;
+			path = cls_objcid.h;
+			refType = 4;
+		};
+		E88C6D59035BB1F5031D1B90 = {
+			isa = PBXFileReference;
+			path = cls_objcid.m;
+			refType = 4;
+		};
+		E88C6D5A035BB1F5031D1B90 = {
+			isa = PBXFileReference;
+			path = cls_objcptr.h;
+			refType = 4;
+		};
+		E88C6D5B035BB1F5031D1B90 = {
+			isa = PBXFileReference;
+			path = cls_objcptr.m;
+			refType = 4;
+		};
+		E88C6D5C035BB1F5031D1B90 = {
+			isa = PBXFileReference;
+			path = DummyProtocolHandler.h;
+			refType = 4;
+		};
+		E88C6D5D035BB1F5031D1B90 = {
+			isa = PBXFileReference;
+			path = DummyProtocolHandler.m;
+			refType = 4;
+		};
+		E88C6D5E035BB1F5031D1B90 = {
+			isa = PBXFileReference;
+			path = mdl_objwrapper.m;
+			refType = 4;
+		};
+		E88C6D5F035BB1F5031D1B90 = {
+			isa = PBXFileReference;
+			path = ocdata_conv.h;
+			refType = 4;
+		};
+		E88C6D60035BB1F5031D1B90 = {
+			isa = PBXFileReference;
+			path = ocdata_conv.m;
+			refType = 4;
+		};
+		E88C6D63035BB1F5031D1B90 = {
+			isa = PBXFileReference;
+			path = OverrideMixin.h;
+			refType = 4;
+		};
+		E88C6D64035BB1F5031D1B90 = {
+			isa = PBXFileReference;
+			path = OverrideMixin.m;
+			refType = 4;
+		};
+		E88C6D65035BB1F5031D1B90 = {
+			isa = PBXFileReference;
+			path = RBObject.h;
+			refType = 4;
+		};
+		E88C6D66035BB1F5031D1B90 = {
+			isa = PBXFileReference;
+			path = RBObject.m;
+			refType = 4;
+		};
+		E88C6D67035BB1F5031D1B90 = {
+			isa = PBXFileReference;
+			path = RBRuntime.h;
+			refType = 4;
+		};
+		E88C6D68035BB1F5031D1B90 = {
+			isa = PBXFileReference;
+			path = RBRuntime.m;
+			refType = 4;
+		};
+		E88C6D69035BB1F5031D1B90 = {
+			isa = PBXFileReference;
+			path = RBSlaveObject.m;
+			refType = 4;
+		};
+		E88C6D6A035BB1F5031D1B90 = {
+			isa = PBXFileReference;
+			path = RBThreadSwitcher.h;
+			refType = 4;
+		};
+		E88C6D6B035BB1F5031D1B90 = {
+			isa = PBXFileReference;
+			path = RBThreadSwitcher.m;
+			refType = 4;
+		};
+		E88C6D6C035BB1F5031D1B90 = {
+			isa = PBXFileReference;
+			path = RubyCocoa.h;
+			refType = 4;
+		};
+		E88C6D6D035BB1F5031D1B90 = {
+			isa = PBXFileReference;
+			path = Version.h;
+			refType = 4;
+		};
+		E88C6D6E035BB1F5031D1B90 = {
+			children = (
+				E88C6D70035BB1F5031D1B90,
+				E88C6D6F035BB1F5031D1B90,
+				E88C6D71035BB1F5031D1B90,
+				A5244F7D0595D2CE00FB7045,
+				A5244F7E0595D2CE00FB7045,
+			);
+			isa = PBXGroup;
+			path = cocoa;
+			refType = 4;
+		};
+		E88C6D6F035BB1F5031D1B90 = {
+			isa = PBXFileReference;
+			path = gen_cocoa_wrapper.rb;
+			refType = 4;
+		};
+		E88C6D70035BB1F5031D1B90 = {
+			isa = PBXFileReference;
+			path = init_cocoa.m;
+			refType = 4;
+		};
+		E88C6D71035BB1F5031D1B90 = {
+			isa = PBXFileReference;
+			path = init_cocoa.m.erb;
+			refType = 4;
+		};
+		E88C6DE1035BB1F6031D1B90 = {
+			fileRef = E88C6D58035BB1F5031D1B90;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		E88C6DE2035BB1F6031D1B90 = {
+			fileRef = E88C6D59035BB1F5031D1B90;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		E88C6DE3035BB1F6031D1B90 = {
+			fileRef = E88C6D5A035BB1F5031D1B90;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		E88C6DE4035BB1F6031D1B90 = {
+			fileRef = E88C6D5B035BB1F5031D1B90;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		E88C6DE5035BB1F6031D1B90 = {
+			fileRef = E88C6D5C035BB1F5031D1B90;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		E88C6DE6035BB1F6031D1B90 = {
+			fileRef = E88C6D5D035BB1F5031D1B90;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		E88C6DE7035BB1F6031D1B90 = {
+			fileRef = E88C6D5E035BB1F5031D1B90;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		E88C6DE8035BB1F6031D1B90 = {
+			fileRef = E88C6D5F035BB1F5031D1B90;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		E88C6DE9035BB1F6031D1B90 = {
+			fileRef = E88C6D60035BB1F5031D1B90;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		E88C6DEC035BB1F6031D1B90 = {
+			fileRef = E88C6D63035BB1F5031D1B90;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		E88C6DED035BB1F6031D1B90 = {
+			fileRef = E88C6D64035BB1F5031D1B90;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		E88C6DEE035BB1F6031D1B90 = {
+			fileRef = E88C6D65035BB1F5031D1B90;
+			isa = PBXBuildFile;
+			settings = {
+				ATTRIBUTES = (
+					Public,
+				);
+			};
+		};
+		E88C6DEF035BB1F6031D1B90 = {
+			fileRef = E88C6D66035BB1F5031D1B90;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		E88C6DF0035BB1F6031D1B90 = {
+			fileRef = E88C6D67035BB1F5031D1B90;
+			isa = PBXBuildFile;
+			settings = {
+				ATTRIBUTES = (
+					Public,
+				);
+			};
+		};
+		E88C6DF1035BB1F6031D1B90 = {
+			fileRef = E88C6D68035BB1F5031D1B90;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		E88C6DF2035BB1F6031D1B90 = {
+			fileRef = E88C6D69035BB1F5031D1B90;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		E88C6DF3035BB1F6031D1B90 = {
+			fileRef = E88C6D6A035BB1F5031D1B90;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		E88C6DF4035BB1F6031D1B90 = {
+			fileRef = E88C6D6B035BB1F5031D1B90;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		E88C6DF5035BB1F6031D1B90 = {
+			fileRef = E88C6D6C035BB1F5031D1B90;
+			isa = PBXBuildFile;
+			settings = {
+				ATTRIBUTES = (
+					Public,
+				);
+			};
+		};
+		E88C6DF6035BB1F6031D1B90 = {
+			fileRef = E88C6D6D035BB1F5031D1B90;
+			isa = PBXBuildFile;
+			settings = {
+				ATTRIBUTES = (
+				);
+			};
+		};
+		E88C6DF8035BB1F6031D1B90 = {
+			fileRef = E88C6D70035BB1F5031D1B90;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		E88C6E69035BB255031D1B90 = {
+			isa = PBXFileReference;
+			path = DummyProtocolHandler.m.erb;
+			refType = 4;
+		};
+		E88C6E6A035BB255031D1B90 = {
+			isa = PBXFileReference;
+			path = gen_dummy_handler.rb;
+			refType = 4;
+		};
+		E88C6E6D035BB408031D1B90 = {
+			children = (
+				E88C6E6E035BB408031D1B90,
+			);
+			isa = PBXGroup;
+			name = ruby;
+			path = src/ruby;
+			refType = 2;
+		};
+		E88C6E6E035BB408031D1B90 = {
+			children = (
+				E84D81EB03ADA29603A81C6F,
+				E84D81EC03ADA29603A81C6F,
+				E84D81ED03ADA29603A81C6F,
+				E84D81EE03ADA29603A81C6F,
+				E84D81EE13ADA29603A81C6F,
+				E8AA467304D26DA70310F9A1,
+				E88C6E73035BB408031D1B90,
+			);
+			isa = PBXGroup;
+			path = osx;
+			refType = 4;
+		};
+		E88C6E73035BB408031D1B90 = {
+			children = (
+				E88C6E74035BB408031D1B90,
+				E88C6E75035BB408031D1B90,
+				E88C6E76035BB408031D1B90,
+				E88C6E77035BB408031D1B90,
+				E88C6E78035BB408031D1B90,
+				E88C6E79035BB408031D1B90,
+				E88C6E7A035BB408031D1B90,
+				E88C6E7B035BB408031D1B90,
+				E88C6E7C035BB408031D1B90,
+				E88C6E7D035BB408031D1B90,
+				E88C6E7E035BB408031D1B90,
+				E88C6E7F035BB408031D1B90,
+				E88C6E80035BB408031D1B90,
+				E88C6E81035BB408031D1B90,
+				E8FD49D003D45B2603A81C6F,
+				E8AA467504D26DDD0310F9A1,
+			);
+			isa = PBXGroup;
+			path = objc;
+			refType = 4;
+		};
+		E88C6E74035BB408031D1B90 = {
+			isa = PBXFileReference;
+			path = addressbook.rb;
+			refType = 4;
+		};
+		E88C6E75035BB408031D1B90 = {
+			isa = PBXFileReference;
+			path = appkit.rb;
+			refType = 4;
+		};
+		E88C6E76035BB408031D1B90 = {
+			isa = PBXFileReference;
+			path = application.rb;
+			refType = 4;
+		};
+		E88C6E77035BB408031D1B90 = {
+			isa = PBXFileReference;
+			path = cocoa.rb;
+			refType = 4;
+		};
+		E88C6E78035BB408031D1B90 = {
+			isa = PBXFileReference;
+			path = cocoa_macros.rb;
+			refType = 4;
+		};
+		E88C6E79035BB408031D1B90 = {
+			isa = PBXFileReference;
+			path = foundation.rb;
+			refType = 4;
+		};
+		E88C6E7A035BB408031D1B90 = {
+			isa = PBXFileReference;
+			path = oc_all.rb;
+			refType = 4;
+		};
+		E88C6E7B035BB408031D1B90 = {
+			isa = PBXFileReference;
+			path = oc_attachments.rb;
+			refType = 4;
+		};
+		E88C6E7C035BB408031D1B90 = {
+			isa = PBXFileReference;
+			path = oc_exception.rb;
+			refType = 4;
+		};
+		E88C6E7D035BB408031D1B90 = {
+			isa = PBXFileReference;
+			path = oc_import.rb;
+			refType = 4;
+		};
+		E88C6E7E035BB408031D1B90 = {
+			isa = PBXFileReference;
+			path = oc_object.rb;
+			refType = 4;
+		};
+		E88C6E7F035BB408031D1B90 = {
+			isa = PBXFileReference;
+			path = oc_types.rb;
+			refType = 4;
+		};
+		E88C6E80035BB408031D1B90 = {
+			isa = PBXFileReference;
+			path = oc_wrapper.rb;
+			refType = 4;
+		};
+		E88C6E81035BB408031D1B90 = {
+			isa = PBXFileReference;
+			path = coredata.rb;
+			refType = 4;
+		};
+		E88C6E85035BB408031D1B90 = {
+			fileRef = E88C6E74035BB408031D1B90;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		E88C6E87035BB408031D1B90 = {
+			fileRef = E88C6E76035BB408031D1B90;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		E88C6E88035BB408031D1B90 = {
+			fileRef = E88C6E77035BB408031D1B90;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		E88C6E89035BB408031D1B90 = {
+			fileRef = E88C6E78035BB408031D1B90;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		E88C6E8A035BB408031D1B90 = {
+			fileRef = E88C6E79035BB408031D1B90;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		E88C6E8B035BB408031D1B90 = {
+			fileRef = E88C6E7A035BB408031D1B90;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		E88C6E8C035BB408031D1B90 = {
+			fileRef = E88C6E7B035BB408031D1B90;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		E88C6E8D035BB408031D1B90 = {
+			fileRef = E88C6E7C035BB408031D1B90;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		E88C6E8E035BB408031D1B90 = {
+			fileRef = E88C6E7D035BB408031D1B90;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		E88C6E8F035BB408031D1B90 = {
+			fileRef = E88C6E7E035BB408031D1B90;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		E88C6E90035BB408031D1B90 = {
+			fileRef = E88C6E7F035BB408031D1B90;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		E88C6E91035BB408031D1B90 = {
+			fileRef = E88C6E80035BB408031D1B90;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		E88C6E92035BB408031D1B90 = {
+			fileRef = E88C6E81035BB408031D1B90;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		E8AA467304D26DA70310F9A1 = {
+			isa = PBXFileReference;
+			path = webkit.rb;
+			refType = 4;
+		};
+		E8AA467504D26DDD0310F9A1 = {
+			isa = PBXFileReference;
+			path = webkit.rb;
+			refType = 4;
+		};
+		E8AA467604D26DDD0310F9A1 = {
+			fileRef = E8AA467504D26DDD0310F9A1;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		E8B05557035C00D003E2294E = {
+			buildActionMask = 2147483647;
+			dstPath = ruby/osx/objc;
+			dstSubfolderSpec = 7;
+			files = (
+				E88C6E85035BB408031D1B90,
+				E88C6E87035BB408031D1B90,
+				E8DE2214036EA4380389A780,
+				E88C6E88035BB408031D1B90,
+				E88C6E89035BB408031D1B90,
+				E88C6E8A035BB408031D1B90,
+				E88C6E8B035BB408031D1B90,
+				E88C6E8C035BB408031D1B90,
+				E88C6E8D035BB408031D1B90,
+				E88C6E8E035BB408031D1B90,
+				E88C6E8F035BB408031D1B90,
+				E88C6E90035BB408031D1B90,
+				E88C6E91035BB408031D1B90,
+				E88C6E92035BB408031D1B90,
+				E8FD49D103D45B2603A81C6F,
+				E8AA467604D26DDD0310F9A1,
+			);
+			isa = PBXCopyFilesBuildPhase;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E8DE2214036EA4380389A780 = {
+			fileRef = E88C6E75035BB408031D1B90;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		E8E03A17035D04E103E1EA43 = {
+			children = (
+				E88C6D57035BB1F5031D1B90,
+				E88C6E6D035BB408031D1B90,
+			);
+			isa = PBXGroup;
+			path = src;
+			refType = 4;
+		};
+		E8FA5ED5035BB5A5035CBD51 = {
+			isa = PBXFileReference;
+			path = osx_intern.h;
+			refType = 4;
+		};
+		E8FA5ED6035BB5A5035CBD51 = {
+			isa = PBXFileReference;
+			path = osx_ruby.h;
+			refType = 4;
+		};
+		E8FA5ED7035BB5A5035CBD51 = {
+			fileRef = E8FA5ED5035BB5A5035CBD51;
+			isa = PBXBuildFile;
+			settings = {
+				ATTRIBUTES = (
+					Public,
+				);
+			};
+		};
+		E8FA5ED8035BB5A5035CBD51 = {
+			fileRef = E8FA5ED6035BB5A5035CBD51;
+			isa = PBXBuildFile;
+			settings = {
+				ATTRIBUTES = (
+					Public,
+				);
+			};
+		};
+		E8FD49D003D45B2603A81C6F = {
+			isa = PBXFileReference;
+			path = ruby_addition.rb;
+			refType = 4;
+		};
+		E8FD49D103D45B2603A81C6F = {
+			fileRef = E8FD49D003D45B2603A81C6F;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+	};
+	rootObject = 0867D690FE84028FC02AAC07;
+}

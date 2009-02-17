@@ -1,0 +1,208 @@
+<?xml version='1.0' encoding='US-ASCII'?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html lang='en' xml:lang='en' xmlns='http://www.w3.org/1999/xhtml'>
+
+<head>
+  <title>RubyCocoa - A Ruby/Objective-C Bridge for Mac OS X with Cocoa</title>
+  <meta content='text/html; charset=us-ascii' http-equiv='Content-type'/>
+  <meta name='Content-Language' content='en'/>
+  <link href='rubycocoasite.css' rel='stylesheet' type='text/css'/>
+</head>
+
+<body>
+
+<!-- main table -->
+<table cellspacing='0' cellpadding='0' width='100%'>
+<colgroup><col width='100%'/></colgroup>
+
+<!-- body/header - title -->
+<tr class='site-title'><td width='100%'>
+RubyCocoa<font size='-1'> - A Ruby/Objective-C Bridge for Mac OS X with Cocoa</font>
+</td></tr>
+
+<!-- body/header - menubar -->
+<tr class='site-menubar'><td width='100%'>
+<table cellspacing='0' cellpadding='2' width='100%'>
+  <colgroup><col width='80%'/><col width='20%'/></colgroup>
+  <tr id='site-menubar'>
+  <td class='site-menubar' align='left' width='80%'>
+    <a href='index.en.html'>What?</a> | <a href='getting.en.html'>Download</a> | <a href='build.en.html'>Build &amp; Install</a> | <a href='trysamples.en.html'>Try Samples</a> | <a href='programming.en.html'>Programming</a> | <a href='references.en.html'>References</a> | <a href='changes.en.html'>Changes</a> | <a href='faq.en.html'>FAQ</a> | <a href='links.en.html'>Links</a>
+  </td>
+  <td class='site-menubar' align='right' width='20%'>
+    [ENGLISH] <a href='index.ja.html'>[JAPANESE]</a>
+  </td>
+</tr>
+</table>
+</td></tr>
+
+<!-- body/main -->
+<tr><td width='100%'>
+<table cellspacing='0' cellpadding='12' width='100%'>
+  <colgroup><col width='80%'/><col width='20%'/></colgroup>
+  <tr>
+
+<!-- body/main/contents -->
+<td class='body-contents' id='body-contents' valign='top'>
+<h2><a name='label-0' id='label-0'>What is RubyCocoa ?</a></h2><!-- RDLabel: "What is RubyCocoa ?" -->
+<p>RubyCocoa is a framework for <a href='http://www.apple.com/macosx/'>Mac OS X</a>
+that allows <a href='http://developer.apple.com/cocoa/'>Cocoa</a> programming
+in the object-oriented scripting language <a href='http://www.ruby-lang.org/'>Ruby</a>.</p>
+<p>RubyCocoa lets you write a Cocoa application in Ruby. It allows you to create
+and use a Cocoa object in a Ruby script. It's possible to write a
+Cocoa application that mixes Ruby and Objective-C code.</p>
+<p>Some useful applications of RubyCocoa:</p>
+<ul>
+<li>Exploration of a Cocoa object's features with <code>irb</code> interactively</li>
+<li>Prototyping of a Cocoa application</li>
+<li>Writing a Cocoa application that combines good features of Ruby and Objective-C</li>
+<li>Wrapping Mac OS X's native GUI for a Ruby script</li>
+</ul>
+<h2><a name='label-1' id='label-1'>Screenshot</a></h2><!-- RDLabel: "Screenshot" -->
+<p>The following screenshot is of a RubyCocoa application which consists of only
+Ruby scripts and a nib file created in Mac OS X's Interface Builder.</p>
+<a href='http://www.fobj.com/rubycocoa/doc/simpleapp.jpg'>
+<img src='simpleapp-sml.jpg' height='192' alt='screenshot' width='256'/></a>
+
+<h2><a name='label-2' id='label-2'>Script Examples</a></h2><!-- RDLabel: "Script Examples" -->
+<p>The next script plays all the system sounds.</p>
+<pre>require 'osx/cocoa'
+snd_files =`ls /System/Library/Sounds/*.aiff`.split
+snd_files.each do |path|
+  snd = OSX::NSSound.alloc.
+    initWithContentsOfFile_byReference (path, true)
+  snd.play
+  sleep 0.5
+end</pre>
+<p>The following examples are scripts that read a text aloud.
+(for OS X 10.2 or later)</p>
+<pre>require 'osx/cocoa'
+include OSX
+def speak (str)
+  str.gsub! (/"/, '\"')
+  src = %(say "#{str}")
+  NSAppleScript.alloc.initWithSource(src).executeAndReturnError(nil)
+end
+speak "Hello World!"
+speak "Kon nich Wah. Ogan key desu ka?" # "Hi. How are you." in Japanese</pre>
+<p>The next script is a class definition that connects to a nib file created in
+Interface Builder.</p>
+<pre>require 'osx/cocoa'
+
+class AppCtrl &lt; OSX::NSObject
+
+  ib_outlets :monthField, :dayField, :mulField
+
+  def awakeFromNib
+    @monthField.setIntValue  Time.now.month
+    @dayField.setIntValue Time.now.day
+    convert
+  end
+
+  def convert (sender = nil)
+    val = @monthField.intValue * @dayField.intValue
+    @mulField.setIntValue (val)
+    @monthField.selectText (self)
+  end
+
+  def windowShouldClose (sender = nil)
+    OSX.NSApp.stop (self)
+    true
+  end
+
+end</pre>
+<h2><a name='label-3' id='label-3'>LICENSE</a></h2><!-- RDLabel: "LICENSE" -->
+<p><a href='http://www.gnu.org/licenses/lgpl.html'>GNU Lesser General Public License version 2. LGPL
+</a></p>
+<h2><a name='label-4' id='label-4'>ACKNOWLEDGEMENT</a></h2><!-- RDLabel: "ACKNOWLEDGEMENT" -->
+<p>Special thanks to Chris Thomas, Luc "lucsky" Heinrich and S. Sawada.</p>
+<p>And thanks to:</p>
+<p>Gesse Gam, Hiroyuki Shimura, John Platte, kimura wataru, Masaki Yatsu,
+Masatoshi Seki, Michael Miller, Ogino Junya, Ralph Broom, Rich Kilmer,
+Shirai Kaoru, Tetsuhumi Takaishi, Tosh, Matthew Fero, Rod Schmidt,
+Jonathan Paisley, Norberto Ortigoza</p>
+<h2><a name='label-5' id='label-5'>Contact</a></h2><!-- RDLabel: "Contact" -->
+<p>Feel free to send comments, icon designs, bug reports and patches for
+RubyCocoa. I want to ask kind native English speakers to correct my strange
+English errors. Thanks.</p>
+<p>An author looks for a job (an income source).  Is there a supporter
+(sponsor, investor, etc.) with interest in the development of RubyCocoa or
+other software?</p>
+<p>Contact <a href='mailto:contact.rubycocoa@fobj.com'>me</a> freely please.</p>
+<p>FUJIMOTO, Hisakuni &lt;hisa at fobj.com&gt; $Date: 2005-11-10 00:11:57 +0900 (木, 10 11 2005) $</p>
+
+</td>
+
+<!-- body/main/sidebar -->
+<td class='body-sidebar' valign='top'>
+
+<!-- body/main/sidebar/news -->
+<div id='sidebar-news'>
+<h2 class='body-sidebar'><a href='news.en.html'>NEWS</a></h2>
+<ul class='body-sidebar'>
+<li><a href='news.en.html#20051110'>RubyCocoa 0.4.2 was released! (2005-11-10)</a></li>
+<li><a href='news.en.html#20050325'>RubyCocoa 0.4.1 was released! (2005-03-25)</a></li>
+<li><a href='news.en.html#20050324'>RubyCocoa web site was moved (2005-03-25)</a></li>
+<li><a href='news.en.html#20040628'>RubyCocoa web site was moved (2004-06-28)</a></li>
+<li><a href='news.en.html#1059364663'>RubyCocoa.framework 0.4.1d8 is available (2003-07-28)</a></li>
+<li><a href='news.en.html#1059366471'>uptime - RubyCocoa App (2003-07-28)</a></li>
+<li><a href='news.en.html#1059131865'>Ruby class browser implemented with RubyCocoa (2003-07-25)</a></li>
+<li><a href='news.en.html#1059131505'>A session about RubyCocoa in O'Reilly Mac OS X Conference (2003-07-25)</a></li>
+<li><a href='news.en.html#1059129687'>WebKit with RubyCocoa (2003-07-25)</a></li>
+<li><a href='news.en.html#1042301135'>screenshots of FreeRIDE (2003-01-12)</a></li>
+<li><a href='news.en.html#1042297376'>a patch fix error of config with Ruby 1.6.8 (2003-01-12)</a></li>
+<li><a href='news.en.html#1041750137'>short briefing about debugging (2003-01-05)</a></li>
+<li><a href='news.en.html#1041154613'>RubyCocoa 0.4 was released! (2002-12-28)</a></li>
+</ul>
+</div>
+
+<!-- body/main/sidebar/contents -->
+<div id='sidebar-contents'>
+  <h2 class='body-sidebar'>Contents</h2>
+  <ul class='body-sidebar'>
+    <li><a href='index.en.html'>What is RubyCocoa?</a></li>
+    <li><a href='getting.en.html'>Getting RubyCocoa</a></li>
+    <li><a href='build.en.html'>Build &amp; Install from Source</a></li>
+    <li><a href='trysamples.en.html'>Try Samples</a></li>
+    <li><a href='programming.en.html'>Programming</a></li>
+    <li><a href='references.en.html'>References</a></li>
+    <li><a href='changes.en.html'>Changes</a></li>
+    <li><a href='changelog.html'>ChangeLog</a></li>
+    <li><a href='faq.en.html'>FAQ</a></li>
+    <li><a href='news.en.html'>News</a></li>
+    <li><a href='links.en.html'>Links</a></li>
+  </ul>
+</div>
+
+<!-- body/main/sidebar/links -->
+<div id='sidebar-links'>
+  <h2 class='body-sidebar'><a href='links.en.html'>Links</a></h2>
+  <ul class='body-sidebar'>
+    <li><a href='http://rubycocoa.sourceforge.net/'>RubyCocoa</a></li>
+    <li><a href='http://www.fobj.com/rubyaeosa/'>RubyAEOSA</a></li>
+    <li><a href='http://www.freeml.com/info/rubycocoa@freeml.com'>Maling List (Japanese)</a></li>
+    <li><a href='http://sourceforge.net/mail/?group_id=44114'>Maling list (English)</a></li>
+    <li><a href='http://sourceforge.net/projects/rubycocoa/'>RubyCocoa Project</a></li>
+    <li><a href='http://rubycocoa.sourceforge.net/w.ja'>RubyCocoa Wiki (Japanese)</a></li>
+    <li><a href='http://rubycocoa.sourceforge.net/w.en'>RubyCocoa Wiki (English)</a></li>
+    <li><a href='http://www.mouseup.net/rubycocoa/calc_app1.html'>Tutorial (Japanese)</a></li>
+  </ul>
+</div>
+
+</td> <!-- end of body/main/sidebar -->
+
+</tr></table></td></tr> <!-- end of body/main -->
+
+<!-- body/footer -->
+<tr class='body-footer'><td width='100%'>
+<table cellspacing='4' cellpadding='0' width='100%'>
+  <tr>
+    <td align='left'>
+      <a href='http://sourceforge.net'>
+	<img src='http://sourceforge.net/sflogo.php?group_id=44114&amp;type=4' border='0' height='37' alt='SourceForge.net Logo' width='125'/>
+	</a>
+      </td>
+  </tr>
+</table>
+</td></tr>
+
+</table> <!-- end of main table -->
+</body>
+</html>

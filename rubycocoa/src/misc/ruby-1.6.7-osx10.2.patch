@@ -1,0 +1,23 @@
+--- ruby-1.6.7/configure	2002-08-25 09:50:27+09	1.1
++++ ruby-1.6.7/configure	2002-08-30 12:11:16+09
+@@ -5076,7 +5076,7 @@
+     	CFLAGS="$CFLAGS -pipe -no-precomp"
+ 	;;
+     darwin*)
+-    	CFLAGS="$CFLAGS -pipe -no-precomp"
++    	CFLAGS="$CFLAGS -pipe"
+ 	;;
+     os2_emx)
+     	CFLAGS="$CFLAGS -DOS2"
+--- ruby-1.6.7/error.c	2002-08-25 10:05:58+09	1.1
++++ ruby-1.6.7/error.c	2002-08-30 12:14:59+09
+@@ -469,7 +469,9 @@
+ #endif
+ 
+ #if !defined(NT) && !defined(__FreeBSD__) && !defined(__NetBSD__) && !defined(__OpenBSD__) && !defined(sys_nerr)
++#  if !defined(__APPLE__) || (__APPLE_CC__ < 1151)
+ extern int sys_nerr;
++#  endif
+ #endif
+ 
+ static VALUE

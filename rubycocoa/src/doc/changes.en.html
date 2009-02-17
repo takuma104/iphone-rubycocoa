@@ -1,0 +1,445 @@
+<?xml version='1.0' encoding='US-ASCII'?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html lang='en' xml:lang='en' xmlns='http://www.w3.org/1999/xhtml'>
+
+<head>
+  <title>RubyCocoa - Changes</title>
+  <meta content='text/html; charset=us-ascii' http-equiv='Content-type'/>
+  <meta name='Content-Language' content='en'/>
+  <link href='rubycocoasite.css' rel='stylesheet' type='text/css'/>
+</head>
+
+<body>
+
+<!-- main table -->
+<table cellspacing='0' cellpadding='0' width='100%'>
+<colgroup><col width='100%'/></colgroup>
+
+<!-- body/header - title -->
+<tr class='site-title'><td width='100%'>
+RubyCocoa<font size='-1'> - A Ruby/Objective-C Bridge for Mac OS X with Cocoa</font>
+</td></tr>
+
+<!-- body/header - menubar -->
+<tr class='site-menubar'><td width='100%'>
+<table cellspacing='0' cellpadding='2' width='100%'>
+  <colgroup><col width='80%'/><col width='20%'/></colgroup>
+  <tr id='site-menubar'>
+  <td class='site-menubar' align='left' width='80%'>
+    <a href='index.en.html'>What?</a> | <a href='getting.en.html'>Download</a> | <a href='build.en.html'>Build &amp; Install</a> | <a href='trysamples.en.html'>Try Samples</a> | <a href='programming.en.html'>Programming</a> | <a href='references.en.html'>References</a> | <a href='changes.en.html'>Changes</a> | <a href='faq.en.html'>FAQ</a> | <a href='links.en.html'>Links</a>
+  </td>
+  <td class='site-menubar' align='right' width='20%'>
+    [ENGLISH] <a href='index.ja.html'>[JAPANESE]</a>
+  </td>
+</tr>
+</table>
+</td></tr>
+
+<!-- body/main -->
+<tr><td width='100%'>
+<table cellspacing='0' cellpadding='12' width='100%'>
+  <colgroup><col width='80%'/><col width='20%'/></colgroup>
+  <tr>
+
+<!-- body/main/contents -->
+<td class='body-contents' id='body-contents' valign='top'>
+<h1><a name='label-0' id='label-0'>Changes</a></h1><!-- RDLabel: "Changes" -->
+<h2><a name='label-1' id='label-1'>changes from 0.4.1 (0.4.2)</a></h2><!-- RDLabel: "changes from 0.4.1 (0.4.2)" -->
+<h3><a name='label-2' id='label-2'>new features</a></h3><!-- RDLabel: "new features" -->
+<dl>
+<dt><a name='label-3' id='label-3'>CocoaBindings support</a></dt><!-- RDLabel: "CocoaBindings support" -->
+<dd>
+<p>on Mac OS X 10.3 or later, CocoaBindings is avalable for a subclass of 
+Cocoa class defined in a ruby script.</p>
+<p>see samples CurrencyConverter and RubySpotlight.</p>
+</dd>
+<dt><a name='label-4' id='label-4'>CoreData support</a></dt><!-- RDLabel: "CoreData support" -->
+<dd>
+on Mac OS X 10.4, CoreData classes and constants are avalable with 
+osx/coredata.rb.
+</dd>
+<dt><a name='label-5' id='label-5'>ease to build test</a></dt><!-- RDLabel: "ease to build test" -->
+<dd>
+<p>after `ruby install.rb setup', test script runs with following command:</p>
+<pre>% ruby install.rb test</pre>
+</dd>
+</dl>
+<h3><a name='label-6' id='label-6'>bug fixes</a></h3><!-- RDLabel: "bug fixes" -->
+<dl>
+<dt><a name='label-7' id='label-7'>a ruby object becomes an instance of OSX::OCObject</a></dt><!-- RDLabel: "a ruby object becomes an instance of OSX::OCObject" -->
+<dd>
+<p>A ruby object becomes an instance of OSX::OCObject when the ruby object is 
+passed from a Cocoa object.</p>
+<p>for example:</p>
+<pre>obj = RubyClass.new
+nsary = OSX::NSArray.arrayWithObjects(obj, nil)
+nsary.objectAtIndex(0) # =&gt; a instance of OSX::OCObject(not RubyClass)</pre>
+</dd>
+<dt><a name='label-8' id='label-8'>itunes_albums.rb fails with NSCharacterConversionException</a></dt><!-- RDLabel: "itunes_albums.rb fails with NSCharacterConversionException" -->
+<dd>
+<p>itunes_albums.rb crashes with following error.</p>
+<pre>Uncaught exception: 
+&lt;NSCharacterConversionException&gt; Conversion to encoding ...</pre>
+<p>new version of RubyCocoa converts a ruby string to NSString with encoding 
+from $KCODE.</p>
+</dd>
+<dt><a name='label-9' id='label-9'>a ruby script with sub-subclass of a Cocoa class crashes</a></dt><!-- RDLabel: "a ruby script with sub-subclass of a Cocoa class crashes" -->
+<dd>
+<p>for example:</p>
+<pre>class A &lt; OSX::NSObject
+end
+
+class B &lt; A
+end
+
+b = B.alloc.init # =&gt; crash</pre>
+</dd>
+</dl>
+<h2><a name='label-10' id='label-10'>changes from 0.4.0 (0.4.1)</a></h2><!-- RDLabel: "changes from 0.4.0 (0.4.1)" -->
+<dl>
+<dt><a name='label-11' id='label-11'>Fix LoadError on running ruby script</a></dt><!-- RDLabel: "Fix LoadError on running ruby script" -->
+<dd>
+<p>Fix following error, it occurs when ruby build without --enable-shared option.</p>
+<pre>osx/cocoa.rb:12:in `require': No such file to load -- osx/objc/cocoa (LoadError)</pre>
+</dd>
+<dt><a name='label-12' id='label-12'>Mac OS X 10.3 and Xcode support</a></dt><!-- RDLabel: "Mac OS X 10.3 and Xcode support" -->
+<dd>
+change some install process to build on Mac OS X 10.3(Panther).
+install Xcode templates for RubyCocoa.
+</dd>
+</dl>
+<h2><a name='label-13' id='label-13'>changes from 0.4.0 (0.4.1d9)</a></h2><!-- RDLabel: "changes from 0.4.0 (0.4.1d9)" -->
+<dl>
+<dt><a name='label-14' id='label-14'>ruby 1.8.0 support</a></dt><!-- RDLabel: "ruby 1.8.0 support" -->
+<dd>
+Fix some warning and errors that came to go with ruby 1.8.0.
+</dd>
+</dl>
+<h2><a name='label-15' id='label-15'>changes from 0.4.0 (0.4.1d8)</a></h2><!-- RDLabel: "changes from 0.4.0 (0.4.1d8)" -->
+<dl>
+<dt><a name='label-16' id='label-16'>enable bundling RubyCocoa.framework within an application bundle</a></dt><!-- RDLabel: "enable bundling RubyCocoa.framework within an application bundle" -->
+<dd>
+Change a build configration of RubyCocoa.framework project, to
+execute a RubyCocoa application on the environment which is not
+installed RubyCocoa. It allows that RubyCocoa application itself
+bundles with RubyCocoa.framework.
+</dd>
+<dt><a name='label-17' id='label-17'>Support WebKit.framework</a></dt><!-- RDLabel: "Support WebKit.framework" -->
+<dd>
+add a library for WebKit.framework written by kimura wataru. <a href='#foottext-1' name='footmark-1' id='footmark-1'><sup><small>*1</small></sup></a>
+</dd>
+<dt><a name='label-18' id='label-18'>Fix a bug about "init" method and ns_override</a></dt><!-- RDLabel: "Fix a bug about "init" method and ns_override" -->
+<dd>
+It is fixed an exception is raised when "super_init" is invoked in
+definition of method "init" as ns_override.
+</dd>
+<dt><a name='label-19' id='label-19'>misc</a></dt><!-- RDLabel: "misc" -->
+<dd>
+define module RCDataAttachment. define some class methods for class
+NSData and NSStrng.
+</dd>
+</dl>
+<h2><a name='label-20' id='label-20'>changes from 0.3.2 (0.4.0)</a></h2><!-- RDLabel: "changes from 0.3.2 (0.4.0)" -->
+<dl>
+<dt><a name='label-21' id='label-21'>support Ruby 1.8</a></dt><!-- RDLabel: "support Ruby 1.8" -->
+<dd>
+RubyCocoa supports Ruby 1.8. It has been fixed such that there are
+no warning messages with '-w' option.
+</dd>
+<dt><a name='label-22' id='label-22'>revived RubyCocoa.framework</a></dt><!-- RDLabel: "revived RubyCocoa.framework" -->
+<dd>
+All of the basic implementation of RubyCocoa is included in RubyCocoa
+framework. It contains also code written with Ruby. Libruby itself
+is linked statically to RubyCocoa framework in the binary distribution.
+It would make you easy to distribute a RubyCocoa application.
+</dd>
+<dt><a name='label-23' id='label-23'>renamed extended library</a></dt><!-- RDLabel: "renamed extended library" -->
+<dd>
+Name of the extended library was changed from 'osx_objc.bundle' into
+'rubycocoa.bundle'.
+This library has become a 'stub' extended library for using RubyCocoa
+framework from commands such as <code>ruby</code>, <code>irb</code>, etc.
+</dd>
+<dt><a name='label-24' id='label-24'>relocated some libraries</a></dt><!-- RDLabel: "relocated some libraries" -->
+<dd>
+All of the libraries included in the directory 'osx/objc' were moved inside
+the RubyCocoa framework.
+In addition, the libraries included in the 'osx' directory have become a
+'stub' library for using RubyCocoa framework from commands such as
+<code>ruby</code>, <code>irb</code>, etc.
+</dd>
+</dl>
+<h2><a name='label-25' id='label-25'>changes from 0.3.1 (0.3.2)</a></h2><!-- RDLabel: "changes from 0.3.1 (0.3.2)" -->
+<h3><a name='label-26' id='label-26'>added library for AddressBook.framework</a></h3><!-- RDLabel: "added library for AddressBook.framework" -->
+<p>e.g.:</p>
+<pre>require 'osx/addressbook'
+ab = OSX::ABAddressBook.sharedAddressBook
+ab.people.to_a.each {|i| puts i.compositeName.to_s }</pre>
+<h2><a name='label-27' id='label-27'>changes from 0.3.0 (0.3.1)</a></h2><!-- RDLabel: "changes from 0.3.0 (0.3.1)" -->
+<h3><a name='label-28' id='label-28'>[IMPROVE] reflection facility for an Objective-C object</a></h3><!-- RDLabel: "[IMPROVE] reflection facility for an Objective-C object" -->
+<p>defined OCObjWrapper#objc_methods, OCObjWrapper#objc_method_type.</p>
+<h3><a name='label-29' id='label-29'>[IMPROVE] exception message</a></h3><!-- RDLabel: "[IMPROVE] exception message" -->
+<p>A message of exception which is related with method invocation of
+Objective-C object contains method or function name.</p>
+<p>Raise OSX::OCException when NSException occurred in NS-function call.</p>
+<h3><a name='label-30' id='label-30'>[BUGFIX] unexpected garbage collection</a></h3><!-- RDLabel: "[BUGFIX] unexpected garbage collection" -->
+<p>Fix a bug that a Ruby object which was instantiated in a NIB file may
+be removed by GC.</p>
+<h3><a name='label-31' id='label-31'>[CHANGE] ruby thread switching</a></h3><!-- RDLabel: "[CHANGE] ruby thread switching" -->
+<p>Start thread switching when load of osx_objc.bundle
+(ruby_thread_switcher_start). This facility is implemented using
+NSTimer, so thread switching doesn't work while NSRunLoop doesn't run.</p>
+<h3><a name='label-32' id='label-32'>[CHANGE] rb_main.rb</a></h3><!-- RDLabel: "[CHANGE] rb_main.rb" -->
+<p>Loaded all ".rb" file in bundle resource. So it is not necessary to
+modify rb_main.rb in RubyCocoa application development.</p>
+<h2><a name='label-33' id='label-33'>Changes from 0.2.7</a></h2><!-- RDLabel: "Changes from 0.2.7" -->
+<h3><a name='label-34' id='label-34'>[IMPROVE] Now RubyAEOSA have become Jaguar (Mac OS X 10.2) aware!</a></h3><!-- RDLabel: "[IMPROVE] Now RubyAEOSA have become Jaguar (Mac OS X 10.2) aware!" -->
+<ul>
+<li>executable with only pre-installed Ruby 1.6.7 on Jaguar.</li>
+<li>buildable with only Developer Tools which is contained Jaguar.</li>
+<li>dispose LibRuby.framework</li>
+<li>dispose RubyCocoa.framework</li>
+<li>no need the Ruby configure option "--enabled-shared" any more.</li>
+</ul>
+<p>(NOTE) Libruby.a is required to build document based application
+working normally. Source distribution does not include the library.
+Make the library by yourself from source of ruby. Or download
+<a href='../rubyosx/files/libruby.a.gz'>libruby.a.gz</a>.</p>
+<h3><a name='label-35' id='label-35'>[IMPROVE] improved NS-constans and NS-functions wrapper generator</a></h3><!-- RDLabel: "[IMPROVE] improved NS-constans and NS-functions wrapper generator" -->
+<p>script (using cpp3). Not implemented of NS-constants and NS-functions
+decreased.</p>
+<h3><a name='label-36' id='label-36'>[IMPROVE] Implement to handle argument and return value of C pointer</a></h3><!-- RDLabel: "[IMPROVE] Implement to handle argument and return value of C pointer" -->
+<ul>
+<li>OSX::ObjcPtr - C pointer wrapper class</li>
+<li>Function/Method return an OSX::ObjcPtr instance as C pointer</li>
+<li>Use OSX::ObjcPtr or String as C pointer argument instead of C
+  pointer argument</li>
+</ul>
+<p>To use this feature, you should understand the meaning of accessing
+memory space directly using C pointer. It's dangerous if not so.
+There is the case which is not usable in a Ruby level virtually so
+that the point that C pointer of return value shows is disturbed
+already by NSAutoreleasePool#release.
+(example - NSString#availableStringEncodings)</p>
+<h3><a name='label-37' id='label-37'>[IMPROVE] NSDictionary argument</a></h3><!-- RDLabel: "[IMPROVE] NSDictionary argument" -->
+<p>available to use Hash when argument of function / method is a
+NSDictionary.</p>
+<h3><a name='label-38' id='label-38'>misc topic about Jaguar</a></h3><!-- RDLabel: "misc topic about Jaguar" -->
+<p>Bus Error occurred frequently when RubyCocoa is used with irb
+formerly. Now it's considerably stable and usable.</p>
+<p>It's seemed to get possible to execute GUI app in Jaguar from command
+line without an application bundle.</p>
+<pre>% cd {RubyCocoa sample}/Hokoiri-Musume
+% ruby rb_main.rb</pre>
+<p>This is enable. opened Hakoiri-Musume window and you can play the
+game.</p>
+<h2><a name='label-39' id='label-39'>Changes from 0.2.6</a></h2><!-- RDLabel: "Changes from 0.2.6" -->
+<p>[IMPROVE] Mac OS X 10.2 support of NS functions and constants for
+example NSAppleScript.</p>
+<p>[CHANGES] Mac OS X 10.2 support of a sample using NSSound.</p>
+<p>[BUGFIX] Solved the problem that cannot make instance of derived class
+of Cocoa defined besides a TOP level:</p>
+<pre>exp...
+module MyModule
+  class AppController &lt; OSX::NSObject
+  end
+end</pre>
+<p>[BUGFIX] When string conversion with NSString, handle string which
+included "\0" midway justly.</p>
+<p>[CHANGES] raise OSX::OCDataConvException when data conversion failed
+between Objective-C and Ruby.</p>
+<h2><a name='label-40' id='label-40'>Changes from 0.2.5</a></h2><!-- RDLabel: "Changes from 0.2.5" -->
+<p>[BUGFIX] fixed a bug that an override method which return BOOL is
+wrong.</p>
+<p>[IMPROVE] Improve auto generator script for Cocoa global functions and
+variables. So "not implemented" functions and variables was
+decreased. These of new supported include a series of
+'NSGenericException' and 'NSUnionRange'.</p>
+<p>[IMPROVE] added a ProjectBuilder template for Document-based
+application.</p>
+<p>[CHANGE] changed some directory names for ProjectBuilder templates.</p>
+<p>[CHANGE] changed the behavior that argument type of Objective-C method
+is Objective-C object for passing pure Ruby object as argument.</p>
+<p>[IMPROVE] better sheet panel support. The callback method needs to
+have the name end with "_returnCode_contextInfo."</p>
+<p>[IMPROVE] define module functions for a localized string.</p>
+<pre>OSX::NSLocalizedStringFromTableInBundle
+OSX::NSLocalizedStringFromTable
+OSX::NSLocalizedString</pre>
+<p>[IMPROVE] support invocation of a method that a selector name is start
+with '_' such as "_transparency".</p>
+<p>[IMPROVE] support version information.</p>
+<pre>OSX::RUBYCOCOA_VERSION
+OSX::RUBYCOCOA_RELEASE_DATE</pre>
+<h2><a name='label-41' id='label-41'>Changes from 0.2.4</a></h2><!-- RDLabel: "Changes from 0.2.4" -->
+<p>[BUGFIX] fix the bug which NSString.availableStringEncodings is
+missing.</p>
+<p>[BUGFIX] The bug which will down if the method which does not exist in
+a super class is passed to the argument of ns_overrides was fixed.</p>
+<p>[IMPROVE] support sheet panel of NSOpenPanel, NSSavePanel and
+NSPrintPanel.</p>
+<p>[CHANGE] added a new template PureEmptyApp.app. This removes the
+contents about a NIB file from EmptyApp.app.</p>
+<h2><a name='label-42' id='label-42'>Changes from 0.2.3</a></h2><!-- RDLabel: "Changes from 0.2.3" -->
+<p>[BUGFIX] The bug about the treatment of the argument of a override
+method is fixed. (thanks Chris-san)</p>
+<p>[BUGFIX] The bug which returns <var>self</var> from the override method
+fixed. The following codes came to move as expected:</p>
+<pre>class MyView &lt; OSX::NSView
+
+  ns_overrides :initWithFrame_
+
+  def initWithFrame (frame)
+    suuper_initWithFrame (frame)
+    self
+  end</pre>
+<h2><a name='label-43' id='label-43'>Changes from 0.2.2</a></h2><!-- RDLabel: "Changes from 0.2.2" -->
+<p>[BUGFIX] The bug which was destroying 4 bytes of memory at the time of
+object instantiation is fixed. (thanks Chris-san)</p>
+<p>[CHANGE] Ruby thread switching(OSX.ruby_thread_switcher_start)
+improved.</p>
+<h2><a name='label-44' id='label-44'>Changes from 0.2.1</a></h2><!-- RDLabel: "Changes from 0.2.1" -->
+<p>[BUGFIX] fix serious bug of installing script. (thanks Rich-san)</p>
+<p>[CHANGE] change the config option to specify the location of the
+RubyCocoa framework as follows:</p>
+<pre>% ruby install.rb config --frameworks=/Network/Library/Frameworks</pre>
+<h2><a name='label-45' id='label-45'>Changes from 0.2.0</a></h2><!-- RDLabel: "Changes from 0.2.0" -->
+<p>[IMPROVE] implement the facility of Ruby thread switching in RubyCocoa
+Application. (experimental implementation) (thanks Takaishi-san)</p>
+<p>[IMPROVE] Implement the facility of super method invocation in
+override method definition. (experimental implementation)</p>
+<pre>def drawRect (frame)
+  super_drawRect (frame)
+end</pre>
+<p>[BUGFIX] fix a bug of return-values from ns_override methods. (thanks
+Chris-san)</p>
+<p>[IMPROVE] add config option to specify the location of the RubyCocoa
+framework.</p>
+<pre>% ruby install.rb config -- --frameworks=/Network/Library/Frameworks</pre>
+<h2><a name='label-46' id='label-46'>Changes from 0.1.3</a></h2><!-- RDLabel: "Changes from 0.1.3" -->
+<h3><a name='label-47' id='label-47'>Spec/Implementation</a></h3><!-- RDLabel: "Spec/Implementation" -->
+<p>[CHANGE] The role of OSX::OCObject became a stagehand.</p>
+<p>[CHANGE] A Cocoa class is defined as a Ruby class.</p>
+<pre>OSX::NSObject.is_a? Class # =&gt; true
+OSX::NSObject.name        # =&gt; "OSX::NSObject"</pre>
+<p>[CHANGE] OSX::OCObject#ib_loadable is obsolete. It changes so that the
+definition of the inherited class of Cocoa may be applied by the same
+method as the definition of the inherited class of Ruby.</p>
+<pre>class Hoge &lt; OSX::NSView
+  ns_outlets   :hoge
+  ns_overrides :drawRect_
+  ...
+end</pre>
+<p>[CHANGE] Use of a symbol was enabled at the argument of
+"COCOA_CLASS#ns_overrides". However, the abbreviation of "_"
+corresponding to an argument cannot be performed (drawRect of the
+above-mentioned example).</p>
+<p>[CHANGE] add an OSX::ObjcID class, an OSX::OCObjWrapper module as a
+base of above modification (these are not things to use directly
+usually)</p>
+<p>[CHANGE] make directory "lib/osx/objc" for the location of Ruby side
+libraries.</p>
+<p>[CHANGE] rename Objective-C side library "osxobjc.bundle" to
+"osx_objc.bundle". Unification for RubyAEOSA and RubyCocoa.</p>
+<h3><a name='label-48' id='label-48'>Documents</a></h3><!-- RDLabel: "Documents" -->
+<p>add the References Manual. The description about a class definition
+was added to "Using RubyCocoa".</p>
+<h2><a name='label-49' id='label-49'>Changes from 0.1.2</a></h2><!-- RDLabel: "Changes from 0.1.2" -->
+<h3><a name='label-50' id='label-50'>Implementation</a></h3><!-- RDLabel: "Implementation" -->
+<p>[IMPROVE] compiling great speed-up. (thanks Chris-san)</p>
+<p>[IMPROVE] implement a facility that raise a Cocoa exception
+(NSException) as Ruby native exception. (thanks Chris-san)</p>
+<h3><a name='label-51' id='label-51'>Misc.</a></h3><!-- RDLabel: "Misc." -->
+<p>add some items in FAQ.</p>
+<h2><a name='label-52' id='label-52'>Changes from 0.1.1</a></h2><!-- RDLabel: "Changes from 0.1.1" -->
+<h3><a name='label-53' id='label-53'>Implementation</a></h3><!-- RDLabel: "Implementation" -->
+<p>[BUGFIX] revise a bug about a memory allotment of the case when
+dynamic forms a class of Objective-C in ib_loadalbe.</p>
+<p>[CHANGE] obsolete "the method <code>initialize</code> for class extended
+<code>ib_lodable</code>" in 0.1.0. Not pass arguments of "initXXX" of
+Objective-C side in "initialize" of Ruby side.</p>
+<p>[IMPROVE] implement conversion for NSRange(Cocoa) and
+Range(Ruby). (Thanks Chris-san)</p>
+<h3><a name='label-54' id='label-54'>Misc.</a></h3><!-- RDLabel: "Misc." -->
+<p>add multinib sample. (Thanks Lucsky-san)</p>
+<h2><a name='label-55' id='label-55'>Changes from 0.1.0</a></h2><!-- RDLabel: "Changes from 0.1.0" -->
+<h3><a name='label-56' id='label-56'>Implementation</a></h3><!-- RDLabel: "Implementation" -->
+<p>[IMPROVE] Converting Ruby's Numeric to Cocoa's NSDeccimalNumber if
+required. (For "Learning Cocoa" CH.9)</p>
+<p>[IMPROVE] (obsoleted by 0.1.2) the method <code>initialize</code> for class
+extended <code>ib_lodable</code>. add mechanism for argument
+passing. Actually, this facility is only <code>ib_loadable :NSView</code>
+that use.</p>
+<h3><a name='label-57' id='label-57'>Misc.</a></h3><!-- RDLabel: "Misc." -->
+<p>Rewrite the sample dotview with reading "Learning Cocoa" CH.8</p>
+<p>Add sample Expenses.app in  "Learning Cocoa" CH.9</p>
+<p>Move templates to template directory from sample directory.</p>
+<p>Add template Empty.app. Using copy of this, you can create a Cocoa
+application by Ruby scripting and some contents modification only.</p>
+<p>$Date: 2005-11-10 00:11:57 +0900 (木, 10 11 2005) $
+$Revision: 893 $</p>
+<hr/>
+<p class='foottext'>
+<a href='#footmark-1' name='foottext-1' id='foottext-1'><sup><small>*1</small></sup></a><small>
+Thanks to kimura wataru and s.sawada </small><br/>
+</p>
+</td>
+
+<!-- body/main/sidebar -->
+<td class='body-sidebar' valign='top'>
+
+<!-- body/main/sidebar/news -->
+<div id='sidebar-news'>
+</div>
+
+<!-- body/main/sidebar/contents -->
+<div id='sidebar-contents'>
+  <h2 class='body-sidebar'>Contents</h2>
+  <ul class='body-sidebar'>
+    <li><a href='index.en.html'>What is RubyCocoa?</a></li>
+    <li><a href='getting.en.html'>Getting RubyCocoa</a></li>
+    <li><a href='build.en.html'>Build &amp; Install from Source</a></li>
+    <li><a href='trysamples.en.html'>Try Samples</a></li>
+    <li><a href='programming.en.html'>Programming</a></li>
+    <li><a href='references.en.html'>References</a></li>
+    <li><a href='changes.en.html'>Changes</a></li>
+    <li><a href='changelog.html'>ChangeLog</a></li>
+    <li><a href='faq.en.html'>FAQ</a></li>
+    <li><a href='news.en.html'>News</a></li>
+    <li><a href='links.en.html'>Links</a></li>
+  </ul>
+</div>
+
+<!-- body/main/sidebar/links -->
+<div id='sidebar-links'>
+  <h2 class='body-sidebar'><a href='links.en.html'>Links</a></h2>
+  <ul class='body-sidebar'>
+    <li><a href='http://rubycocoa.sourceforge.net/'>RubyCocoa</a></li>
+    <li><a href='http://www.fobj.com/rubyaeosa/'>RubyAEOSA</a></li>
+    <li><a href='http://www.freeml.com/info/rubycocoa@freeml.com'>Maling List (Japanese)</a></li>
+    <li><a href='http://sourceforge.net/mail/?group_id=44114'>Maling list (English)</a></li>
+    <li><a href='http://sourceforge.net/projects/rubycocoa/'>RubyCocoa Project</a></li>
+    <li><a href='http://rubycocoa.sourceforge.net/w.ja'>RubyCocoa Wiki (Japanese)</a></li>
+    <li><a href='http://rubycocoa.sourceforge.net/w.en'>RubyCocoa Wiki (English)</a></li>
+    <li><a href='http://www.mouseup.net/rubycocoa/calc_app1.html'>Tutorial (Japanese)</a></li>
+  </ul>
+</div>
+
+</td> <!-- end of body/main/sidebar -->
+
+</tr></table></td></tr> <!-- end of body/main -->
+
+<!-- body/footer -->
+<tr class='body-footer'><td width='100%'>
+<table cellspacing='4' cellpadding='0' width='100%'>
+  <tr>
+    <td align='left'>
+      <a href='http://sourceforge.net'>
+	<img src='http://sourceforge.net/sflogo.php?group_id=44114&amp;type=4' border='0' height='37' alt='SourceForge.net Logo' width='125'/>
+	</a>
+      </td>
+  </tr>
+</table>
+</td></tr>
+
+</table> <!-- end of main table -->
+</body>
+</html>

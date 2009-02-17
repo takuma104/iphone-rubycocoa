@@ -1,0 +1,214 @@
+<?xml version='1.0' encoding='US-ASCII'?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html lang='en' xml:lang='en' xmlns='http://www.w3.org/1999/xhtml'>
+
+<head>
+  <title>RubyCocoa - RubyCocoa FAQ</title>
+  <meta content='text/html; charset=us-ascii' http-equiv='Content-type'/>
+  <meta name='Content-Language' content='en'/>
+  <link href='rubycocoasite.css' rel='stylesheet' type='text/css'/>
+</head>
+
+<body>
+
+<!-- main table -->
+<table cellspacing='0' cellpadding='0' width='100%'>
+<colgroup><col width='100%'/></colgroup>
+
+<!-- body/header - title -->
+<tr class='site-title'><td width='100%'>
+RubyCocoa<font size='-1'> - A Ruby/Objective-C Bridge for Mac OS X with Cocoa</font>
+</td></tr>
+
+<!-- body/header - menubar -->
+<tr class='site-menubar'><td width='100%'>
+<table cellspacing='0' cellpadding='2' width='100%'>
+  <colgroup><col width='80%'/><col width='20%'/></colgroup>
+  <tr id='site-menubar'>
+  <td class='site-menubar' align='left' width='80%'>
+    <a href='index.en.html'>What?</a> | <a href='getting.en.html'>Download</a> | <a href='build.en.html'>Build &amp; Install</a> | <a href='trysamples.en.html'>Try Samples</a> | <a href='programming.en.html'>Programming</a> | <a href='references.en.html'>References</a> | <a href='changes.en.html'>Changes</a> | <a href='faq.en.html'>FAQ</a> | <a href='links.en.html'>Links</a>
+  </td>
+  <td class='site-menubar' align='right' width='20%'>
+    [ENGLISH] <a href='index.ja.html'>[JAPANESE]</a>
+  </td>
+</tr>
+</table>
+</td></tr>
+
+<!-- body/main -->
+<tr><td width='100%'>
+<table cellspacing='0' cellpadding='12' width='100%'>
+  <colgroup><col width='80%'/><col width='20%'/></colgroup>
+  <tr>
+
+<!-- body/main/contents -->
+<td class='body-contents' id='body-contents' valign='top'>
+<h1><a name='label-0' id='label-0'>RubyCocoa FAQ</a></h1><!-- RDLabel: "RubyCocoa FAQ" -->
+<h2><a name='label-1' id='label-1'>Installation</a></h2><!-- RDLabel: "Installation" -->
+<h3><a name='label-2' id='label-2'>Q: Installation failed when downloading and installing RubyCocoa in the</a></h3><!-- RDLabel: "Q: Installation failed when downloading and installing RubyCocoa in the" -->
+<p>folder "dl file."</p>
+<h4><a name='label-3' id='label-3'>A: It seems that an error will occur when invoking 'ruby install.rb</a></h4><!-- RDLabel: "A: It seems that an error will occur when invoking 'ruby install.rb" -->
+<p>config' if it is installed into a directory whose name contains a space.
+Especially those who have only used Macintosh until now should be careful.</p>
+<h2><a name='label-4' id='label-4'>After Installation</a></h2><!-- RDLabel: "After Installation" -->
+<h3><a name='label-5' id='label-5'>Q: I tried to execute a sample script, but I received the error:</a></h3><!-- RDLabel: "Q: I tried to execute a sample script, but I received the error:" -->
+<pre>% ruby fontnames.rb
+dyld: ruby Undefined symbols:
+_init_NSDistributedNotificationCenter
+_init_NSScriptStandardSuiteCommands</pre>
+<h4><a name='label-6' id='label-6'>A: Did you use StuffIt to extract the tgz file of RubyCocoa ?</a></h4><!-- RDLabel: "A: Did you use StuffIt to extract the tgz file of RubyCocoa ?" -->
+<p>When using StuffIt, long file names in excess of 31 characters are truncated.
+Building RubyCocoa with truncated filenames will fail. You must use
+the "tar" command in the shell (Terminal application) when extracting
+the tgz file:</p>
+<pre>% tar zxf rubycocoa-0.1.0.tgz</pre>
+<p>And reinstall RubyCocoa.</p>
+<p>(thanks Shimura-san)</p>
+<h2><a name='label-7' id='label-7'>Misc.</a></h2><!-- RDLabel: "Misc." -->
+<h3><a name='label-8' id='label-8'>Q: How can I use ABAddressBook class ? (2002-09-30)</a></h3><!-- RDLabel: "Q: How can I use ABAddressBook class ? (2002-09-30)" -->
+<h4><a name='label-9' id='label-9'>A:</a></h4><!-- RDLabel: "A:" -->
+<p>By default, any class which isn't contained in Foundation or AppKit is
+not imported. For using such a class, load a appropriate framework with
+OSX_NSBundle and import a class with OSX_ns_import.</p>
+<p>For AddressBook.framework, you can use it in RubyCocoa 0.3.2 or later
+as following:</p>
+<pre>require 'osx/cocoa'
+require 'osx/addressbook'
+abook = OSX::ABAddressBook.sharedAddressBook</pre>
+<p>You can use it in older RubyCocoa as follows:</p>
+<pre>require 'osx/cocoa'
+OSX::NSBundle.bundleWithPath("/System/Library/Frameworks/AddressBook.framework").load
+OSX.ns_import :ABAddressBook
+abook = OSX::ABAddressBook.sharedAddressBook</pre>
+<p>(thanks tosh-san)</p>
+<h2><a name='label-10' id='label-10'>obsolete FAQ (2002-12-23)</a></h2><!-- RDLabel: "obsolete FAQ (2002-12-23)" -->
+<h3><a name='label-11' id='label-11'>Q: I see a warning on the console when running a RubyCocoa application.</a></h3><!-- RDLabel: "Q: I see a warning on the console when running a RubyCocoa application." -->
+<p>When running a Cocoa application, sometimes a warning message about 
+memory allocation appears on the Console: </p>
+<pre>malloc[2461]: Deallocation of a pointer not malloced: 0x2718b20;
+This could be a double free(), or free() called with the middle of
+an allocated block; Try setting environment variable MallocHelp to
+see tools to help debug</pre>
+<h4><a name='label-12' id='label-12'>A: Its cause is unknown and is unsolved at this time. (2002-01-08)</a></h4><!-- RDLabel: "A: Its cause is unknown and is unsolved at this time. (2002-01-08)" -->
+<p>Although I thought that this problem was solved in version 0.1.2, it
+still occurs.  If there is information which you think is likely to be
+helpful in tracking down this problem, such as "I can always cause it
+by performing these steps", please email me with your configuration,
+what I must do to reproduce the error and, if possible, the script you
+were running when it happend.</p>
+<h3><a name='label-13' id='label-13'>Q: Threads do not seem to work properly.</a></h3><!-- RDLabel: "Q: Threads do not seem to work properly." -->
+<h4><a name='label-14' id='label-14'>A: Are you using release 0.2.1 or later ?</a></h4><!-- RDLabel: "A: Are you using release 0.2.1 or later ?" -->
+<p>RubyCocoa release 0.2.1 or later supports Ruby threads. To use a Ruby
+thread in an application with an older release of RubyCocoa, change
+"ns_app_main" in the file "rb_main.rb" as follows:</p>
+<pre>def ns_app_main
+  OSX.ruby_thread_switcher_start (0.05)  # switching interval sec
+  app = OSX::NSApplication.sharedApplication
+  OSX::NSBundle.loadNibNamed_owner (BUNDLE_NAME.to_s, app)
+  OSX.NSApp.run
+end</pre>
+<h3><a name='label-15' id='label-15'>Q: I launched SimpleApp1, which results in the message "SimpleApp1 closed unexpectedly."</a></h3><!-- RDLabel: "Q: I launched SimpleApp1, which results in the message "SimpleApp1 closed unexpectedly."" -->
+<p>I am having problems getting RubyCocoa working. I built and installed
+ruby-1.6.5 and RubyCocoa-0.1.2 with no problems.</p>
+<p>Following the instructions on:
+&lt;http://www.fobj.com/rubycocoa/doc/install.en.html&gt; I encountered
+an error when i tried executing: "open SimpleApp1.app", which results in
+an "SimpleApp1 closed unexpectedly." The error it quits with is:</p>
+<pre>bash-2.05# ./SimpleApp1.app/Contents/MacOS/SimpleApp1
+dyld: ./SimpleApp1.app/Contents/MacOS/SimpleApp1 Undefined symbols:
+_dlclose
+_dlerror
+_dlopen
+_dlsym</pre>
+<p>I run into the same error trying to build the other examples.
+fontnames.rb and sndplay?.rb worked with no problems.  What is causing
+this?</p>
+<h4><a name='label-16' id='label-16'>A: Have you installed any unix-tools packages ?</a></h4><!-- RDLabel: "A: Have you installed any unix-tools packages ?" -->
+<p>I am guessing a dyld library is installed by some unix-tool package in
+your MacOS X system. This problem seems to occur when the old
+EasyPackage is installed on the system.</p>
+<p>If my guess is right, two solutions exist. The first is to remove the
+dyld library named 'libdl*.bundle' in '/usr/local/lib'. The second is
+setting "-ldl" as a linker option in each PB project or Makefile.</p>
+<p>The first way may produce unwanted side effects in other installed
+commands. The second way is time-consuming.</p>
+<p>You can use 'otool -L' command for printing shared library names that
+are required by a RubyCocoa application binary.</p>
+<p>The thread
+<a href='http://www.ruby-talk.com/cgi-bin/scat.rb/ruby/ruby-talk/29708'>[ruby-talk:29708]</a>
+also has some references to this problem.</p>
+<h3><a name='label-17' id='label-17'>Q: I want to select a RubyCocoa application template in PB.</a></h3><!-- RDLabel: "Q: I want to select a RubyCocoa application template in PB." -->
+<p>I want to select a RubyCocoa application template in the
+ProjectBuilder new Project menu.</p>
+<h4><a name='label-18' id='label-18'>A: Create a subdirectory of  "/Developer/ProjectBuilder Extras" named</a></h4><!-- RDLabel: "A: Create a subdirectory of  "/Developer/ProjectBuilder Extras" named" -->
+<p>"RubyCocoa Application", and copy the subdirectories of "template" whose names
+start with "tmpl_pb_" into it.</p>
+<pre>% cd "/Developer/ProjectBuilder Extras/Project Templates/Application"
+% cp -R {rubycocoa srcdir}/template/tmpl_pb_RubyCocoaApp "RubyCocoa Application"
+% cp -R {rubycocoa srcdir}/template/tmpl_pb_RubyCocoaDocApp "RubyCocoa Doc Application"
+% cd "../../File Templates"
+% cp -R {rubycocoa srcdir}/template/tmpl_pb_RubyFiles Ruby</pre>
+<p>(thanks Shimura-san)</p>
+<p>$Date: 2005-11-10 00:11:57 +0900 (木, 10 11 2005) $
+$Revision: 893 $</p>
+
+</td>
+
+<!-- body/main/sidebar -->
+<td class='body-sidebar' valign='top'>
+
+<!-- body/main/sidebar/news -->
+<div id='sidebar-news'>
+</div>
+
+<!-- body/main/sidebar/contents -->
+<div id='sidebar-contents'>
+  <h2 class='body-sidebar'>Contents</h2>
+  <ul class='body-sidebar'>
+    <li><a href='index.en.html'>What is RubyCocoa?</a></li>
+    <li><a href='getting.en.html'>Getting RubyCocoa</a></li>
+    <li><a href='build.en.html'>Build &amp; Install from Source</a></li>
+    <li><a href='trysamples.en.html'>Try Samples</a></li>
+    <li><a href='programming.en.html'>Programming</a></li>
+    <li><a href='references.en.html'>References</a></li>
+    <li><a href='changes.en.html'>Changes</a></li>
+    <li><a href='changelog.html'>ChangeLog</a></li>
+    <li><a href='faq.en.html'>FAQ</a></li>
+    <li><a href='news.en.html'>News</a></li>
+    <li><a href='links.en.html'>Links</a></li>
+  </ul>
+</div>
+
+<!-- body/main/sidebar/links -->
+<div id='sidebar-links'>
+  <h2 class='body-sidebar'><a href='links.en.html'>Links</a></h2>
+  <ul class='body-sidebar'>
+    <li><a href='http://rubycocoa.sourceforge.net/'>RubyCocoa</a></li>
+    <li><a href='http://www.fobj.com/rubyaeosa/'>RubyAEOSA</a></li>
+    <li><a href='http://www.freeml.com/info/rubycocoa@freeml.com'>Maling List (Japanese)</a></li>
+    <li><a href='http://sourceforge.net/mail/?group_id=44114'>Maling list (English)</a></li>
+    <li><a href='http://sourceforge.net/projects/rubycocoa/'>RubyCocoa Project</a></li>
+    <li><a href='http://rubycocoa.sourceforge.net/w.ja'>RubyCocoa Wiki (Japanese)</a></li>
+    <li><a href='http://rubycocoa.sourceforge.net/w.en'>RubyCocoa Wiki (English)</a></li>
+    <li><a href='http://www.mouseup.net/rubycocoa/calc_app1.html'>Tutorial (Japanese)</a></li>
+  </ul>
+</div>
+
+</td> <!-- end of body/main/sidebar -->
+
+</tr></table></td></tr> <!-- end of body/main -->
+
+<!-- body/footer -->
+<tr class='body-footer'><td width='100%'>
+<table cellspacing='4' cellpadding='0' width='100%'>
+  <tr>
+    <td align='left'>
+      <a href='http://sourceforge.net'>
+	<img src='http://sourceforge.net/sflogo.php?group_id=44114&amp;type=4' border='0' height='37' alt='SourceForge.net Logo' width='125'/>
+	</a>
+      </td>
+  </tr>
+</table>
+</td></tr>
+
+</table> <!-- end of main table -->
+</body>
+</html>

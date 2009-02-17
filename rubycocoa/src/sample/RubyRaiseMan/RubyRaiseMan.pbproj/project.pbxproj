@@ -1,0 +1,579 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 38;
+	objects = {
+		080E96D9FE201CDB7F000001 = {
+			fileRef = 2A37F4B9FDCFA73011CA2CEA;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		080E96DAFE201CDB7F000001 = {
+			fileRef = 2A37F4B6FDCFA73011CA2CEA;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		080E96DBFE201CDB7F000001 = {
+			fileRef = 2A37F4B4FDCFA73011CA2CEA;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		089C165FFE840EACC02AAC07 = {
+			children = (
+				089C1660FE840EACC02AAC07,
+			);
+			isa = PBXVariantGroup;
+			name = InfoPlist.strings;
+			refType = 4;
+		};
+		089C1660FE840EACC02AAC07 = {
+			fileEncoding = 10;
+			isa = PBXFileReference;
+			name = English;
+			path = English.lproj/InfoPlist.strings;
+			refType = 4;
+		};
+		089C1661FE840EACC02AAC07 = {
+			fileRef = 089C165FFE840EACC02AAC07;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+//080
+//081
+//082
+//083
+//084
+//100
+//101
+//102
+//103
+//104
+		1058C7A6FEA54F5311CA2CBB = {
+			children = (
+				1058C7A7FEA54F5311CA2CBB,
+				E8F5E23003ADAF6203A81C6F,
+			);
+			isa = PBXGroup;
+			name = "Linked Frameworks";
+			refType = 4;
+		};
+		1058C7A7FEA54F5311CA2CBB = {
+			isa = PBXFrameworkReference;
+			name = Cocoa.framework;
+			path = /System/Library/Frameworks/Cocoa.framework;
+			refType = 0;
+		};
+		1058C7A8FEA54F5311CA2CBB = {
+			children = (
+				2A37F4C5FDCFA73011CA2CEA,
+				2A37F4C4FDCFA73011CA2CEA,
+			);
+			isa = PBXGroup;
+			name = "Other Frameworks";
+			refType = 4;
+		};
+		1058C7A9FEA54F5311CA2CBB = {
+			fileRef = 1058C7A7FEA54F5311CA2CBB;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+//100
+//101
+//102
+//103
+//104
+//170
+//171
+//172
+//173
+//174
+		1758732AFF379DA111CA2CBB = {
+			isa = PBXApplicationReference;
+			path = RubyRaiseMan.app;
+			refType = 3;
+		};
+//170
+//171
+//172
+//173
+//174
+//190
+//191
+//192
+//193
+//194
+		19C28FB0FE9D524F11CA2CBB = {
+			children = (
+				1758732AFF379DA111CA2CBB,
+			);
+			isa = PBXGroup;
+			name = Products;
+			refType = 4;
+		};
+//190
+//191
+//192
+//193
+//194
+//2A0
+//2A1
+//2A2
+//2A3
+//2A4
+		2A37F4A9FDCFA73011CA2CEA = {
+			buildStyles = (
+				4A9504D0FFE6A4CB11CA0CBA,
+				4A9504D1FFE6A4CB11CA0CBA,
+			);
+			isa = PBXProject;
+			mainGroup = 2A37F4AAFDCFA73011CA2CEA;
+			projectDirPath = "";
+			targets = (
+				2A37F4C6FDCFA73011CA2CEA,
+			);
+		};
+		2A37F4AAFDCFA73011CA2CEA = {
+			children = (
+				2A37F4ABFDCFA73011CA2CEA,
+				2A37F4AFFDCFA73011CA2CEA,
+				2A37F4B8FDCFA73011CA2CEA,
+				2A37F4C3FDCFA73011CA2CEA,
+				19C28FB0FE9D524F11CA2CBB,
+			);
+			isa = PBXGroup;
+			name = RubyRaiseMan;
+			path = "";
+			refType = 4;
+		};
+		2A37F4ABFDCFA73011CA2CEA = {
+			children = (
+				E8361CB30210F40B03A81C6F,
+				E8DDC3AA03060FB20303F93B,
+				E8A78C34030DF38C030F748B,
+				E8A78C36030DF531030F748B,
+			);
+			isa = PBXGroup;
+			name = Classes;
+			path = "";
+			refType = 4;
+		};
+		2A37F4AFFDCFA73011CA2CEA = {
+			children = (
+				2A37F4B0FDCFA73011CA2CEA,
+				E8361CB10210F3BD03A81C6F,
+			);
+			isa = PBXGroup;
+			name = "Other Sources";
+			path = "";
+			refType = 4;
+		};
+		2A37F4B0FDCFA73011CA2CEA = {
+			isa = PBXFileReference;
+			path = main.m;
+			refType = 4;
+		};
+		2A37F4B4FDCFA73011CA2CEA = {
+			children = (
+				2A37F4B5FDCFA73011CA2CEA,
+				E823A3850314BC1003A81C6F,
+			);
+			isa = PBXVariantGroup;
+			name = MyDocument.nib;
+			path = "";
+			refType = 4;
+		};
+		2A37F4B5FDCFA73011CA2CEA = {
+			isa = PBXFileReference;
+			name = English;
+			path = English.lproj/MyDocument.nib;
+			refType = 4;
+		};
+		2A37F4B6FDCFA73011CA2CEA = {
+			children = (
+				2A37F4B7FDCFA73011CA2CEA,
+				E823A3860314BF7403A81C6F,
+			);
+			isa = PBXVariantGroup;
+			name = MainMenu.nib;
+			path = "";
+			refType = 4;
+		};
+		2A37F4B7FDCFA73011CA2CEA = {
+			isa = PBXFileReference;
+			name = English;
+			path = English.lproj/MainMenu.nib;
+			refType = 4;
+		};
+		2A37F4B8FDCFA73011CA2CEA = {
+			children = (
+				E8F4C483030CA6D4038C597D,
+				2A37F4B9FDCFA73011CA2CEA,
+				2A37F4B6FDCFA73011CA2CEA,
+				2A37F4B4FDCFA73011CA2CEA,
+				E8A78C38030DF5DE030F748B,
+				089C165FFE840EACC02AAC07,
+				E823A3810314B84703A81C6F,
+			);
+			isa = PBXGroup;
+			name = Resources;
+			path = "";
+			refType = 4;
+		};
+		2A37F4B9FDCFA73011CA2CEA = {
+			children = (
+				2A37F4BAFDCFA73011CA2CEA,
+			);
+			isa = PBXVariantGroup;
+			name = Credits.rtf;
+			path = "";
+			refType = 4;
+		};
+		2A37F4BAFDCFA73011CA2CEA = {
+			isa = PBXFileReference;
+			name = English;
+			path = English.lproj/Credits.rtf;
+			refType = 4;
+		};
+		2A37F4C3FDCFA73011CA2CEA = {
+			children = (
+				1058C7A6FEA54F5311CA2CBB,
+				1058C7A8FEA54F5311CA2CBB,
+			);
+			isa = PBXGroup;
+			name = Frameworks;
+			path = "";
+			refType = 4;
+		};
+		2A37F4C4FDCFA73011CA2CEA = {
+			isa = PBXFrameworkReference;
+			name = AppKit.framework;
+			path = /System/Library/Frameworks/AppKit.framework;
+			refType = 0;
+		};
+		2A37F4C5FDCFA73011CA2CEA = {
+			isa = PBXFrameworkReference;
+			name = Foundation.framework;
+			path = /System/Library/Frameworks/Foundation.framework;
+			refType = 0;
+		};
+		2A37F4C6FDCFA73011CA2CEA = {
+			buildPhases = (
+				2A37F4C7FDCFA73011CA2CEA,
+				2A37F4C9FDCFA73011CA2CEA,
+				2A37F4CEFDCFA73011CA2CEA,
+				2A37F4D1FDCFA73011CA2CEA,
+			);
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = "";
+				HEADER_SEARCH_PATHS = "";
+				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_SEARCH_PATHS = "";
+				PREBINDING = NO;
+				PRODUCT_NAME = RubyRaiseMan;
+				SECTORDER_FLAGS = "";
+				WARNING_CFLAGS = "-Wmost -Wno-four-char-constants -Wno-unknown-pragmas";
+				WRAPPER_EXTENSION = app;
+			};
+			dependencies = (
+			);
+			isa = PBXApplicationTarget;
+			name = RubyRaiseMan;
+			productInstallPath = "$(HOME)/Applications";
+			productName = RubyRaiseMan;
+			productReference = 1758732AFF379DA111CA2CBB;
+			productSettingsXML = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
+<!DOCTYPE plist PUBLIC \"-//Apple Computer//DTD PLIST 1.0//EN\" \"http://www.apple.com/DTDs/PropertyList-1.0.dtd\">
+<plist version=\"1.0\">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleDocumentTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeExtensions</key>
+			<array>
+				<string>rrsmn</string>
+			</array>
+			<key>CFBundleTypeIconFile</key>
+			<string>BBall.icns</string>
+			<key>CFBundleTypeName</key>
+			<string>DocumentType</string>
+			<key>CFBundleTypeOSTypes</key>
+			<array>
+				<string>rrsmn</string>
+			</array>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>NSDocumentClass</key>
+			<string>MyDocument</string>
+		</dict>
+	</array>
+	<key>CFBundleExecutable</key>
+	<string>RubyRaiseMan</string>
+	<key>CFBundleIconFile</key>
+	<string></string>
+	<key>CFBundleIdentifier</key>
+	<string>com.fobj.RubyRaiseMan</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleVersion</key>
+	<string>0.1</string>
+	<key>NSMainNibFile</key>
+	<string>MainMenu</string>
+	<key>NSPrincipalClass</key>
+	<string>NSApplication</string>
+</dict>
+</plist>
+";
+			shouldUseHeadermap = 1;
+		};
+		2A37F4C7FDCFA73011CA2CEA = {
+			buildActionMask = 2147483647;
+			files = (
+			);
+			isa = PBXHeadersBuildPhase;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2A37F4C9FDCFA73011CA2CEA = {
+			buildActionMask = 2147483647;
+			files = (
+				080E96D9FE201CDB7F000001,
+				080E96DAFE201CDB7F000001,
+				080E96DBFE201CDB7F000001,
+				089C1661FE840EACC02AAC07,
+				E8361CB20210F3BD03A81C6F,
+				E8361CB40210F40B03A81C6F,
+				E8DDC3AB03060FB20303F93B,
+				E8F4C484030CA6D4038C597D,
+				E8A78C35030DF38D030F748B,
+				E8A78C37030DF531030F748B,
+				E8A78C3A030DF5DE030F748B,
+				E823A3830314B84703A81C6F,
+			);
+			isa = PBXResourcesBuildPhase;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2A37F4CEFDCFA73011CA2CEA = {
+			buildActionMask = 2147483647;
+			files = (
+				2A37F4D0FDCFA73011CA2CEA,
+			);
+			isa = PBXSourcesBuildPhase;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2A37F4D0FDCFA73011CA2CEA = {
+			fileRef = 2A37F4B0FDCFA73011CA2CEA;
+			isa = PBXBuildFile;
+			settings = {
+				ATTRIBUTES = (
+				);
+			};
+		};
+		2A37F4D1FDCFA73011CA2CEA = {
+			buildActionMask = 2147483647;
+			files = (
+				1058C7A9FEA54F5311CA2CBB,
+				E8F5E23903ADAF6203A81C6F,
+			);
+			isa = PBXFrameworksBuildPhase;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+//2A0
+//2A1
+//2A2
+//2A3
+//2A4
+//4A0
+//4A1
+//4A2
+//4A3
+//4A4
+		4A9504D0FFE6A4CB11CA0CBA = {
+			buildRules = (
+			);
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				OPTIMIZATION_CFLAGS = "-O0";
+			};
+			isa = PBXBuildStyle;
+			name = Development;
+		};
+		4A9504D1FFE6A4CB11CA0CBA = {
+			buildRules = (
+			);
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+			};
+			isa = PBXBuildStyle;
+			name = Deployment;
+		};
+//4A0
+//4A1
+//4A2
+//4A3
+//4A4
+//E80
+//E81
+//E82
+//E83
+//E84
+		E823A3810314B84703A81C6F = {
+			children = (
+				E823A3820314B84703A81C6F,
+				E823A3840314B95803A81C6F,
+			);
+			isa = PBXVariantGroup;
+			name = Localizable.strings;
+			path = "";
+			refType = 4;
+		};
+		E823A3820314B84703A81C6F = {
+			isa = PBXFileReference;
+			name = English;
+			path = English.lproj/Localizable.strings;
+			refType = 4;
+		};
+		E823A3830314B84703A81C6F = {
+			fileRef = E823A3810314B84703A81C6F;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		E823A3840314B95803A81C6F = {
+			fileEncoding = 10;
+			isa = PBXFileReference;
+			name = Japanese;
+			path = Japanese.lproj/Localizable.strings;
+			refType = 4;
+		};
+		E823A3850314BC1003A81C6F = {
+			isa = PBXFileReference;
+			name = Japanese;
+			path = Japanese.lproj/MyDocument.nib;
+			refType = 4;
+		};
+		E823A3860314BF7403A81C6F = {
+			isa = PBXFileReference;
+			name = Japanese;
+			path = Japanese.lproj/MainMenu.nib;
+			refType = 4;
+		};
+		E833DBA30314C1B403A81C6F = {
+			isa = PBXFileReference;
+			name = English;
+			path = English.lproj/Preferences.nib;
+			refType = 4;
+		};
+		E8361CB10210F3BD03A81C6F = {
+			isa = PBXFileReference;
+			path = rb_main.rb;
+			refType = 4;
+		};
+		E8361CB20210F3BD03A81C6F = {
+			fileRef = E8361CB10210F3BD03A81C6F;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		E8361CB30210F40B03A81C6F = {
+			isa = PBXFileReference;
+			path = MyDocument.rb;
+			refType = 4;
+		};
+		E8361CB40210F40B03A81C6F = {
+			fileRef = E8361CB30210F40B03A81C6F;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		E8A78C34030DF38C030F748B = {
+			isa = PBXFileReference;
+			path = AppController.rb;
+			refType = 4;
+		};
+		E8A78C35030DF38D030F748B = {
+			fileRef = E8A78C34030DF38C030F748B;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		E8A78C36030DF531030F748B = {
+			isa = PBXFileReference;
+			path = PreferenceController.rb;
+			refType = 4;
+		};
+		E8A78C37030DF531030F748B = {
+			fileRef = E8A78C36030DF531030F748B;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		E8A78C38030DF5DE030F748B = {
+			children = (
+				E833DBA30314C1B403A81C6F,
+				E8A78C3B030DF96B030F748B,
+			);
+			isa = PBXVariantGroup;
+			name = Preferences.nib;
+			refType = 4;
+		};
+		E8A78C3A030DF5DE030F748B = {
+			fileRef = E8A78C38030DF5DE030F748B;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		E8A78C3B030DF96B030F748B = {
+			isa = PBXFileReference;
+			name = Japanese;
+			path = Japanese.lproj/Preferences.nib;
+			refType = 4;
+		};
+		E8DDC3AA03060FB20303F93B = {
+			isa = PBXFileReference;
+			path = Person.rb;
+			refType = 4;
+		};
+		E8DDC3AB03060FB20303F93B = {
+			fileRef = E8DDC3AA03060FB20303F93B;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		E8F4C483030CA6D4038C597D = {
+			isa = PBXFileReference;
+			path = BBall.icns;
+			refType = 4;
+		};
+		E8F4C484030CA6D4038C597D = {
+			fileRef = E8F4C483030CA6D4038C597D;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		E8F5E23003ADAF6203A81C6F = {
+			isa = PBXFrameworkReference;
+			name = RubyCocoa.framework;
+			path = /Library/Frameworks/RubyCocoa.framework;
+			refType = 0;
+		};
+		E8F5E23903ADAF6203A81C6F = {
+			fileRef = E8F5E23003ADAF6203A81C6F;
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+	};
+	rootObject = 2A37F4A9FDCFA73011CA2CEA;
+}
