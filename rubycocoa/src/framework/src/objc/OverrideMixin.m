@@ -263,16 +263,13 @@ static id imp_c_addRubyMethod_withType(Class klass, SEL method, SEL arg0, const 
   return nil;
 }
 
-struct objc_ivar {
+struct objc_ivar__ {
     char *ivar_name                                          OBJC2_UNAVAILABLE;
     char *ivar_type                                          OBJC2_UNAVAILABLE;
     int ivar_offset                                          OBJC2_UNAVAILABLE;
-#ifdef __LP64__
-    int space                                                OBJC2_UNAVAILABLE;
-#endif
 }                                                            OBJC2_UNAVAILABLE;
 
-static struct objc_ivar imp_ivars[] = {
+static struct objc_ivar__ imp_ivars[] = {
   {				// struct objc_ivar {
     "m_slave",			//   char *ivar_name;
     "@",			//   char *ivar_type;
@@ -296,13 +293,13 @@ static const char* imp_method_names[] = {
   "setValue:forUndefinedKey:",
 };
 
-struct objc_method {
+struct objc_method__ {
     SEL method_name                                          OBJC2_UNAVAILABLE;
     char *method_types                                       OBJC2_UNAVAILABLE;
     IMP method_imp                                           OBJC2_UNAVAILABLE;
 }                                                            OBJC2_UNAVAILABLE;
 
-static struct objc_method imp_methods[] = {
+static struct objc_method__ imp_methods[] = {
   { NULL,
     "@4@4:8",
     (IMP)imp_slave 
@@ -344,7 +341,7 @@ static const char* imp_c_method_names[] = {
   "addRubyMethod:withType:",
 };
 
-static struct objc_method imp_c_methods[] = {
+static struct objc_method__ imp_c_methods[] = {
   { NULL,
     "@4@4:8",
     (IMP)imp_c_alloc
@@ -387,7 +384,7 @@ struct objc_ivar_list* override_mixin_ivar_list()
 */
 void install_method_list(Class c)
 {
-    long cnt = sizeof(imp_methods) / sizeof(struct objc_method);
+    long cnt = sizeof(imp_methods) / sizeof(struct objc_method__);
 	int i;
 	for (i = 0; i < cnt; i++) {
 		SEL sel = sel_registerName(imp_method_names[i]);
@@ -400,7 +397,7 @@ void install_method_list(Class c)
 void install_class_method_list(Class c)
 {
     int i;
-    long cnt = sizeof(imp_c_methods) / sizeof(struct objc_method);
+    long cnt = sizeof(imp_c_methods) / sizeof(struct objc_method__);
     for (i = 0; i < cnt; i++) {
 		SEL sel = sel_registerName(imp_c_method_names[i]);
 		IMP imp = imp_c_methods[i].method_imp;

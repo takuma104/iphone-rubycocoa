@@ -11,27 +11,8 @@
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
-		F1CE7A5C0F4B1C06006BAA18 /* libruby-static-full.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F1CE7A5B0F4B1C06006BAA18 /* libruby-static-full.a */; };
-		F1CE7AA00F4B1C15006BAA18 /* bigdecimal.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F1CE7A620F4B1C15006BAA18 /* bigdecimal.a */; };
-		F1CE7AA20F4B1C15006BAA18 /* dbm.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F1CE7A650F4B1C15006BAA18 /* dbm.a */; };
-		F1CE7AA50F4B1C15006BAA18 /* bubblebabble.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F1CE7A6A0F4B1C15006BAA18 /* bubblebabble.a */; };
-		F1CE7AA60F4B1C15006BAA18 /* digest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F1CE7A6B0F4B1C15006BAA18 /* digest.a */; };
-		F1CE7AA80F4B1C16006BAA18 /* md5.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F1CE7A6E0F4B1C15006BAA18 /* md5.a */; };
-		F1CE7AAA0F4B1C16006BAA18 /* rmd160.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F1CE7A710F4B1C15006BAA18 /* rmd160.a */; };
-		F1CE7AAC0F4B1C16006BAA18 /* sha1.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F1CE7A740F4B1C15006BAA18 /* sha1.a */; };
-		F1CE7AAE0F4B1C16006BAA18 /* sha2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F1CE7A770F4B1C15006BAA18 /* sha2.a */; };
-		F1CE7AB00F4B1C16006BAA18 /* etc.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F1CE7A7A0F4B1C15006BAA18 /* etc.a */; };
-		F1CE7AB20F4B1C16006BAA18 /* fcntl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F1CE7A7D0F4B1C15006BAA18 /* fcntl.a */; };
-		F1CE7AB40F4B1C16006BAA18 /* wait.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F1CE7A810F4B1C15006BAA18 /* wait.a */; };
-		F1CE7AB60F4B1C17006BAA18 /* nkf.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F1CE7A840F4B1C15006BAA18 /* nkf.a */; };
-		F1CE7AB80F4B1C17006BAA18 /* pty.o in Frameworks */ = {isa = PBXBuildFile; fileRef = F1CE7A870F4B1C15006BAA18 /* pty.o */; };
-		F1CE7ABA0F4B1C17006BAA18 /* cparse.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F1CE7A8B0F4B1C15006BAA18 /* cparse.a */; };
-		F1CE7ABC0F4B1C17006BAA18 /* sdbm.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F1CE7A8E0F4B1C15006BAA18 /* sdbm.a */; };
-		F1CE7ABE0F4B1C17006BAA18 /* socket.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F1CE7A910F4B1C15006BAA18 /* socket.a */; };
-		F1CE7AC00F4B1C17006BAA18 /* stringio.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F1CE7A940F4B1C15006BAA18 /* stringio.a */; };
-		F1CE7AC20F4B1C17006BAA18 /* strscan.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F1CE7A970F4B1C15006BAA18 /* strscan.a */; };
-		F1CE7AC40F4B1C17006BAA18 /* syck.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F1CE7A9A0F4B1C15006BAA18 /* syck.a */; };
-		F1CE7AC50F4B1C18006BAA18 /* thread.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F1CE7A9C0F4B1C15006BAA18 /* thread.a */; };
+		8DE53CED0F559EB300A77153 /* extinit.c in Sources */ = {isa = PBXBuildFile; fileRef = 8DE53CEC0F559EB300A77153 /* extinit.c */; };
+		8DE53D0E0F55A7C000A77153 /* libruby-static-full.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DE53D0D0F55A7C000A77153 /* libruby-static-full.a */; };
 		F1CE7AFD0F4B2649006BAA18 /* init_cocoa.m in Sources */ = {isa = PBXBuildFile; fileRef = F1CE7AD50F4B2649006BAA18 /* init_cocoa.m */; };
 		F1CE7AFF0F4B2649006BAA18 /* rb_Foundation.m in Sources */ = {isa = PBXBuildFile; fileRef = F1CE7AD70F4B2649006BAA18 /* rb_Foundation.m */; };
 		F1CE7B000F4B2649006BAA18 /* rb_UIKit.m in Sources */ = {isa = PBXBuildFile; fileRef = F1CE7AD80F4B2649006BAA18 /* rb_UIKit.m */; };
@@ -59,33 +40,14 @@
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* rubycocoa4iphone_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rubycocoa4iphone_Prefix.pch; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8DE53CEC0F559EB300A77153 /* extinit.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = extinit.c; path = ruby/extinit.c; sourceTree = "<group>"; };
+		8DE53D0D0F55A7C000A77153 /* libruby-static-full.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libruby-static-full.a"; path = "ruby/libruby-static-full.a"; sourceTree = "<group>"; };
 		F1CE7A550F4B1BF7006BAA18 /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
 		F1CE7A560F4B1BF7006BAA18 /* defines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = defines.h; sourceTree = "<group>"; };
 		F1CE7A570F4B1BF7006BAA18 /* intern.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = intern.h; sourceTree = "<group>"; };
 		F1CE7A580F4B1BF7006BAA18 /* missing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = missing.h; sourceTree = "<group>"; };
 		F1CE7A590F4B1BF7006BAA18 /* ruby.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ruby.h; sourceTree = "<group>"; };
 		F1CE7A5A0F4B1BF7006BAA18 /* rubysig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rubysig.h; sourceTree = "<group>"; };
-		F1CE7A5B0F4B1C06006BAA18 /* libruby-static-full.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libruby-static-full.a"; path = "ruby/libruby-static-full.a"; sourceTree = "<group>"; };
-		F1CE7A620F4B1C15006BAA18 /* bigdecimal.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = bigdecimal.a; sourceTree = "<group>"; };
-		F1CE7A650F4B1C15006BAA18 /* dbm.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = dbm.a; sourceTree = "<group>"; };
-		F1CE7A6A0F4B1C15006BAA18 /* bubblebabble.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = bubblebabble.a; sourceTree = "<group>"; };
-		F1CE7A6B0F4B1C15006BAA18 /* digest.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = digest.a; sourceTree = "<group>"; };
-		F1CE7A6E0F4B1C15006BAA18 /* md5.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = md5.a; sourceTree = "<group>"; };
-		F1CE7A710F4B1C15006BAA18 /* rmd160.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = rmd160.a; sourceTree = "<group>"; };
-		F1CE7A740F4B1C15006BAA18 /* sha1.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = sha1.a; sourceTree = "<group>"; };
-		F1CE7A770F4B1C15006BAA18 /* sha2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = sha2.a; sourceTree = "<group>"; };
-		F1CE7A7A0F4B1C15006BAA18 /* etc.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = etc.a; sourceTree = "<group>"; };
-		F1CE7A7D0F4B1C15006BAA18 /* fcntl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = fcntl.a; sourceTree = "<group>"; };
-		F1CE7A810F4B1C15006BAA18 /* wait.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = wait.a; sourceTree = "<group>"; };
-		F1CE7A840F4B1C15006BAA18 /* nkf.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = nkf.a; sourceTree = "<group>"; };
-		F1CE7A870F4B1C15006BAA18 /* pty.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = pty.o; sourceTree = "<group>"; };
-		F1CE7A8B0F4B1C15006BAA18 /* cparse.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = cparse.a; sourceTree = "<group>"; };
-		F1CE7A8E0F4B1C15006BAA18 /* sdbm.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = sdbm.a; sourceTree = "<group>"; };
-		F1CE7A910F4B1C15006BAA18 /* socket.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = socket.a; sourceTree = "<group>"; };
-		F1CE7A940F4B1C15006BAA18 /* stringio.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = stringio.a; sourceTree = "<group>"; };
-		F1CE7A970F4B1C15006BAA18 /* strscan.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = strscan.a; sourceTree = "<group>"; };
-		F1CE7A9A0F4B1C15006BAA18 /* syck.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = syck.a; sourceTree = "<group>"; };
-		F1CE7A9C0F4B1C15006BAA18 /* thread.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = thread.a; sourceTree = "<group>"; };
 		F1CE7AD50F4B2649006BAA18 /* init_cocoa.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = init_cocoa.m; sourceTree = "<group>"; };
 		F1CE7AD70F4B2649006BAA18 /* rb_Foundation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rb_Foundation.m; sourceTree = "<group>"; };
 		F1CE7AD80F4B2649006BAA18 /* rb_UIKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rb_UIKit.m; sourceTree = "<group>"; };
@@ -129,27 +91,7 @@
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */,
-				F1CE7A5C0F4B1C06006BAA18 /* libruby-static-full.a in Frameworks */,
-				F1CE7AA00F4B1C15006BAA18 /* bigdecimal.a in Frameworks */,
-				F1CE7AA20F4B1C15006BAA18 /* dbm.a in Frameworks */,
-				F1CE7AA50F4B1C15006BAA18 /* bubblebabble.a in Frameworks */,
-				F1CE7AA60F4B1C15006BAA18 /* digest.a in Frameworks */,
-				F1CE7AA80F4B1C16006BAA18 /* md5.a in Frameworks */,
-				F1CE7AAA0F4B1C16006BAA18 /* rmd160.a in Frameworks */,
-				F1CE7AAC0F4B1C16006BAA18 /* sha1.a in Frameworks */,
-				F1CE7AAE0F4B1C16006BAA18 /* sha2.a in Frameworks */,
-				F1CE7AB00F4B1C16006BAA18 /* etc.a in Frameworks */,
-				F1CE7AB20F4B1C16006BAA18 /* fcntl.a in Frameworks */,
-				F1CE7AB40F4B1C16006BAA18 /* wait.a in Frameworks */,
-				F1CE7AB60F4B1C17006BAA18 /* nkf.a in Frameworks */,
-				F1CE7AB80F4B1C17006BAA18 /* pty.o in Frameworks */,
-				F1CE7ABA0F4B1C17006BAA18 /* cparse.a in Frameworks */,
-				F1CE7ABC0F4B1C17006BAA18 /* sdbm.a in Frameworks */,
-				F1CE7ABE0F4B1C17006BAA18 /* socket.a in Frameworks */,
-				F1CE7AC00F4B1C17006BAA18 /* stringio.a in Frameworks */,
-				F1CE7AC20F4B1C17006BAA18 /* strscan.a in Frameworks */,
-				F1CE7AC40F4B1C17006BAA18 /* syck.a in Frameworks */,
-				F1CE7AC50F4B1C18006BAA18 /* thread.a in Frameworks */,
+				8DE53D0E0F55A7C000A77153 /* libruby-static-full.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,9 +151,9 @@
 		F1CE7A520F4B1BE5006BAA18 /* ruby */ = {
 			isa = PBXGroup;
 			children = (
+				8DE53D0D0F55A7C000A77153 /* libruby-static-full.a */,
+				8DE53CEC0F559EB300A77153 /* extinit.c */,
 				F1CE7A540F4B1BF7006BAA18 /* include */,
-				F1CE7A5B0F4B1C06006BAA18 /* libruby-static-full.a */,
-				F1CE7A5D0F4B1C15006BAA18 /* ext */,
 			);
 			name = ruby;
 			sourceTree = "<group>";
@@ -264,210 +206,6 @@
 			);
 			name = include;
 			path = ruby/include;
-			sourceTree = "<group>";
-		};
-		F1CE7A5D0F4B1C15006BAA18 /* ext */ = {
-			isa = PBXGroup;
-			children = (
-				F1CE7A600F4B1C15006BAA18 /* bigdecimal */,
-				F1CE7A630F4B1C15006BAA18 /* dbm */,
-				F1CE7A660F4B1C15006BAA18 /* digest */,
-				F1CE7A780F4B1C15006BAA18 /* etc */,
-				F1CE7A7B0F4B1C15006BAA18 /* fcntl */,
-				F1CE7A7E0F4B1C15006BAA18 /* io */,
-				F1CE7A820F4B1C15006BAA18 /* nkf */,
-				F1CE7A850F4B1C15006BAA18 /* pty */,
-				F1CE7A880F4B1C15006BAA18 /* racc */,
-				F1CE7A8C0F4B1C15006BAA18 /* sdbm */,
-				F1CE7A8F0F4B1C15006BAA18 /* socket */,
-				F1CE7A920F4B1C15006BAA18 /* stringio */,
-				F1CE7A950F4B1C15006BAA18 /* strscan */,
-				F1CE7A980F4B1C15006BAA18 /* syck */,
-				F1CE7A9B0F4B1C15006BAA18 /* thread */,
-			);
-			name = ext;
-			path = ruby/ext;
-			sourceTree = "<group>";
-		};
-		F1CE7A600F4B1C15006BAA18 /* bigdecimal */ = {
-			isa = PBXGroup;
-			children = (
-				F1CE7A620F4B1C15006BAA18 /* bigdecimal.a */,
-			);
-			path = bigdecimal;
-			sourceTree = "<group>";
-		};
-		F1CE7A630F4B1C15006BAA18 /* dbm */ = {
-			isa = PBXGroup;
-			children = (
-				F1CE7A650F4B1C15006BAA18 /* dbm.a */,
-			);
-			path = dbm;
-			sourceTree = "<group>";
-		};
-		F1CE7A660F4B1C15006BAA18 /* digest */ = {
-			isa = PBXGroup;
-			children = (
-				F1CE7A680F4B1C15006BAA18 /* bubblebabble */,
-				F1CE7A6B0F4B1C15006BAA18 /* digest.a */,
-				F1CE7A6C0F4B1C15006BAA18 /* md5 */,
-				F1CE7A6F0F4B1C15006BAA18 /* rmd160 */,
-				F1CE7A720F4B1C15006BAA18 /* sha1 */,
-				F1CE7A750F4B1C15006BAA18 /* sha2 */,
-			);
-			path = digest;
-			sourceTree = "<group>";
-		};
-		F1CE7A680F4B1C15006BAA18 /* bubblebabble */ = {
-			isa = PBXGroup;
-			children = (
-				F1CE7A6A0F4B1C15006BAA18 /* bubblebabble.a */,
-			);
-			path = bubblebabble;
-			sourceTree = "<group>";
-		};
-		F1CE7A6C0F4B1C15006BAA18 /* md5 */ = {
-			isa = PBXGroup;
-			children = (
-				F1CE7A6E0F4B1C15006BAA18 /* md5.a */,
-			);
-			path = md5;
-			sourceTree = "<group>";
-		};
-		F1CE7A6F0F4B1C15006BAA18 /* rmd160 */ = {
-			isa = PBXGroup;
-			children = (
-				F1CE7A710F4B1C15006BAA18 /* rmd160.a */,
-			);
-			path = rmd160;
-			sourceTree = "<group>";
-		};
-		F1CE7A720F4B1C15006BAA18 /* sha1 */ = {
-			isa = PBXGroup;
-			children = (
-				F1CE7A740F4B1C15006BAA18 /* sha1.a */,
-			);
-			path = sha1;
-			sourceTree = "<group>";
-		};
-		F1CE7A750F4B1C15006BAA18 /* sha2 */ = {
-			isa = PBXGroup;
-			children = (
-				F1CE7A770F4B1C15006BAA18 /* sha2.a */,
-			);
-			path = sha2;
-			sourceTree = "<group>";
-		};
-		F1CE7A780F4B1C15006BAA18 /* etc */ = {
-			isa = PBXGroup;
-			children = (
-				F1CE7A7A0F4B1C15006BAA18 /* etc.a */,
-			);
-			path = etc;
-			sourceTree = "<group>";
-		};
-		F1CE7A7B0F4B1C15006BAA18 /* fcntl */ = {
-			isa = PBXGroup;
-			children = (
-				F1CE7A7D0F4B1C15006BAA18 /* fcntl.a */,
-			);
-			path = fcntl;
-			sourceTree = "<group>";
-		};
-		F1CE7A7E0F4B1C15006BAA18 /* io */ = {
-			isa = PBXGroup;
-			children = (
-				F1CE7A7F0F4B1C15006BAA18 /* wait */,
-			);
-			path = io;
-			sourceTree = "<group>";
-		};
-		F1CE7A7F0F4B1C15006BAA18 /* wait */ = {
-			isa = PBXGroup;
-			children = (
-				F1CE7A810F4B1C15006BAA18 /* wait.a */,
-			);
-			path = wait;
-			sourceTree = "<group>";
-		};
-		F1CE7A820F4B1C15006BAA18 /* nkf */ = {
-			isa = PBXGroup;
-			children = (
-				F1CE7A840F4B1C15006BAA18 /* nkf.a */,
-			);
-			path = nkf;
-			sourceTree = "<group>";
-		};
-		F1CE7A850F4B1C15006BAA18 /* pty */ = {
-			isa = PBXGroup;
-			children = (
-				F1CE7A870F4B1C15006BAA18 /* pty.o */,
-			);
-			path = pty;
-			sourceTree = "<group>";
-		};
-		F1CE7A880F4B1C15006BAA18 /* racc */ = {
-			isa = PBXGroup;
-			children = (
-				F1CE7A890F4B1C15006BAA18 /* cparse */,
-			);
-			path = racc;
-			sourceTree = "<group>";
-		};
-		F1CE7A890F4B1C15006BAA18 /* cparse */ = {
-			isa = PBXGroup;
-			children = (
-				F1CE7A8B0F4B1C15006BAA18 /* cparse.a */,
-			);
-			path = cparse;
-			sourceTree = "<group>";
-		};
-		F1CE7A8C0F4B1C15006BAA18 /* sdbm */ = {
-			isa = PBXGroup;
-			children = (
-				F1CE7A8E0F4B1C15006BAA18 /* sdbm.a */,
-			);
-			path = sdbm;
-			sourceTree = "<group>";
-		};
-		F1CE7A8F0F4B1C15006BAA18 /* socket */ = {
-			isa = PBXGroup;
-			children = (
-				F1CE7A910F4B1C15006BAA18 /* socket.a */,
-			);
-			path = socket;
-			sourceTree = "<group>";
-		};
-		F1CE7A920F4B1C15006BAA18 /* stringio */ = {
-			isa = PBXGroup;
-			children = (
-				F1CE7A940F4B1C15006BAA18 /* stringio.a */,
-			);
-			path = stringio;
-			sourceTree = "<group>";
-		};
-		F1CE7A950F4B1C15006BAA18 /* strscan */ = {
-			isa = PBXGroup;
-			children = (
-				F1CE7A970F4B1C15006BAA18 /* strscan.a */,
-			);
-			path = strscan;
-			sourceTree = "<group>";
-		};
-		F1CE7A980F4B1C15006BAA18 /* syck */ = {
-			isa = PBXGroup;
-			children = (
-				F1CE7A9A0F4B1C15006BAA18 /* syck.a */,
-			);
-			path = syck;
-			sourceTree = "<group>";
-		};
-		F1CE7A9B0F4B1C15006BAA18 /* thread */ = {
-			isa = PBXGroup;
-			children = (
-				F1CE7A9C0F4B1C15006BAA18 /* thread.a */,
-			);
-			path = thread;
 			sourceTree = "<group>";
 		};
 		F1CE7AD20F4B2649006BAA18 /* cocoa */ = {
@@ -551,6 +289,7 @@
 				F1CE7B0F0F4B2649006BAA18 /* mdl_osxobjc.m in Sources */,
 				F1CE7B100F4B2649006BAA18 /* RBClassUtils.m in Sources */,
 				F1CE7B110F4B2649006BAA18 /* cls_objcptr.m in Sources */,
+				8DE53CED0F559EB300A77153 /* extinit.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
