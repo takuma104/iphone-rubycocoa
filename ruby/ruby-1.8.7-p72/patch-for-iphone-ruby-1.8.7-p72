@@ -1,0 +1,395 @@
+diff -P -r -c ruby-1.8.7-p72/build.sh ruby-1.8.7-p72_iphone/build.sh
+*** ruby-1.8.7-p72/build.sh	1970-01-01 09:00:00.000000000 +0900
+--- ruby-1.8.7-p72_iphone/build.sh	2009-02-26 01:17:51.000000000 +0900
+***************
+*** 0 ****
+--- 1,57 ----
++ #!/bin/sh
++ 
++ ###
++ 
++ CC=/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/arm-apple-darwin9-gcc-4.0.1
++ CPP=/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/cpp
++ LD=/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/ld
++ AR=/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/ar
++ RANLIB=/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/ranlib
++ 
++ LIBRUBY_FULL_ARM=libruby-static-full-arm.a
++ LIBRUBY_FULL_386=libruby-static-full-386.a
++ LIBRUBY_FULL_OUT=libruby-static-full.a
++ 
++ ###
++ 
++ find . -name "*.o" -exec rm -f {} \;
++ 
++ # make for arm
++ 
++ ./configure --host=arm-apple-darwin9 --target=arm-apple-darwin9 --enable-wide-getaddrinfo --with-static-linked-ext \
++ 	CC=$CC CPP=$CPP LD=$LD AR=$AR RANLIB=$RANLIB \
++ 	ac_cv_func_getpgrp_void=yes \
++ 	ac_cv_func_setpgrp_void=yes \
++ 	CFLAGS="-arch armv6 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -mdynamic-no-pic \
++  		-Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS2.0.sdk"
++ 
++ make
++ 
++ rm -f $LIBRUBY_FULL_ARM
++ cat dot_o_list | xargs $AR rcu $LIBRUBY_FULL_ARM
++ $RANLIB $LIBRUBY_FULL_ARM
++ 
++ # cleanup
++ 
++ make clean
++ find . -name "*.o" -exec rm -f {} \;
++ 
++ # make for i386
++ 
++ ./configure --with-static-linked-ext --without-openssl
++ 
++ make
++ 
++ rm -f $LIBRUBY_FULL_386
++ cat dot_o_list | xargs ar rcu $LIBRUBY_FULL_386
++ ranlib $LIBRUBY_FULL_386
++ 
++ # cleanup
++ #make clean
++ 
++ # make universal binary (arm+386)
++ 
++ lipo -create $LIBRUBY_FULL_ARM $LIBRUBY_FULL_386 -output $LIBRUBY_FULL_OUT
++ 
++ #rm -f $LIBRUBY_FULL_ARM
++ #rm -f $LIBRUBY_FULL_386
+diff -P -r -c ruby-1.8.7-p72/dot_o_list ruby-1.8.7-p72_iphone/dot_o_list
+*** ruby-1.8.7-p72/dot_o_list	1970-01-01 09:00:00.000000000 +0900
+--- ruby-1.8.7-p72_iphone/dot_o_list	2009-02-26 00:42:34.000000000 +0900
+***************
+*** 0 ****
+--- 1,74 ----
++ ./array.o
++ ./bignum.o
++ ./class.o
++ ./compar.o
++ ./dir.o
++ ./dln.o
++ ./enum.o
++ ./enumerator.o
++ ./error.o
++ ./eval.o
++ ./file.o
++ ./finite.o
++ ./gc.o
++ ./hash.o
++ ./inits.o
++ ./io.o
++ ./main.o
++ ./marshal.o
++ ./math.o
++ ./memcmp.o
++ ./numeric.o
++ ./object.o
++ ./pack.o
++ ./parse.o
++ ./prec.o
++ ./process.o
++ ./random.o
++ ./range.o
++ ./re.o
++ ./regex.o
++ ./ruby.o
++ ./signal.o
++ ./sprintf.o
++ ./st.o
++ ./string.o
++ ./struct.o
++ ./time.o
++ ./util.o
++ ./variable.o
++ ./version.o
++ ./ext/bigdecimal/bigdecimal.o
++ ./ext/dbm/dbm.o
++ ./ext/digest/bubblebabble/bubblebabble.o
++ ./ext/digest/digest.o
++ ./ext/digest/md5/md5.o
++ ./ext/digest/md5/md5init.o
++ ./ext/digest/rmd160/rmd160.o
++ ./ext/digest/rmd160/rmd160init.o
++ ./ext/digest/sha1/sha1.o
++ ./ext/digest/sha1/sha1init.o
++ ./ext/digest/sha2/sha2.o
++ ./ext/digest/sha2/sha2init.o
++ ./ext/etc/etc.o
++ ./ext/fcntl/fcntl.o
++ ./ext/io/wait/wait.o
++ ./ext/nkf/nkf.o
++ ./ext/pty/pty.o
++ ./ext/racc/cparse/cparse.o
++ ./ext/sdbm/_sdbm.o
++ ./ext/sdbm/init.o
++ ./ext/socket/socket.o
++ ./ext/stringio/stringio.o
++ ./ext/strscan/strscan.o
++ ./ext/syck/bytecode.o
++ ./ext/syck/emitter.o
++ ./ext/syck/gram.o
++ ./ext/syck/handler.o
++ ./ext/syck/implicit.o
++ ./ext/syck/node.o
++ ./ext/syck/rubyext.o
++ ./ext/syck/syck.o
++ ./ext/syck/token.o
++ ./ext/syck/yaml2byte.o
++ ./ext/thread/thread.o
+diff -c -r ruby-1.8.7-p72/eval.c ruby-1.8.7-p72_iphone/eval.c
+*** ruby-1.8.7-p72/eval.c	2008-08-04 12:24:26.000000000 +0900
+--- ruby-1.8.7-p72_iphone/eval.c	2009-02-26 00:15:08.000000000 +0900
+***************
+*** 33,41 ****
+  #include "st.h"
+  #include "dln.h"
+  
+! #ifdef __APPLE__
+! #include <crt_externs.h>
+! #endif
+  
+  /* Make alloca work the best possible way.  */
+  #ifdef __GNUC__
+--- 33,41 ----
+  #include "st.h"
+  #include "dln.h"
+  
+! //#ifdef __APPLE__
+! //#include <crt_externs.h>
+! //#endif
+  
+  /* Make alloca work the best possible way.  */
+  #ifdef __GNUC__
+***************
+*** 1378,1388 ****
+      ruby_frame = top_frame = &frame;
+      ruby_iter = &iter;
+  
+! #ifdef __MACOS__
+      rb_origenviron = 0;
+! #else
+!     rb_origenviron = environ;
+! #endif
+  
+      Init_stack((void*)&state);
+      Init_heap();
+--- 1378,1388 ----
+      ruby_frame = top_frame = &frame;
+      ruby_iter = &iter;
+  
+! //#ifdef __MACOS__
+      rb_origenviron = 0;
+! //#else
+! //    rb_origenviron = environ;
+! //#endif
+  
+      Init_stack((void*)&state);
+      Init_heap();
+diff -c -r ruby-1.8.7-p72/ext/digest/md5/extconf.rb ruby-1.8.7-p72_iphone/ext/digest/md5/extconf.rb
+*** ruby-1.8.7-p72/ext/digest/md5/extconf.rb	2007-02-13 08:01:19.000000000 +0900
+--- ruby-1.8.7-p72_iphone/ext/digest/md5/extconf.rb	2009-02-26 01:04:27.000000000 +0900
+***************
+*** 8,22 ****
+  
+  $objs = [ "md5init.#{$OBJEXT}" ]
+  
+! dir_config("openssl")
+  
+! if !with_config("bundled-md5") &&
+!     have_library("crypto") && have_header("openssl/md5.h")
+!   $objs << "md5ossl.#{$OBJEXT}"
+! 
+! else
+    $objs << "md5.#{$OBJEXT}"
+! end
+  
+  have_header("sys/cdefs.h")
+  
+--- 8,22 ----
+  
+  $objs = [ "md5init.#{$OBJEXT}" ]
+  
+! #dir_config("openssl")
+  
+! #if !with_config("bundled-md5") &&
+! #    have_library("crypto") && have_header("openssl/md5.h")
+! #  $objs << "md5ossl.#{$OBJEXT}"
+! #
+! #else
+    $objs << "md5.#{$OBJEXT}"
+! #end
+  
+  have_header("sys/cdefs.h")
+  
+diff -c -r ruby-1.8.7-p72/ext/digest/rmd160/extconf.rb ruby-1.8.7-p72_iphone/ext/digest/rmd160/extconf.rb
+*** ruby-1.8.7-p72/ext/digest/rmd160/extconf.rb	2007-02-13 08:01:19.000000000 +0900
+--- ruby-1.8.7-p72_iphone/ext/digest/rmd160/extconf.rb	2009-02-26 01:04:50.000000000 +0900
+***************
+*** 8,21 ****
+  
+  $objs = [ "rmd160init.#{$OBJEXT}" ]
+  
+! dir_config("openssl")
+  
+! if !with_config("bundled-rmd160") &&
+!     have_library("crypto") && have_header("openssl/ripemd.h")
+!   $objs << "rmd160ossl.#{$OBJEXT}"
+! else
+    $objs << "rmd160.#{$OBJEXT}"
+! end
+  
+  have_header("sys/cdefs.h")
+  
+--- 8,21 ----
+  
+  $objs = [ "rmd160init.#{$OBJEXT}" ]
+  
+! #dir_config("openssl")
+  
+! #if !with_config("bundled-rmd160") &&
+! #    have_library("crypto") && have_header("openssl/ripemd.h")
+! #  $objs << "rmd160ossl.#{$OBJEXT}"
+! #else
+    $objs << "rmd160.#{$OBJEXT}"
+! #end
+  
+  have_header("sys/cdefs.h")
+  
+diff -c -r ruby-1.8.7-p72/ext/digest/sha1/extconf.rb ruby-1.8.7-p72_iphone/ext/digest/sha1/extconf.rb
+*** ruby-1.8.7-p72/ext/digest/sha1/extconf.rb	2007-02-13 08:01:19.000000000 +0900
+--- ruby-1.8.7-p72_iphone/ext/digest/sha1/extconf.rb	2009-02-26 01:05:07.000000000 +0900
+***************
+*** 8,21 ****
+  
+  $objs = [ "sha1init.#{$OBJEXT}" ]
+  
+! dir_config("openssl")
+  
+! if !with_config("bundled-sha1") &&
+!     have_library("crypto") && have_header("openssl/sha.h")
+!   $objs << "sha1ossl.#{$OBJEXT}"
+! else
+    $objs << "sha1.#{$OBJEXT}"
+! end
+  
+  have_header("sys/cdefs.h")
+  
+--- 8,21 ----
+  
+  $objs = [ "sha1init.#{$OBJEXT}" ]
+  
+! #dir_config("openssl")
+  
+! #if !with_config("bundled-sha1") &&
+! #    have_library("crypto") && have_header("openssl/sha.h")
+! #  $objs << "sha1ossl.#{$OBJEXT}"
+! #else
+    $objs << "sha1.#{$OBJEXT}"
+! #end
+  
+  have_header("sys/cdefs.h")
+  
+diff -c -r ruby-1.8.7-p72/ext/extmk.rb ruby-1.8.7-p72_iphone/ext/extmk.rb
+*** ruby-1.8.7-p72/ext/extmk.rb	2008-05-23 14:22:13.000000000 +0900
+--- ruby-1.8.7-p72_iphone/ext/extmk.rb	2009-02-26 00:15:08.000000000 +0900
+***************
+*** 354,360 ****
+  else
+    $ruby = '$(topdir)/miniruby' + EXEEXT
+  end
+! $ruby << " -I'$(topdir)'"
+  unless CROSS_COMPILING
+    $ruby << " -I'$(top_srcdir)/lib'"
+    $ruby << " -I'$(extout)/$(arch)' -I'$(extout)/common'" if $extout
+--- 354,360 ----
+  else
+    $ruby = '$(topdir)/miniruby' + EXEEXT
+  end
+! #$ruby << " -I'$(topdir)'"
+  unless CROSS_COMPILING
+    $ruby << " -I'$(top_srcdir)/lib'"
+    $ruby << " -I'$(extout)/$(arch)' -I'$(extout)/common'" if $extout
+diff -c -r ruby-1.8.7-p72/ext/socket/socket.c ruby-1.8.7-p72_iphone/ext/socket/socket.c
+*** ruby-1.8.7-p72/ext/socket/socket.c	2008-04-15 12:35:55.000000000 +0900
+--- ruby-1.8.7-p72_iphone/ext/socket/socket.c	2009-02-26 00:15:08.000000000 +0900
+***************
+*** 33,41 ****
+  # define pseudo_AF_FTIP pseudo_AF_RTIP	/* workaround for NetBSD and etc. */
+  #endif
+  #include <netinet/in.h>
+- #ifdef HAVE_NETINET_IN_SYSTM_H
+- # include <netinet/in_systm.h>
+- #endif
+  #ifdef HAVE_NETINET_TCP_H
+  # include <netinet/tcp.h>
+  #endif
+--- 33,38 ----
+diff -c -r ruby-1.8.7-p72/hash.c ruby-1.8.7-p72_iphone/hash.c
+*** ruby-1.8.7-p72/hash.c	2008-06-09 03:25:01.000000000 +0900
+--- ruby-1.8.7-p72_iphone/hash.c	2009-02-26 00:15:08.000000000 +0900
+***************
+*** 17,25 ****
+  #include "util.h"
+  #include "rubysig.h"
+  
+! #ifdef __APPLE__
+! #include <crt_externs.h>
+! #endif
+  
+  #define HASH_DELETED  FL_USER1
+  #define HASH_PROC_DEFAULT FL_USER2
+--- 17,25 ----
+  #include "util.h"
+  #include "rubysig.h"
+  
+! //#ifdef __APPLE__
+! //#include <crt_externs.h>
+! //#endif
+  
+  #define HASH_DELETED  FL_USER1
+  #define HASH_PROC_DEFAULT FL_USER2
+***************
+*** 1772,1778 ****
+  static int path_tainted = -1;
+  
+  static char **origenviron;
+! #ifdef _WIN32
+  #define GET_ENVIRON(e) (e = rb_w32_get_environ())
+  #define FREE_ENVIRON(e) rb_w32_free_environ(e)
+  static char **my_environ;
+--- 1772,1778 ----
+  static int path_tainted = -1;
+  
+  static char **origenviron;
+! /*#ifdef _WIN32
+  #define GET_ENVIRON(e) (e = rb_w32_get_environ())
+  #define FREE_ENVIRON(e) rb_w32_free_environ(e)
+  static char **my_environ;
+***************
+*** 1784,1793 ****
+  #define GET_ENVIRON(e) (e)
+  #define FREE_ENVIRON(e)
+  #else
+! extern char **environ;
+  #define GET_ENVIRON(e) (e)
+  #define FREE_ENVIRON(e)
+! #endif
+  
+  static VALUE
+  env_str_new(ptr, len)
+--- 1784,1793 ----
+  #define GET_ENVIRON(e) (e)
+  #define FREE_ENVIRON(e)
+  #else
+! */extern char **environ;
+  #define GET_ENVIRON(e) (e)
+  #define FREE_ENVIRON(e)
+! //#endif
+  
+  static VALUE
+  env_str_new(ptr, len)

@@ -1,0 +1,8 @@
+How to build 'libruby-static-full.a' for ruby-1.8.7-p72
+
+$ wget http://ftp.iij.ad.jp/pub/lang/ruby/1.8/ruby-1.8.7-p72.tar.bz2
+$ tar xvjf ruby-1.8.7-p72.tar.bz2
+$ cd ruby-1.8.7-p72
+$ patch -p1 -d . < ../patch-for-iphone-ruby-1.8.7-p72 
+$ sh build.sh 
+
