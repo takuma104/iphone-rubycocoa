@@ -1,11 +1,7 @@
 #
-#  $Id: tc_objcptr.rb 610 2003-01-15 05:21:56Z hisa $
+#  $Id: tc_objcptr.rb 979 2006-05-29 01:18:25Z hisa $
 #
-#  Copyright (c) 2001 FUJIMOTO Hisakuni <hisa@imasy.or.jp>
-#
-#  This program is free software.
-#  You can distribute/modify this program under the terms of
-#  the GNU Lesser General Public License version 2.
+#  Copyright (c) 2001-2003 FUJIMOTO Hisakuni
 #
 
 require 'test/unit'

@@ -1,9 +1,7 @@
 #
-#  $Id: tc_exception.rb 827 2005-08-10 13:01:25Z kimuraw $
+#  $Id: tc_exception.rb 979 2006-05-29 01:18:25Z hisa $
 #
-#  This program is free software.
-#  You can distribute/modify this program under the terms of
-#  the GNU Lesser General Public License version 2.
+#  Copyright (c) 2005 kimura wataru
 #
 
 require 'test/unit'

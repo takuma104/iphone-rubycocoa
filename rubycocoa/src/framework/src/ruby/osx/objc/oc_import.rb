@@ -1,11 +1,7 @@
 #
 #  $Id: oc_import.rb 889 2005-11-07 14:20:21Z kimuraw $
 #
-#  Copyright (c) 2001 FUJIMOTO Hisakuni <hisa@imasy.or.jp>
-#
-#  This program is free software.
-#  You can distribute/modify this program under the terms of
-#  the GNU Lesser General Public License version 2.
+#  Copyright (c) 2001 FUJIMOTO Hisakuni
 #
 
 require 'osx/objc/oc_wrapper'

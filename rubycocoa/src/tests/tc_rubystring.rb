@@ -1,11 +1,7 @@
 #
-#  $Id: tc_rubystring.rb 712 2004-12-11 11:54:39Z hisa $
+#  $Id: tc_rubystring.rb 979 2006-05-29 01:18:25Z hisa $
 #
-#  Copyright (c) 2001 FUJIMOTO Hisakuni <hisa@imasy.or.jp>
-#
-#  This program is free software.
-#  You can distribute/modify this program under the terms of
-#  the GNU Lesser General Public License version 2.
+#  Copyright (c) 2001-2004 FUJIMOTO Hisakuni
 #
 
 require 'test/unit'

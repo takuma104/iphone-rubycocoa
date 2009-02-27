@@ -1,11 +1,8 @@
 #
-#  $Id: coredata.rb 875 2005-11-06 01:55:24Z kimuraw $
+#  $Id: coredata.rb 979 2006-05-29 01:18:25Z hisa $
 #
-#  Copyright (c) 2005 FUJIMOTO Hisakuni <hisa@imasy.or.jp>
-#
-#  This program is free software.
-#  You can distribute/modify this program under the terms of
-#  the GNU Lesser General Public License version 2.
+#  Copyright (c) 2005 FUJIMOTO Hisakuni
+#  Copyright (c) 2005 kumura wataru
 #
 require 'osx/cocoa'
 

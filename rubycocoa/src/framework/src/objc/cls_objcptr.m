@@ -1,12 +1,8 @@
 /** -*-objc-*-
  *
- *   $Id: cls_objcptr.m 609 2003-01-15 05:20:08Z hisa $
+ *   $Id: cls_objcptr.m 979 2006-05-29 01:18:25Z hisa $
  *
- *   Copyright (c) 2001 FUJIMOTO Hisakuni <hisa@imasy.or.jp>
- *
- *   This program is free software.
- *   You can distribute/modify this program under the terms of
- *   the GNU Lesser General Public License version 2.
+ *   Copyright (c) 2001 FUJIMOTO Hisakuni
  *
  **/
 #import "cls_objcptr.h"

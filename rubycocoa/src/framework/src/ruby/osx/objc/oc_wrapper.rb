@@ -1,11 +1,7 @@
 #
-#  $Id: oc_wrapper.rb 834 2005-09-11 11:45:30Z kimuraw $
+#  $Id: oc_wrapper.rb 979 2006-05-29 01:18:25Z hisa $
 #
-#  Copyright (c) 2001 FUJIMOTO Hisakuni <hisa@imasy.or.jp>
-#
-#  This program is free software.
-#  You can distribute/modify this program under the terms of
-#  the GNU Lesser General Public License version 2.
+#  Copyright (c) 2001 FUJIMOTO Hisakuni
 #
 
 module OSX
