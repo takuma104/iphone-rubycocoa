@@ -131,7 +131,6 @@
 #define HAVE_SETRLIMIT 1
 #define HAVE_SYSCONF 1
 #define HAVE_DLOPEN 1
-#define HAVE_SIGPROCMASK 1
 #define HAVE_SIGACTION 1
 #define HAVE_SIGSETJMP 1
 #define HAVE__SETJMP 1
@@ -161,7 +160,6 @@
 #define HAVE_VAR_TIMEZONE 1
 #define TYPEOF_VAR_TIMEZONE long
 #define NEGATIVE_TIME_T 1
-#define POSIX_SIGNAL 1
 #define GETPGRP_VOID 1
 #define SETPGRP_VOID 1
 #define RSHIFT(x,y) ((x)>>(int)y)

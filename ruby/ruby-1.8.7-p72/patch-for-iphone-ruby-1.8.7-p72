@@ -26,8 +26,8 @@ diff -P -r -c ruby-1.8.7-p72/build.sh ruby-1.8.7-p72_iphone/build.sh
 + 
 + ./configure --host=arm-apple-darwin9 --target=arm-apple-darwin9 --enable-wide-getaddrinfo --with-static-linked-ext \
 + 	CC=$CC CPP=$CPP LD=$LD AR=$AR RANLIB=$RANLIB \
-+ 	ac_cv_func_getpgrp_void=yes \
-+ 	ac_cv_func_setpgrp_void=yes \
++ 	ac_cv_func_getpgrp_void=yes ac_cv_func_setpgrp_void=yes \
++ 	ac_cv_func_sigprocmask=no ac_cv_func_sigsetmask=no \
 + 	CFLAGS="-arch armv6 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -mdynamic-no-pic \
 +  		-Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS2.0.sdk"
 + 

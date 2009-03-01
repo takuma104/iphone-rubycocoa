@@ -27,3 +27,5 @@ void Init_ext _((void))
     init(Init_syck, "syck.so");
     init(Init_thread, "thread.so");
 }
+
+void ruby_nativethread_signal(int signum, void* handler) {}
