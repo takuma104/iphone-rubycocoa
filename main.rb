@@ -1,4 +1,8 @@
+require 'rubylibs'
 require 'rubycocoa'
+
+# require 'remote_irb'
+# RemoteIRB.new(6000).start
 
 class MyAppDelegate < OSX::NSObject
 
