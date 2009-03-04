@@ -11,12 +11,10 @@
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
-		8D93B3BC0F5AC31800C653F0 /* apputils.rb in Resources */ = {isa = PBXBuildFile; fileRef = 8D93B3B90F5AC31800C653F0 /* apputils.rb */; };
 		8D93B3BD0F5AC31800C653F0 /* remote_irb.rb in Resources */ = {isa = PBXBuildFile; fileRef = 8D93B3BA0F5AC31800C653F0 /* remote_irb.rb */; };
-		8D93B3BE0F5AC31800C653F0 /* rubylibs.rb in Resources */ = {isa = PBXBuildFile; fileRef = 8D93B3BB0F5AC31800C653F0 /* rubylibs.rb */; };
-		8D93B3D50F5AC37800C653F0 /* rubylib.tar in Resources */ = {isa = PBXBuildFile; fileRef = 8D93B3D40F5AC37800C653F0 /* rubylib.tar */; };
 		8DE53CED0F559EB300A77153 /* extinit.c in Sources */ = {isa = PBXBuildFile; fileRef = 8DE53CEC0F559EB300A77153 /* extinit.c */; };
 		8DE53D0E0F55A7C000A77153 /* libruby-static-full.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DE53D0D0F55A7C000A77153 /* libruby-static-full.a */; };
+		F1584E930F5EDA05009A700F /* lib in Resources */ = {isa = PBXBuildFile; fileRef = F1584BFC0F5EDA04009A700F /* lib */; };
 		F1CE7AFD0F4B2649006BAA18 /* init_cocoa.m in Sources */ = {isa = PBXBuildFile; fileRef = F1CE7AD50F4B2649006BAA18 /* init_cocoa.m */; };
 		F1CE7AFF0F4B2649006BAA18 /* rb_Foundation.m in Sources */ = {isa = PBXBuildFile; fileRef = F1CE7AD70F4B2649006BAA18 /* rb_Foundation.m */; };
 		F1CE7B000F4B2649006BAA18 /* rb_UIKit.m in Sources */ = {isa = PBXBuildFile; fileRef = F1CE7AD80F4B2649006BAA18 /* rb_UIKit.m */; };
@@ -44,12 +42,10 @@
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* rubycocoa4iphone_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rubycocoa4iphone_Prefix.pch; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8D93B3B90F5AC31800C653F0 /* apputils.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = apputils.rb; sourceTree = "<group>"; };
 		8D93B3BA0F5AC31800C653F0 /* remote_irb.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = remote_irb.rb; sourceTree = "<group>"; };
-		8D93B3BB0F5AC31800C653F0 /* rubylibs.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = rubylibs.rb; sourceTree = "<group>"; };
-		8D93B3D40F5AC37800C653F0 /* rubylib.tar */ = {isa = PBXFileReference; lastKnownFileType = archive.tar; name = rubylib.tar; path = ruby/rubylib.tar; sourceTree = "<group>"; };
 		8DE53CEC0F559EB300A77153 /* extinit.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = extinit.c; path = ruby/extinit.c; sourceTree = "<group>"; };
 		8DE53D0D0F55A7C000A77153 /* libruby-static-full.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libruby-static-full.a"; path = "ruby/libruby-static-full.a"; sourceTree = "<group>"; };
+		F1584BFC0F5EDA04009A700F /* lib */ = {isa = PBXFileReference; lastKnownFileType = folder; name = lib; path = ruby/lib; sourceTree = SOURCE_ROOT; };
 		F1CE7A550F4B1BF7006BAA18 /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
 		F1CE7A560F4B1BF7006BAA18 /* defines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = defines.h; sourceTree = "<group>"; };
 		F1CE7A570F4B1BF7006BAA18 /* intern.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = intern.h; sourceTree = "<group>"; };
@@ -141,7 +137,7 @@
 			children = (
 				F1CE7B500F4B2CB2006BAA18 /* main.rb */,
 				F1CE7B520F4B2CCB006BAA18 /* rubycocoa.rb */,
-				8D93B3DD0F5AC39500C653F0 /* ruby */,
+				F1584BC40F5ED870009A700F /* Ruby */,
 				8D93B3B80F5AC31800C653F0 /* utils */,
 				8D1107310486CEB800E47090 /* Info.plist */,
 			);
@@ -161,19 +157,17 @@
 		8D93B3B80F5AC31800C653F0 /* utils */ = {
 			isa = PBXGroup;
 			children = (
-				8D93B3B90F5AC31800C653F0 /* apputils.rb */,
 				8D93B3BA0F5AC31800C653F0 /* remote_irb.rb */,
-				8D93B3BB0F5AC31800C653F0 /* rubylibs.rb */,
 			);
 			path = utils;
 			sourceTree = "<group>";
 		};
-		8D93B3DD0F5AC39500C653F0 /* ruby */ = {
+		F1584BC40F5ED870009A700F /* Ruby */ = {
 			isa = PBXGroup;
 			children = (
-				8D93B3D40F5AC37800C653F0 /* rubylib.tar */,
+				F1584BFC0F5EDA04009A700F /* lib */,
 			);
-			name = ruby;
+			name = Ruby;
 			sourceTree = "<group>";
 		};
 		F1CE7A520F4B1BE5006BAA18 /* ruby */ = {
@@ -291,10 +285,8 @@
 			files = (
 				F1CE7B510F4B2CB2006BAA18 /* main.rb in Resources */,
 				F1CE7B530F4B2CCB006BAA18 /* rubycocoa.rb in Resources */,
-				8D93B3BC0F5AC31800C653F0 /* apputils.rb in Resources */,
 				8D93B3BD0F5AC31800C653F0 /* remote_irb.rb in Resources */,
-				8D93B3BE0F5AC31800C653F0 /* rubylibs.rb in Resources */,
-				8D93B3D50F5AC37800C653F0 /* rubylib.tar in Resources */,
+				F1584E930F5EDA05009A700F /* lib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

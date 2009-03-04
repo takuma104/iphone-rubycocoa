@@ -46,7 +46,7 @@ static char* framework_ruby_path()
 {
   NSString* str;
   char* result;
-  const char* dirname = "/ruby";
+  const char* dirname = "/lib";
   id pool = [[NSAutoreleasePool alloc] init];
   NSBundle* bundle = [NSBundle bundleForClass: [RBObject class]];
   str = [bundle resourcePath];
