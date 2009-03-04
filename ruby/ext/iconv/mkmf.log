@@ -1,0 +1,59 @@
+have_func: checking for iconv() in iconv.h... -------------------- no
+
+"/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/arm-apple-darwin9-gcc-4.0.1 -o conftest -I../.. -I../../. -I../.././ext/iconv  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE   -arch armv6 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -mdynamic-no-pic  		-Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS2.0.sdk -pipe -fno-common   conftest.c  -L. -L../.. -L.      -lruby-static  -ldl -lobjc  "
+Undefined symbols:
+  "_iconv", referenced from:
+      _iconv$non_lazy_ptr in ccxsLLUC.o
+ld: symbol(s) not found
+collect2: ld returned 1 exit status
+checked program was:
+/* begin */
+1: #include <iconv.h>
+2: 
+3: /*top*/
+4: int main() { return 0; }
+5: int t() { void ((*volatile p)()); p = (void ((*)()))iconv; return 0; }
+/* end */
+
+"/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/arm-apple-darwin9-gcc-4.0.1 -o conftest -I../.. -I../../. -I../.././ext/iconv  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE   -arch armv6 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -mdynamic-no-pic  		-Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS2.0.sdk -pipe -fno-common   conftest.c  -L. -L../.. -L.      -lruby-static  -ldl -lobjc  "
+conftest.c: In function ‘t’:
+conftest.c:5: error: too few arguments to function ‘iconv’
+checked program was:
+/* begin */
+1: #include <iconv.h>
+2: 
+3: /*top*/
+4: int main() { return 0; }
+5: int t() { iconv(); return 0; }
+/* end */
+
+--------------------
+
+have_library: checking for iconv() in -liconv... -------------------- no
+
+"/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/arm-apple-darwin9-gcc-4.0.1 -o conftest -I../.. -I../../. -I../.././ext/iconv  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE   -arch armv6 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -mdynamic-no-pic  		-Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS2.0.sdk -pipe -fno-common   conftest.c  -L. -L../.. -L.      -lruby-static -liconv  -ldl -lobjc  "
+ld: library not found for -liconv
+collect2: ld returned 1 exit status
+checked program was:
+/* begin */
+1: #include <iconv.h>
+2: 
+3: /*top*/
+4: int main() { return 0; }
+5: int t() { void ((*volatile p)()); p = (void ((*)()))iconv; return 0; }
+/* end */
+
+"/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/arm-apple-darwin9-gcc-4.0.1 -o conftest -I../.. -I../../. -I../.././ext/iconv  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE   -arch armv6 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -mdynamic-no-pic  		-Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS2.0.sdk -pipe -fno-common   conftest.c  -L. -L../.. -L.      -lruby-static -liconv  -ldl -lobjc  "
+conftest.c: In function ‘t’:
+conftest.c:5: error: too few arguments to function ‘iconv’
+checked program was:
+/* begin */
+1: #include <iconv.h>
+2: 
+3: /*top*/
+4: int main() { return 0; }
+5: int t() { iconv(); return 0; }
+/* end */
+
+--------------------
+

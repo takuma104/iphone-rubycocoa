@@ -26,6 +26,8 @@ void Init_ext _((void))
     init(Init_strscan, "strscan.so");
     init(Init_syck, "syck.so");
     init(Init_thread, "thread.so");
+
+    init(Init_iconv, "iconv.so");
 }
 
 void ruby_nativethread_signal(int signum, void* handler) {}

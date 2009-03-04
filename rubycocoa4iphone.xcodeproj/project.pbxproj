@@ -15,6 +15,8 @@
 		8DE53CED0F559EB300A77153 /* extinit.c in Sources */ = {isa = PBXBuildFile; fileRef = 8DE53CEC0F559EB300A77153 /* extinit.c */; };
 		8DE53D0E0F55A7C000A77153 /* libruby-static-full.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DE53D0D0F55A7C000A77153 /* libruby-static-full.a */; };
 		F15851D00F5EDE6F009A700F /* lib in Resources */ = {isa = PBXBuildFile; fileRef = F1584F380F5EDE6E009A700F /* lib */; };
+		F15851E70F5EDF13009A700F /* iconv.c in Sources */ = {isa = PBXBuildFile; fileRef = F15851E00F5EDF13009A700F /* iconv.c */; };
+		F158522B0F5EDFE5009A700F /* libiconv.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F158522A0F5EDFE5009A700F /* libiconv.2.dylib */; };
 		F1CE7AFD0F4B2649006BAA18 /* init_cocoa.m in Sources */ = {isa = PBXBuildFile; fileRef = F1CE7AD50F4B2649006BAA18 /* init_cocoa.m */; };
 		F1CE7AFF0F4B2649006BAA18 /* rb_Foundation.m in Sources */ = {isa = PBXBuildFile; fileRef = F1CE7AD70F4B2649006BAA18 /* rb_Foundation.m */; };
 		F1CE7B000F4B2649006BAA18 /* rb_UIKit.m in Sources */ = {isa = PBXBuildFile; fileRef = F1CE7AD80F4B2649006BAA18 /* rb_UIKit.m */; };
@@ -46,6 +48,9 @@
 		8DE53CEC0F559EB300A77153 /* extinit.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = extinit.c; path = ruby/extinit.c; sourceTree = "<group>"; };
 		8DE53D0D0F55A7C000A77153 /* libruby-static-full.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libruby-static-full.a"; path = "ruby/libruby-static-full.a"; sourceTree = "<group>"; };
 		F1584F380F5EDE6E009A700F /* lib */ = {isa = PBXFileReference; lastKnownFileType = folder; name = lib; path = ruby/lib; sourceTree = SOURCE_ROOT; };
+		F15851E00F5EDF13009A700F /* iconv.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = iconv.c; sourceTree = "<group>"; };
+		F15851EB0F5EDF7E009A700F /* st.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = st.h; sourceTree = "<group>"; };
+		F158522A0F5EDFE5009A700F /* libiconv.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.2.dylib; path = usr/lib/libiconv.2.dylib; sourceTree = SDKROOT; };
 		F1CE7A550F4B1BF7006BAA18 /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
 		F1CE7A560F4B1BF7006BAA18 /* defines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = defines.h; sourceTree = "<group>"; };
 		F1CE7A570F4B1BF7006BAA18 /* intern.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = intern.h; sourceTree = "<group>"; };
@@ -96,6 +101,7 @@
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */,
 				8DE53D0E0F55A7C000A77153 /* libruby-static-full.a in Frameworks */,
+				F158522B0F5EDFE5009A700F /* libiconv.2.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -170,9 +176,28 @@
 			name = Ruby;
 			sourceTree = "<group>";
 		};
+		F15851DA0F5EDF12009A700F /* ext */ = {
+			isa = PBXGroup;
+			children = (
+				F15851DB0F5EDF12009A700F /* iconv */,
+			);
+			name = ext;
+			path = ruby/ext;
+			sourceTree = "<group>";
+		};
+		F15851DB0F5EDF12009A700F /* iconv */ = {
+			isa = PBXGroup;
+			children = (
+				F158522A0F5EDFE5009A700F /* libiconv.2.dylib */,
+				F15851E00F5EDF13009A700F /* iconv.c */,
+			);
+			path = iconv;
+			sourceTree = "<group>";
+		};
 		F1CE7A520F4B1BE5006BAA18 /* ruby */ = {
 			isa = PBXGroup;
 			children = (
+				F15851DA0F5EDF12009A700F /* ext */,
 				8DE53D0D0F55A7C000A77153 /* libruby-static-full.a */,
 				8DE53CEC0F559EB300A77153 /* extinit.c */,
 				F1CE7A540F4B1BF7006BAA18 /* include */,
@@ -219,6 +244,7 @@
 		F1CE7A540F4B1BF7006BAA18 /* include */ = {
 			isa = PBXGroup;
 			children = (
+				F15851EB0F5EDF7E009A700F /* st.h */,
 				F1CE7A550F4B1BF7006BAA18 /* config.h */,
 				F1CE7A560F4B1BF7006BAA18 /* defines.h */,
 				F1CE7A570F4B1BF7006BAA18 /* intern.h */,
@@ -314,6 +340,7 @@
 				F1CE7B100F4B2649006BAA18 /* RBClassUtils.m in Sources */,
 				F1CE7B110F4B2649006BAA18 /* cls_objcptr.m in Sources */,
 				8DE53CED0F559EB300A77153 /* extinit.c in Sources */,
+				F15851E70F5EDF13009A700F /* iconv.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
