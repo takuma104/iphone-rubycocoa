@@ -117,6 +117,7 @@ class RemoteIRB
 
   def start
     @gs = TCPServer.open(@port)
+    puts "[remote_irb] listening on #{OSX::NSHost.currentHost.address.to_s}:#{@port}"
     @thread = Thread.new do
       loop do
         Thread.start(@gs.accept) do |s|
