@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="us-ascii" ?>
-<menubar>
-  <td class='site-menubar' align='left' width='80%'>
-    <a href="index.en.html">What?</a> | <a href="getting.en.html">Download</a> | <a href="build.en.html">Build &amp; Install</a> | <a href="trysamples.en.html">Try Samples</a> | <a href="programming.en.html">Programming</a> | <a href="references.en.html">References</a> | <a href="changes.en.html">Changes</a> | <a href="faq.en.html">FAQ</a> | <a href="links.en.html">Links</a>
-  </td>
-  <td class='site-menubar' align='right' width='20%'>
-    [ENGLISH] <a href="index.ja.html">[JAPANESE]</a>
-  </td>
-</menubar>

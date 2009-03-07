@@ -1,2 +1,0 @@
-#define RUBYCOCOA_VERSION       "%%%rubycocoa_version%%%"
-#define RUBYCOCOA_RELEASE_DATE  "%%%rubycocoa_release_date%%%"
