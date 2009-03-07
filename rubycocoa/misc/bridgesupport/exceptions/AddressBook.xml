@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<!DOCTYPE signatures SYSTEM "file://localhost/System/Library/DTDs/BridgeSupport.dtd">
+<signatures version="0.9">
+  <!-- those AB*Ref CFTypes miss a gettypeid function (rdar://4908162) -->
+  <cftype name="ABAddressBookRef"/>
+  <cftype name="ABGroupRef"/>
+  <cftype name="ABMultiValueRef"/>
+  <cftype name="ABMutableMultiValueRef"/>
+  <cftype name="ABPersonRef"/>
+  <cftype name="ABPickerRef"/>
+  <cftype name="ABSearchElementRef"/>
+  <struct name="ABActionCallbacks"/>
+  <opaque name="ABRecordRef" ignore="true" type="@"/>
+  <function name="ABBeginLoadingImageDataForClient">
+    <arg index="1" type_modifier="n"/>
+    <arg index="2" type_modifier="n"/>
+  </function>
+  <function name="ABMultiValueAdd">
+    <arg index="3" type_modifier="o"/>
+  </function>
+  <function name="ABMultiValueInsert">
+    <arg index="4" type_modifier="o"/>
+  </function>
+  <function name="ABPickerGetFrame">
+    <arg index="1" type_modifier="o"/>
+  </function>
+  <function name="ABPickerSetFrame">
+    <arg index="1" type_modifier="n"/>
+  </function>
+  <class name="ABAddressBook">
+    <method selector="saveAndReturnError:">
+      <arg index="0" type_modifier="o"/>
+    </method>
+  </class>
+  <class name='ABPeoplePickerView'>
+    <method selector='setGroupDoubleAction:'>
+      <arg index='0' sel_of_type="(void)doubleAction:(id)sender"/>
+    </method>
+    <method selector='setNameDoubleAction:'>
+      <arg index='0' sel_of_type="(void)doubleAction:(id)sender"/>
+    </method>
+  </class>
+</signatures>

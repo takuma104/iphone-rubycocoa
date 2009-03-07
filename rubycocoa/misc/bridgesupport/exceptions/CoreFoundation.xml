@@ -1,0 +1,711 @@
+<?xml version="1.0"?>
+<!DOCTYPE signatures SYSTEM "file://localhost/System/Library/DTDs/BridgeSupport.dtd">
+<signatures version="0.9">
+  <cftype name="CFAllocatorRef" gettypeid_func="CFAllocatorGetTypeID"/>
+  <cftype name="CFArrayRef" gettypeid_func="CFArrayGetTypeID"/>
+  <cftype name="CFAttributedStringRef" gettypeid_func="CFAttributedStringGetTypeID"/>
+  <cftype name="CFBagRef" gettypeid_func="CFBagGetTypeID"/>
+  <cftype name="CFBinaryHeapRef" gettypeid_func="CFBinaryHeapGetTypeID"/>
+  <cftype name="CFBitVectorRef" gettypeid_func="CFBitVectorGetTypeID"/>
+  <cftype name="CFBooleanRef" gettypeid_func="CFBooleanGetTypeID"/>
+  <cftype name="CFBundleRef" gettypeid_func="CFBundleGetTypeID"/>
+  <cftype name="CFCalendarRef" gettypeid_func="CFCalendarGetTypeID"/>
+  <cftype name="CFCharacterSetRef" gettypeid_func="CFCharacterSetGetTypeID"/>
+  <cftype name="CFDataRef" gettypeid_func="CFDataGetTypeID"/>
+  <cftype name="CFDateFormatterRef" gettypeid_func="CFDateFormatterGetTypeID"/>
+  <cftype name="CFDateRef" gettypeid_func="CFDateGetTypeID"/>
+  <cftype name="CFDictionaryRef" gettypeid_func="CFDictionaryGetTypeID"/>
+  <cftype name="CFLocaleRef" gettypeid_func="CFLocaleGetTypeID"/>
+  <cftype name="CFMachPortRef" gettypeid_func="CFMachPortGetTypeID"/>
+  <cftype name="CFMessagePortRef" gettypeid_func="CFMessagePortGetTypeID"/>
+  <cftype name="CFNotificationCenterRef" gettypeid_func="CFNotificationCenterGetTypeID"/>
+  <cftype name="CFNullRef" gettypeid_func="CFNullGetTypeID"/>
+  <cftype name="CFNumberFormatterRef" gettypeid_func="CFNumberFormatterGetTypeID"/>
+  <cftype name="CFNumberRef" gettypeid_func="CFNumberGetTypeID"/>
+  <cftype name="CFPlugInInstanceRef" gettypeid_func="CFPlugInInstanceGetTypeID"/>
+  <cftype name="CFPlugInRef" gettypeid_func="CFPlugInGetTypeID"/>
+  <cftype name="CFReadStreamRef" gettypeid_func="CFReadStreamGetTypeID"/>
+  <cftype name="CFRunLoopObserverRef" gettypeid_func="CFRunLoopObserverGetTypeID"/>
+  <cftype name="CFRunLoopRef" gettypeid_func="CFRunLoopGetTypeID"/>
+  <cftype name="CFRunLoopSourceRef" gettypeid_func="CFRunLoopSourceGetTypeID"/>
+  <cftype name="CFRunLoopTimerRef" gettypeid_func="CFRunLoopTimerGetTypeID"/>
+  <cftype name="CFSetRef" gettypeid_func="CFSetGetTypeID"/>
+  <cftype name="CFSocketRef" gettypeid_func="CFSocketGetTypeID"/>
+  <cftype name="CFStringRef" gettypeid_func="CFStringGetTypeID"/>
+  <cftype name="CFTimeZoneRef" gettypeid_func="CFTimeZoneGetTypeID"/>
+  <cftype name="CFTreeRef" gettypeid_func="CFTreeGetTypeID"/>
+  <cftype name="CFURLRef" gettypeid_func="CFURLGetTypeID"/>
+  <cftype name="CFUUIDRef" gettypeid_func="CFUUIDGetTypeID"/>
+  <cftype name="CFUserNotificationRef" gettypeid_func="CFUserNotificationGetTypeID"/>
+  <cftype name="CFWriteStreamRef" gettypeid_func="CFWriteStreamGetTypeID"/>
+  <cftype name="CFXMLNodeRef" gettypeid_func="CFXMLNodeGetTypeID"/>
+  <cftype name="CFXMLParserRef" gettypeid_func="CFXMLParserGetTypeID"/>
+  <struct name="CFAllocatorContext"/>
+  <struct name="CFArrayCallBacks"/>
+  <struct name="CFBagCallBacks"/>
+  <struct name="CFBinaryHeapCallBacks"/>
+  <struct name="CFBinaryHeapCompareContext"/>
+  <struct name="CFDictionaryKeyCallBacks"/>
+  <struct name="CFDictionaryValueCallBacks"/>
+  <struct name="CFGregorianDate"/>
+  <struct name="CFGregorianUnits"/>
+  <struct name="CFMachPortContext"/>
+  <struct name="CFMessagePortContext"/>
+  <struct name="CFRange"/>
+  <struct name="CFRunLoopObserverContext"/>
+  <struct name="CFRunLoopSourceContext"/>
+  <struct name="CFRunLoopTimerContext"/>
+  <struct name="CFSetCallBacks"/>
+  <struct name="CFSocketContext"/>
+  <struct name="CFSocketSignature"/>
+  <struct name="CFStreamClientContext"/>
+  <struct name="CFStreamError"/>
+  <struct name="CFStringInlineBuffer"/>
+  <struct name="CFSwappedFloat32"/>
+  <struct name="CFSwappedFloat64"/>
+  <struct name="CFTreeContext"/>
+  <struct name="CFUUIDBytes"/>
+  <struct name="CFXMLAttributeDeclarationInfo"/>
+  <struct name="CFXMLAttributeListDeclarationInfo"/>
+  <struct name="CFXMLDocumentInfo"/>
+  <struct name="CFXMLDocumentTypeInfo"/>
+  <struct name="CFXMLElementInfo"/>
+  <struct name="CFXMLElementTypeDeclarationInfo"/>
+  <struct name="CFXMLEntityInfo"/>
+  <struct name="CFXMLEntityReferenceInfo"/>
+  <struct name="CFXMLExternalID"/>
+  <struct name="CFXMLNotationInfo"/>
+  <struct name="CFXMLParserCallBacks"/>
+  <struct name="CFXMLParserContext"/>
+  <struct name="CFXMLProcessingInstructionInfo"/>
+  <constant magic_cookie="true" name="kCFAllocatorUseContext" type="^{__CFAllocator=}"/>
+  <function name="CFAllocatorCreate">
+    <arg index="1" type_modifier="n"/>
+  </function>
+  <function name="CFAllocatorDeallocate">
+    <arg index="1" type_modifier="n"/>
+  </function>
+  <function name="CFAllocatorGetContext">
+    <arg index="1" type_modifier="o"/>
+  </function>
+  <function name="CFAllocatorReallocate">
+    <arg index="1" type_modifier="n"/>
+  </function>
+  <function name="CFArrayAppendValue">
+    <arg index="1" type_modifier="n"/>
+  </function>
+  <function name="CFArrayApplyFunction">
+    <arg index="2" type_modifier="n"/>
+    <arg index="3" type_modifier="n"/>
+  </function>
+  <function name="CFArrayBSearchValues">
+    <arg index="2" type_modifier="n"/>
+    <arg index="3" type_modifier="n"/>
+    <arg index="4" type_modifier="n"/>
+  </function>
+  <function name="CFArrayContainsValue">
+    <arg index="2" type_modifier="n"/>
+  </function>
+  <function name="CFArrayCreate">
+    <arg c_array_of_fixed_length="2" index="1" type_modifier="n"/>
+    <arg index="3" type_modifier="n"/>
+  </function>
+  <function name="CFArrayCreateMutable">
+    <arg index="2" type_modifier="n"/>
+  </function>
+  <function name="CFArrayGetCountOfValue">
+    <arg index="2" type_modifier="n"/>
+  </function>
+  <function name="CFArrayGetFirstIndexOfValue">
+    <arg index="2" type_modifier="n"/>
+  </function>
+  <function name="CFArrayGetLastIndexOfValue">
+    <arg index="2" type_modifier="n"/>
+  </function>
+  <function name="CFArrayInsertValueAtIndex">
+    <arg index="2" type_modifier="n"/>
+  </function>
+  <function name="CFArraySetValueAtIndex">
+    <arg index="2" type_modifier="n"/>
+  </function>
+  <function name="CFArraySortValues">
+    <arg index="2" type_modifier="n"/>
+    <arg index="3" type_modifier="n"/>
+  </function>
+  <function name="CFAttributedStringGetAttribute">
+    <arg index="3" type_modifier="o"/>
+  </function>
+  <function name="CFAttributedStringGetAttributeAndLongestEffectiveRange">
+    <arg index="4" type_modifier="o"/>
+  </function>
+  <function name="CFAttributedStringGetAttributes">
+    <arg index="2" type_modifier="o"/>
+  </function>
+  <function name="CFAttributedStringGetAttributesAndLongestEffectiveRange">
+    <arg index="3" type_modifier="o"/>
+  </function>
+  <function name="CFBagAddValue">
+    <arg index="1" type_modifier="n"/>
+  </function>
+  <function name="CFBagApplyFunction">
+    <arg index="1" type_modifier="n"/>
+    <arg index="2" type_modifier="n"/>
+  </function>
+  <function name="CFBagContainsValue">
+    <arg index="1" type_modifier="n"/>
+  </function>
+  <function name="CFBagCreate">
+    <arg c_array_of_fixed_length="2" index="1" type_modifier="n"/>
+    <arg index="3" type_modifier="n"/>
+  </function>
+  <function name="CFBagCreateMutable">
+    <arg index="2" type_modifier="n"/>
+  </function>
+  <function name="CFBagGetCountOfValue">
+    <arg index="1" type_modifier="n"/>
+  </function>
+  <function name="CFBagGetValue">
+    <arg index="1" type_modifier="n"/>
+  </function>
+  <function name="CFBagGetValueIfPresent">
+    <arg index="1" type_modifier="n"/>
+    <arg index="2" type_modifier="o"/>
+  </function>
+  <function name="CFBagRemoveValue">
+    <arg index="1" type_modifier="n"/>
+  </function>
+  <function name="CFBagReplaceValue">
+    <arg index="1" type_modifier="n"/>
+  </function>
+  <function name="CFBagSetValue">
+    <arg index="1" type_modifier="n"/>
+  </function>
+  <function name="CFBinaryHeapAddValue">
+    <arg index="1" type_modifier="n"/>
+  </function>
+  <function name="CFBinaryHeapApplyFunction">
+    <arg index="1" type_modifier="n"/>
+    <arg index="2" type_modifier="n"/>
+  </function>
+  <function name="CFBinaryHeapContainsValue">
+    <arg index="1" type_modifier="n"/>
+  </function>
+  <function name="CFBinaryHeapCreate">
+    <arg index="2" type_modifier="n"/>
+    <arg index="3" type_modifier="n"/>
+  </function>
+  <function name="CFBinaryHeapGetCountOfValue">
+    <arg index="1" type_modifier="n"/>
+  </function>
+  <function name="CFBitVectorCreate">
+    <arg c_array_of_fixed_length="2" index="1" type_modifier="n"/>
+  </function>
+  <function name="CFBitVectorGetBits">
+    <arg index="2" c_array_of_variable_length="true" type_modifier="o"/>
+  </function>
+  <function name="CFBundleGetPackageInfo">
+    <arg index="1" type_modifier="o"/>
+    <arg index="2" type_modifier="o"/>
+  </function>
+  <function name="CFBundleGetPackageInfoInDirectory">
+    <arg index="1" type_modifier="o"/>
+    <arg index="2" type_modifier="o"/>
+  </function>
+  <function name="CFBundleOpenBundleResourceFiles">
+    <arg index="1" type_modifier="o"/>
+    <arg index="2" type_modifier="o"/>
+  </function>
+  <function name="CFCalendarAddComponents">
+    <arg index="1" type_modifier="N"/>
+  </function>
+  <function name="CFCalendarComposeAbsoluteTime">
+    <arg index="1" type_modifier="o"/>
+  </function>
+  <function name="CFCalendarDecomposeAbsoluteTime" ignore="true"/>
+  <function name="CFCalendarGetComponentDifference" ignore="true"/>
+  <function name="CFDataAppendBytes">
+    <arg c_array_length_in_arg="2" index="1" type_modifier="n"/>
+  </function>
+  <function name="CFDataCreate">
+    <arg c_array_length_in_arg="2" index="1" type_modifier="n"/>
+  </function>
+  <function name="CFDataCreateWithBytesNoCopy">
+    <arg c_array_length_in_arg="2" index="1" type_modifier="n"/>
+  </function>
+  <function name="CFDataGetBytes">
+    <arg index="2" c_array_of_variable_length="true" type_modifier="o"/>
+  </function>
+  <function name="CFDataReplaceBytes">
+    <arg c_array_length_in_arg="3" index="2" type_modifier="n"/>
+  </function>
+  <function name="CFDateCompare">
+    <arg index="2" type_modifier="n"/>
+  </function>
+  <function name="CFDateFormatterCreateDateFromString">
+    <arg index="3" type_modifier="o"/>
+  </function>
+  <function name="CFDateFormatterGetAbsoluteTimeFromString">
+    <arg index="2" type_modifier="o"/>
+    <arg index="3" type_modifier="o"/>
+  </function>
+  <function name="CFDictionaryAddValue">
+    <arg index="1" type_modifier="n"/>
+    <arg index="2" type_modifier="n"/>
+  </function>
+  <function name="CFDictionaryApplyFunction">
+    <arg index="1" type_modifier="n"/>
+    <arg index="2" type_modifier="n"/>
+  </function>
+  <function name="CFDictionaryContainsKey">
+    <arg index="1" type_modifier="n"/>
+  </function>
+  <function name="CFDictionaryContainsValue">
+    <arg index="1" type_modifier="n"/>
+  </function>
+  <function name="CFDictionaryCreate">
+    <arg c_array_length_in_arg="3" index="1" type_modifier="n"/>
+    <arg c_array_length_in_arg="3" index="2" type_modifier="n"/>
+    <arg index="4" type_modifier="n"/>
+    <arg index="5" type_modifier="n"/>
+  </function>
+  <function name="CFDictionaryCreateMutable">
+    <arg index="2" type_modifier="n"/>
+    <arg index="3" type_modifier="n"/>
+  </function>
+  <function name="CFDictionaryGetCountOfKey">
+    <arg index="1" type_modifier="n"/>
+  </function>
+  <function name="CFDictionaryGetCountOfValue">
+    <arg index="1" type_modifier="n"/>
+  </function>
+  <function name="CFDictionaryGetValue">
+    <arg index="1" type_modifier="n"/>
+  </function>
+  <function name="CFDictionaryGetValueIfPresent">
+    <arg index="1" type_modifier="n"/>
+    <arg index="2" type_modifier="o"/>
+  </function>
+  <function name="CFDictionaryRemoveValue">
+    <arg index="1" type_modifier="n"/>
+  </function>
+  <function name="CFDictionaryReplaceValue">
+    <arg index="1" type_modifier="n"/>
+    <arg index="2" type_modifier="n"/>
+  </function>
+  <function name="CFDictionarySetValue">
+    <arg index="1" type_modifier="n"/>
+    <arg index="2" type_modifier="n"/>
+  </function>
+  <function name="CFMachPortCreate">
+    <arg index="1" type_modifier="n"/>
+    <arg index="2" type_modifier="n"/>
+    <arg index="3" type_modifier="o"/>
+  </function>
+  <function name="CFMachPortCreateWithPort">
+    <arg index="2" type_modifier="n"/>
+    <arg index="3" type_modifier="n"/>
+    <arg index="4" type_modifier="o"/>
+  </function>
+  <function name="CFMachPortGetContext">
+    <arg index="1" type_modifier="o"/>
+  </function>
+  <function name="CFMessagePortCreateLocal">
+    <arg index="2" type_modifier="n"/>
+    <arg index="3" type_modifier="n"/>
+    <arg index="4" type_modifier="o"/>
+  </function>
+  <function name="CFMessagePortGetContext">
+    <arg index="1" type_modifier="o"/>
+  </function>
+  <function name="CFMessagePortSendRequest">
+    <arg index="6" type_modifier="o"/>
+  </function>
+  <function name="CFNotificationCenterAddObserver">
+    <arg index="1" type_modifier="n"/>
+    <arg index="2" type_modifier="n"/>
+    <arg index="4" type_modifier="n"/>
+  </function>
+  <function name="CFNotificationCenterPostNotification">
+    <arg index="2" type_modifier="n"/>
+  </function>
+  <function name="CFNotificationCenterPostNotificationWithOptions">
+    <arg index="2" type_modifier="n"/>
+  </function>
+  <function name="CFNotificationCenterRemoveEveryObserver">
+    <arg index="1" type_modifier="n"/>
+  </function>
+  <function name="CFNotificationCenterRemoveObserver">
+    <arg index="1" type_modifier="n"/>
+    <arg index="3" type_modifier="n"/>
+  </function>
+  <function name="CFNumberCompare">
+    <arg index="2" type_modifier="n"/>
+  </function>
+  <function name="CFNumberCreate">
+    <arg index="2" type_modifier="n"/>
+  </function>
+  <function name="CFNumberFormatterCreateNumberFromString">
+    <arg index="3" type_modifier="o"/>
+  </function>
+  <function name="CFNumberFormatterCreateStringWithValue">
+    <arg index="3" type_modifier="o"/>
+  </function>
+  <function name="CFNumberFormatterGetDecimalInfoForCurrencyCode">
+    <arg index="1" type_modifier="o"/>
+    <arg index="2" type_modifier="o"/>
+  </function>
+  <function name="CFNumberFormatterGetValueFromString">
+    <arg index="2" type_modifier="o"/>
+    <arg index="4" type_modifier="o"/>
+  </function>
+  <function name="CFNumberGetValue">
+    <arg index="2" type_modifier="o"/>
+  </function>
+  <function name="CFPreferencesGetAppBooleanValue">
+    <arg index="2" type_modifier="o"/>
+  </function>
+  <function name="CFPreferencesGetAppIntegerValue">
+    <arg index="2" type_modifier="o"/>
+  </function>
+  <function name="CFPropertyListCreateFromStream">
+    <arg index="4" type_modifier="o"/>
+    <arg index="5" type_modifier="o"/>
+  </function>
+  <function name="CFPropertyListCreateFromXMLData">
+    <arg index="3" type_modifier="o"/>
+  </function>
+  <function name="CFPropertyListWriteToStream">
+    <arg index="3" type_modifier="o"/>
+  </function>
+  <function name="CFReadStreamCreateWithBytesNoCopy">
+    <arg c_array_length_in_arg="2" index="1" type_modifier="n"/>
+  </function>
+  <function name="CFReadStreamGetBuffer">
+    <arg index="2" type_modifier="o"/>
+    <retval c_array_length_in_arg="1"/>
+  </function>
+  <function name="CFReadStreamRead">
+    <arg c_array_length_in_arg="2" index="1" type_modifier="o"/>
+  </function>
+  <function name="CFReadStreamSetClient">
+    <arg index="2" type_modifier="n"/>
+    <arg index="3" type_modifier="n"/>
+  </function>
+  <function name="CFRunLoopObserverCreate">
+    <arg index="4" type_modifier="n"/>
+    <arg index="5" type_modifier="n"/>
+  </function>
+  <function name="CFRunLoopObserverGetContext">
+    <arg index="1" type_modifier="o"/>
+  </function>
+  <function name="CFRunLoopSourceCreate">
+    <arg index="2" type_modifier="n"/>
+  </function>
+  <function name="CFRunLoopSourceGetContext">
+    <arg index="1" type_modifier="o"/>
+  </function>
+  <function name="CFRunLoopTimerCreate">
+    <arg index="5" type_modifier="n"/>
+    <arg index="6" type_modifier="n"/>
+  </function>
+  <function name="CFRunLoopTimerGetContext">
+    <arg index="1" type_modifier="o"/>
+  </function>
+  <function name="CFSetAddValue">
+    <arg index="1" type_modifier="n"/>
+  </function>
+  <function name="CFSetApplyFunction">
+    <arg index="1" type_modifier="n"/>
+    <arg index="2" type_modifier="n"/>
+  </function>
+  <function name="CFSetContainsValue">
+    <arg index="1" type_modifier="n"/>
+  </function>
+  <function name="CFSetCreate">
+    <arg c_array_length_in_arg="2" index="1" type_modifier="n"/>
+    <arg index="3" type_modifier="n"/>
+  </function>
+  <function name="CFSetCreateMutable">
+    <arg index="2" type_modifier="n"/>
+  </function>
+  <function name="CFSetGetCountOfValue">
+    <arg index="1" type_modifier="n"/>
+  </function>
+  <function name="CFSetGetValue">
+    <arg index="1" type_modifier="n"/>
+  </function>
+  <function name="CFSetGetValueIfPresent">
+    <arg index="1" type_modifier="n"/>
+    <arg index="2" type_modifier="o"/>
+  </function>
+  <function name="CFSetRemoveValue">
+    <arg index="1" type_modifier="n"/>
+  </function>
+  <function name="CFSetReplaceValue">
+    <arg index="1" type_modifier="n"/>
+  </function>
+  <function name="CFSetSetValue">
+    <arg index="1" type_modifier="n"/>
+  </function>
+  <function name="CFSocketCopyRegisteredSocketSignature">
+    <arg index="0" type_modifier="n"/>
+    <arg index="3" type_modifier="o"/>
+    <arg index="4" type_modifier="o"/>
+  </function>
+  <function name="CFSocketCopyRegisteredValue">
+    <arg index="0" type_modifier="n"/>
+    <arg index="3" type_modifier="o"/>
+    <arg index="4" type_modifier="o"/>
+  </function>
+  <function name="CFSocketCreate">
+    <arg index="5" type_modifier="n"/>
+    <arg index="6" type_modifier="n"/>
+  </function>
+  <function name="CFSocketCreateConnectedToSocketSignature">
+    <arg index="1" type_modifier="n"/>
+    <arg index="3" type_modifier="n"/>
+    <arg index="4" type_modifier="n"/>
+  </function>
+  <function name="CFSocketCreateWithNative">
+    <arg index="3" type_modifier="n"/>
+    <arg index="4" type_modifier="n"/>
+  </function>
+  <function name="CFSocketCreateWithSocketSignature">
+    <arg index="1" type_modifier="n"/>
+    <arg index="3" type_modifier="n"/>
+    <arg index="4" type_modifier="n"/>
+  </function>
+  <function name="CFSocketGetContext">
+    <arg index="1" type_modifier="o"/>
+  </function>
+  <function name="CFSocketRegisterSocketSignature">
+    <arg index="0" type_modifier="n"/>
+    <arg index="3" type_modifier="n"/>
+  </function>
+  <function name="CFSocketRegisterValue">
+    <arg index="0" type_modifier="n"/>
+  </function>
+  <function name="CFSocketUnregister">
+    <arg index="0" type_modifier="n"/>
+  </function>
+  <function name="CFStreamCreatePairWithPeerSocketSignature">
+    <arg index="1" type_modifier="n"/>
+    <arg index="2" type_modifier="o"/>
+    <arg index="3" type_modifier="o"/>
+  </function>
+  <function name="CFStreamCreatePairWithSocket">
+    <arg index="2" type_modifier="o"/>
+    <arg index="3" type_modifier="o"/>
+  </function>
+  <function name="CFStreamCreatePairWithSocketToHost">
+    <arg index="3" type_modifier="o"/>
+    <arg index="4" type_modifier="o"/>
+  </function>
+  <function name="CFStringAppendCharacters">
+    <arg c_array_length_in_arg="2" index="1" type_modifier="n"/>
+  </function>
+  <function name="CFStringAppendFormat">
+    <arg printf_format="true" index="2"/>
+  </function>
+  <function name="CFStringCreateMutableWithExternalCharactersNoCopy">
+    <arg c_array_length_in_arg="2" index="1" type_modifier="n"/>
+  </function>
+  <function name="CFStringCreateWithBytes">
+    <arg c_array_length_in_arg="2" index="1" type_modifier="n"/>
+  </function>
+  <function name="CFStringCreateWithCharacters">
+    <arg c_array_length_in_arg="2" index="1" type_modifier="n"/>
+  </function>
+  <function name="CFStringCreateWithCharactersNoCopy">
+    <arg c_array_length_in_arg="2" index="1" type_modifier="n"/>
+  </function>
+  <function name="CFStringCreateWithFormat">
+    <arg printf_format="true" index="2"/>
+  </function>
+  <function name="CFStringFindCharacterFromSet">
+    <arg index="4" type_modifier="o"/>
+  </function>
+  <function name="CFStringFindWithOptions">
+    <arg index="4" type_modifier="o"/>
+  </function>
+  <function name="CFStringGetBytes">
+    <arg c_array_length_in_arg="6" index="5" type_modifier="o"/>
+    <arg index="7" type_modifier="o"/>
+  </function>
+  <function name="CFStringGetCString">
+    <arg c_array_length_in_arg="2" index="1" type_modifier="o"/>
+  </function>
+  <function name="CFStringGetCharacterFromInlineBuffer">
+    <arg index="0" type_modifier="n"/>
+  </function>
+  <function name="CFStringGetCharacters">
+    <arg index="2" c_array_of_variable_length="true" type_modifier="o"/>
+  </function>
+  <function name="CFStringGetFileSystemRepresentation">
+    <arg c_array_length_in_arg="2" index="1" type_modifier="o"/>
+  </function>
+  <function name="CFStringGetLineBounds">
+    <arg index="2" type_modifier="o"/>
+    <arg index="3" type_modifier="o"/>
+    <arg index="4" type_modifier="o"/>
+  </function>
+  <function name="CFStringInitInlineBuffer">
+    <arg index="1" type_modifier="n"/>
+  </function>
+  <function name="CFStringSetExternalCharactersNoCopy">
+    <arg c_array_length_in_arg="2" index="1" type_modifier="n"/>
+  </function>
+  <function name="CFStringTransform">
+    <arg index="1" type_modifier="o"/>
+  </function>
+  <function name="CFTreeApplyFunctionToChildren">
+    <arg index="1" type_modifier="n"/>
+    <arg index="2" type_modifier="n"/>
+  </function>
+  <function name="CFTreeCreate">
+    <arg index="1" type_modifier="n"/>
+  </function>
+  <function name="CFTreeGetChildren">
+    <arg index="1" c_array_of_variable_length="true" type_modifier="o"/>
+  </function>
+  <function name="CFTreeGetContext">
+    <arg index="1" type_modifier="o"/>
+  </function>
+  <function name="CFTreeSetContext">
+    <arg index="1" type_modifier="n"/>
+  </function>
+  <function name="CFTreeSortChildren">
+    <arg index="1" type_modifier="n"/>
+    <arg index="2" type_modifier="n"/>
+  </function>
+  <function name="CFURLCopyStrictPath">
+    <arg index="1" type_modifier="o"/>
+  </function>
+  <function name="CFURLCreateAbsoluteURLWithBytes">
+    <arg c_array_length_in_arg="2" index="1" type_modifier="n"/>
+  </function>
+  <function name="CFURLCreateDataAndPropertiesFromResource">
+    <arg index="2" type_modifier="o"/>
+    <arg index="3" type_modifier="o"/>
+    <arg index="5" type_modifier="o"/>
+  </function>
+  <function name="CFURLCreateFromFSRef">
+    <arg index="1" type_modifier="n"/>
+  </function>
+  <function name="CFURLCreateFromFileSystemRepresentation">
+    <arg c_array_length_in_arg="2" index="1" type_modifier="n"/>
+  </function>
+  <function name="CFURLCreateFromFileSystemRepresentationRelativeToBase">
+    <arg c_array_length_in_arg="2" index="1" type_modifier="n"/>
+  </function>
+  <function name="CFURLCreatePropertyFromResource">
+    <arg index="3" type_modifier="o"/>
+  </function>
+  <function name="CFURLCreateWithBytes">
+    <arg c_array_length_in_arg="2" index="1" type_modifier="n"/>
+  </function>
+  <function name="CFURLDestroyResource">
+    <arg index="1" type_modifier="o"/>
+  </function>
+  <function name="CFURLGetByteRangeForComponent">
+    <arg index="2" type_modifier="o"/>
+  </function>
+  <function name="CFURLGetBytes">
+    <arg c_array_length_in_arg="2" index="1" type_modifier="o"/>
+  </function>
+  <function name="CFURLGetFSRef">
+    <arg index="1" type_modifier="o"/>
+  </function>
+  <function name="CFURLGetFileSystemRepresentation">
+    <arg c_array_length_in_arg="3" index="2" type_modifier="o"/>
+  </function>
+  <function name="CFURLWriteDataAndPropertiesToResource">
+    <arg index="3" type_modifier="o"/>
+  </function>
+  <function name="CFUserNotificationCreate">
+    <arg index="3" type_modifier="o"/>
+  </function>
+  <function name="CFUserNotificationDisplayAlert">
+    <arg index="10" type_modifier="o"/>
+  </function>
+  <function name="CFUserNotificationReceiveResponse">
+    <arg index="2" type_modifier="o"/>
+  </function>
+  <function name="CFWriteStreamCreateWithBuffer">
+    <arg c_array_length_in_arg="2" index="1" type_modifier="n"/>
+  </function>
+  <function name="CFWriteStreamSetClient">
+    <arg index="2" type_modifier="n"/>
+    <arg index="3" type_modifier="n"/>
+  </function>
+  <function name="CFWriteStreamWrite">
+    <arg c_array_length_in_arg="2" index="1" type_modifier="n"/>
+  </function>
+  <function name="CFXMLNodeCreate">
+    <arg index="3" type_modifier="n"/>
+  </function>
+  <function name="CFXMLParserCreate">
+    <arg index="5" type_modifier="n"/>
+    <arg index="6" type_modifier="n"/>
+  </function>
+  <function name="CFXMLParserCreateWithDataFromURL">
+    <arg index="4" type_modifier="n"/>
+    <arg index="5" type_modifier="n"/>
+  </function>
+  <function name="CFXMLParserGetCallBacks">
+    <arg index="1" type_modifier="o"/>
+  </function>
+  <function name="CFXMLParserGetContext">
+    <arg index="1" type_modifier="o"/>
+  </function>
+  <function name="CFXMLTreeCreateFromDataWithError">
+    <arg index="5" type_modifier="o"/>
+  </function>
+  <function name="CFArrayGetValues">
+    <arg index="2" type_modifier="o" c_array_of_variable_length='true'/>
+  </function>
+  <function name="CFArrayReplaceValues">
+    <arg index="2" type_modifier="n" c_array_length_in_arg='3'/>
+  </function>
+  <function name="CFBagGetValues">
+    <arg index="1" type_modifier="o" c_array_of_variable_length='true'/>
+  </function>
+  <function name="CFBinaryHeapGetMinimumIfPresent">
+    <arg index="1" type_modifier="o"/>
+  </function>
+  <function name="CFBinaryHeapGetValues">
+    <arg index="1" type_modifier="o" c_array_of_variable_length='true'/>
+  </function>
+  <function name="CFBundleGetDataPointersForNames">
+    <arg index="2" type_modifier="o" c_array_of_variable_length='true'/>
+  </function>
+  <function name="CFBundleGetFunctionPointersForNames">
+    <arg index="2" type_modifier="o" c_array_of_variable_length='true'/>
+  </function>
+  <function name="CFDictionaryGetKeysAndValues">
+    <arg index="1" type_modifier="o" c_array_of_variable_length='true'/>
+    <arg index="2" type_modifier="o" c_array_of_variable_length='true'/>
+  </function>
+  <function name="CFMachPortSetInvalidationCallBack">
+    <arg index="1" type_modifier="n"/>
+  </function>
+  <function name="CFMessagePortSetInvalidationCallBack">
+    <arg index="1" type_modifier="n"/>
+  </function>
+  <function name="CFPlugInInstanceCreateWithInstanceDataSize">
+    <arg index="2" type_modifier="n"/>
+    <arg index="4" type_modifier="n"/>
+  </function>
+  <function name="CFPlugInInstanceGetInterfaceFunctionTable">
+    <arg index="2" type_modifier="o"/>
+  </function>
+  <function name="CFPlugInRegisterFactoryFunction">
+    <arg index="1" type_modifier="n"/>
+  </function>
+  <function name="CFSetGetValues">
+    <arg index="1" type_modifier="o" c_array_of_variable_length='true'/>
+  </function>
+  <function name="CFUserNotificationCreateRunLoopSource">
+    <arg index="2" type_modifier="n"/>
+  </function>
+</signatures>

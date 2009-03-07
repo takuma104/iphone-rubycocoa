@@ -1,0 +1,112 @@
+<!-- Entities. -->
+<!ENTITY % boolean "(true|false)">
+<!ENTITY % type_modifier "(n|o|N)">
+
+<!-- Root element. -->
+<!ELEMENT signatures (depends_on|struct|cftype|opaque|constant|string_constant|enum|function|function_alias|informal_protocol|class)*>
+<!ATTLIST signatures version CDATA "0.9">
+
+<!-- Dependencies. -->
+<!ELEMENT depends_on EMPTY>
+<!ATTLIST depends_on path CDATA #REQUIRED>
+
+<!-- Structures. -->
+<!ELEMENT struct EMPTY>
+<!ATTLIST struct name CDATA #REQUIRED>
+<!ATTLIST struct type CDATA #REQUIRED>
+<!ATTLIST struct type64 CDATA #IMPLIED>
+<!ATTLIST struct opaque %boolean; #IMPLIED>
+
+<!-- Opaques. -->
+<!ELEMENT opaque EMPTY>
+<!ATTLIST opaque name CDATA #REQUIRED>
+<!ATTLIST opaque type CDATA #REQUIRED>
+<!ATTLIST opaque type64 CDATA #IMPLIED>
+
+<!-- CFTypes. -->
+<!ELEMENT cftype EMPTY>
+<!ATTLIST cftype name CDATA #REQUIRED>
+<!ATTLIST cftype type CDATA #REQUIRED>
+<!ATTLIST cftype type64 CDATA #IMPLIED>
+<!ATTLIST cftype gettypeid_func CDATA #IMPLIED>
+<!ATTLIST cftype tollfree CDATA #IMPLIED>
+
+<!-- Constants. -->
+<!ELEMENT constant EMPTY>
+<!ATTLIST constant name CDATA #REQUIRED>
+<!ATTLIST constant type CDATA #REQUIRED>
+<!ATTLIST constant type64 CDATA #IMPLIED>
+<!ATTLIST constant magic_cookie %boolean; #IMPLIED>
+
+<!-- String constants. -->
+<!ELEMENT string_constant EMPTY>
+<!ATTLIST string_constant name CDATA #REQUIRED>
+<!ATTLIST string_constant value CDATA #REQUIRED>
+<!ATTLIST string_constant nsstring %boolean; #IMPLIED>
+
+<!-- Enums. -->
+<!ELEMENT enum EMPTY>
+<!ATTLIST enum name CDATA #REQUIRED>
+<!ATTLIST enum value CDATA #IMPLIED>
+<!ATTLIST enum value64 CDATA #IMPLIED>
+<!ATTLIST enum le_value CDATA #IMPLIED>
+<!ATTLIST enum be_value CDATA #IMPLIED>
+<!ATTLIST enum ignore %boolean; #IMPLIED>
+<!ATTLIST enum suggestion CDATA #IMPLIED>
+
+<!-- Arguments. -->
+<!ELEMENT arg (arg*,retval?)>
+<!ATTLIST arg index CDATA #IMPLIED>
+<!ATTLIST arg type_modifier %type_modifier; #IMPLIED>
+<!ATTLIST arg c_array_length_in_arg CDATA #IMPLIED>
+<!ATTLIST arg c_array_length_in_retval CDATA #IMPLIED>
+<!ATTLIST arg c_array_of_fixed_length CDATA #IMPLIED>
+<!ATTLIST arg c_array_delimited_by_null %boolean; #IMPLIED>
+<!ATTLIST arg c_array_of_variable_length %boolean; #IMPLIED>
+<!ATTLIST arg null_accepted %boolean; #IMPLIED>
+<!ATTLIST arg type CDATA #IMPLIED>
+<!ATTLIST arg type64 CDATA #IMPLIED>
+<!ATTLIST arg function_pointer %boolean; #IMPLIED>
+<!ATTLIST arg printf_format %boolean; #IMPLIED>
+<!ATTLIST arg sel_of_type CDATA #IMPLIED>
+<!ATTLIST arg sel_of_type64 CDATA #IMPLIED>
+
+<!-- Return values. -->
+<!ELEMENT retval (arg*, retval?)>
+<!ATTLIST retval c_array_length_in_arg CDATA #IMPLIED>
+<!ATTLIST retval c_array_of_fixed_length CDATA #IMPLIED>
+<!ATTLIST retval c_array_delimited_by_null %boolean; #IMPLIED>
+<!ATTLIST retval c_array_of_variable_length %boolean; #IMPLIED>
+<!ATTLIST retval already_retained CDATA #IMPLIED>
+<!ATTLIST retval type CDATA #IMPLIED>
+<!ATTLIST retval type64 CDATA #IMPLIED>
+<!ATTLIST retval function_pointer %boolean; #IMPLIED>
+
+<!-- Functions. -->
+<!ELEMENT function (arg*,retval?)>
+<!ATTLIST function name CDATA #REQUIRED>
+<!ATTLIST function variadic %boolean; #IMPLIED>
+<!ATTLIST function inline %boolean; #IMPLIED>
+
+<!-- Function aliases. -->
+<!ELEMENT function_alias EMPTY>
+<!ATTLIST function_alias name CDATA #REQUIRED>
+<!ATTLIST function_alias original CDATA #REQUIRED>
+
+<!-- Informal protocols. -->
+<!ELEMENT informal_protocol (method*)>
+<!ATTLIST informal_protocol name CDATA #REQUIRED>
+
+<!-- Classes. -->
+<!ELEMENT class (method*)>
+<!ATTLIST class name CDATA #REQUIRED>
+
+<!-- Methods. -->
+<!ELEMENT method (arg*,retval?)>
+<!ATTLIST method selector CDATA #REQUIRED>
+<!ATTLIST method type CDATA #IMPLIED>
+<!ATTLIST method type64 CDATA #IMPLIED>
+<!ATTLIST method class_method %boolean; #IMPLIED>
+<!ATTLIST method ignore %boolean; #IMPLIED>
+<!ATTLIST method suggestion CDATA #IMPLIED>
+<!ATTLIST method variadic %boolean; #IMPLIED>

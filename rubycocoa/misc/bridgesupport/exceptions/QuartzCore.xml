@@ -1,0 +1,134 @@
+<?xml version="1.0"?>
+<!DOCTYPE signatures SYSTEM "file://localhost/System/Library/DTDs/BridgeSupport.dtd">
+<signatures version="0.9">
+  <ignored_headers>
+    <header>LKObsolete.h</header>
+  </ignored_headers>
+  <cftype name="CVBufferRef"/>
+  <cftype name="CVDisplayLinkRef" gettypeid_func="CVDisplayLinkGetTypeID"/>
+  <cftype name="CVOpenGLBufferPoolRef" gettypeid_func="CVOpenGLBufferPoolGetTypeID"/>
+  <cftype name="CVOpenGLTextureCacheRef" gettypeid_func="CVOpenGLTextureCacheGetTypeID"/>
+  <cftype name="CVPixelBufferPoolRef" gettypeid_func="CVPixelBufferPoolGetTypeID"/>
+  <struct name="CVFillExtendedPixelsCallBackData"/>
+  <struct name="CVSMPTETime"/>
+  <struct name="CVTime"/>
+  <struct name="CVTimeStamp"/>
+  <function name="CVBufferGetAttachment">
+    <arg index="2" type_modifier="o"/>
+  </function>
+  <function name="CVDisplayLinkCreateWithActiveCGDisplays">
+    <arg index="0" type_modifier="o"/>
+  </function>
+  <function name="CVDisplayLinkCreateWithCGDisplay">
+    <arg index="1" type_modifier="o"/>
+  </function>
+  <function name="CVDisplayLinkCreateWithCGDisplays">
+    <arg c_array_length_in_arg="1" index="0" type_modifier="n"/>
+    <arg index="2" type_modifier="o"/>
+  </function>
+  <function name="CVDisplayLinkCreateWithOpenGLDisplayMask">
+    <arg index="1" type_modifier="o"/>
+  </function>
+  <function name="CVDisplayLinkGetCurrentTime">
+    <arg index="1" type_modifier="o"/>
+  </function>
+  <function name="CVDisplayLinkSetOutputCallback">
+    <arg index="1" type_modifier="n"/>
+    <arg index="2" type_modifier="n"/>
+  </function>
+  <function name="CVDisplayLinkTranslateTime">
+    <arg index="1" type_modifier="n"/>
+    <arg index="2" type_modifier="o"/>
+  </function>
+  <function name="CVOpenGLBufferCreate">
+    <arg index="4" type_modifier="o"/>
+  </function>
+  <function name="CVOpenGLBufferPoolCreate">
+    <arg index="3" type_modifier="o"/>
+  </function>
+  <function name="CVOpenGLBufferPoolCreateOpenGLBuffer">
+    <arg index="2" type_modifier="o"/>
+  </function>
+  <function name="CVOpenGLTextureCacheCreate">
+    <arg index="2" type_modifier="n"/>
+    <arg index="3" type_modifier="n"/>
+    <arg index="5" type_modifier="o"/>
+  </function>
+  <function name="CVOpenGLTextureCacheCreateTextureFromImage">
+    <arg index="2" type_modifier="n"/>
+    <arg index="3" type_modifier="n"/>
+    <arg index="4" type_modifier="o"/>
+  </function>
+  <function name="CVOpenGLTextureGetCleanTexCoords">
+    <arg c_array_of_fixed_length="2" index="1" type_modifier="o"/>
+    <arg c_array_of_fixed_length="2" index="2" type_modifier="o"/>
+    <arg c_array_of_fixed_length="2" index="3" type_modifier="o"/>
+    <arg c_array_of_fixed_length="2" index="4" type_modifier="o"/>
+  </function>
+  <function name="CVPixelBufferCreate">
+    <arg index="5" type_modifier="o"/>
+  </function>
+  <function name="CVPixelBufferCreateResolvedAttributesDictionary">
+    <arg index="2" type_modifier="o"/>
+  </function>
+  <function name="CVPixelBufferCreateWithBytes">
+    <arg index="4" type_modifier="n" c_array_of_variable_length='true'/>
+    <arg index="7" type_modifier="n"/>
+    <arg index="9" type_modifier="o"/>
+  </function>
+  <function name="CVPixelBufferCreateWithPlanarBytes">
+    <arg index="4" type_modifier="n"/>
+    <arg index="7" c_array_of_variable_length="true" type_modifier="n"/>
+    <arg index="8" c_array_of_variable_length="true" type_modifier="n"/>
+    <arg index="9" c_array_of_variable_length="true" type_modifier="n"/>
+    <arg index="10" c_array_of_variable_length="true" type_modifier="n"/>
+    <arg index="11" type_modifier="n"/>
+    <arg index="12" type_modifier="n"/>
+    <arg index="14" type_modifier="o"/>
+  </function>
+  <function name="CVPixelBufferGetExtendedPixels">
+    <arg index="1" type_modifier="o"/>
+    <arg index="2" type_modifier="o"/>
+    <arg index="3" type_modifier="o"/>
+    <arg index="4" type_modifier="o"/>
+  </function>
+  <function name="CVPixelBufferPoolCreate">
+    <arg index="3" type_modifier="o"/>
+  </function>
+  <function name="CVPixelBufferPoolCreatePixelBuffer">
+    <arg index="2" type_modifier="o"/>
+  </function>
+  <function name="CVDisplayLinkSetCurrentCGDisplayFromOpenGLContext">
+    <arg index="1" type_modifier="n"/>
+    <arg index="2" type_modifier="n"/>
+  </function>
+  <function name="CVOpenGLBufferAttach">
+    <arg index="1" type_modifier="n"/>
+  </function>
+  <class name="CIContext">
+    <method selector="render:toBitmap:rowBytes:bounds:format:colorSpace:">
+      <arg index="1" type_modifier="n"/>
+    </method>
+  </class>
+  <class name='CIKernel'>
+    <method selector='setROISelector:'>
+      <arg index='0' sel_of_type="(CGRect)regionOf:(int)samplerIndex destRect:(CGRect)r userInfo:(id)obj"/>
+    </method>
+  </class>
+  <class name="CIVector">
+    <method selector="initWithValues:count:">
+      <arg c_array_length_in_arg="1" index="0" type_modifier="n"/>
+    </method>
+    <method class_method="true" selector="vectorWithValues:count:">
+      <arg c_array_length_in_arg="1" index="0" type_modifier="n"/>
+    </method>
+  </class>
+  <class name="NSObject">
+    <method selector="load:">
+      <arg index="0" type_modifier="n"/>
+    </method>
+    <method selector="provideImageData:bytesPerRow:origin:size:userInfo:">
+      <arg index="0" type_modifier="n"/>
+    </method>
+  </class>
+</signatures>

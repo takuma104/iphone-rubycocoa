@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<!DOCTYPE signatures SYSTEM "file://localhost/System/Library/DTDs/BridgeSupport.dtd">
+<signatures version="0.9">
+  <cftype name="CGImageDestinationRef" gettypeid_func="CGImageDestinationGetTypeID"/>
+  <cftype name="CGImageSourceRef" gettypeid_func="CGImageSourceGetTypeID"/>
+</signatures>

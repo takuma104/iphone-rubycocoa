@@ -1,0 +1,20 @@
+= BridgeSupport =
+
+BridgeSupport files are XML files that describe the API symbols of frameworks 
+or libraries that cannot be introspected at runtime. These are generally ANSI C
+symbols that is, non-object-oriented items such as constants, enumerations, 
+structures, and functions but can also include some additional information 
+about Objective-C classes, methods, and informal protocols.
+
+The sources are covered under a BSD license (see the COPYRIGHT file for more
+information).
+
+= Getting Started =
+
+$ make
+$ sudo make install
+
+= Support =
+
+Please redirect any kind of feedback to Laurent Sansonetti 
+<lsansonetti@apple.com>, in the meantime a mailing list is created.

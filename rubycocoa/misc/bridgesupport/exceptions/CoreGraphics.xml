@@ -1,0 +1,485 @@
+<?xml version="1.0"?>
+<!DOCTYPE signatures SYSTEM "file://localhost/System/Library/DTDs/BridgeSupport.dtd">
+<signatures version="0.9">
+  <cftype name="CGColorRef" gettypeid_func="CGColorGetTypeID"/>
+  <cftype name="CGColorSpaceRef" gettypeid_func="CGColorSpaceGetTypeID"/>
+  <cftype name="CGContextRef" gettypeid_func="CGContextGetTypeID"/>
+  <cftype name="CGDataConsumerRef" gettypeid_func="CGDataConsumerGetTypeID"/>
+  <cftype name="CGDataProviderRef" gettypeid_func="CGDataProviderGetTypeID"/>
+  <cftype name="CGEventRef" gettypeid_func="CGEventGetTypeID"/>
+  <cftype name="CGEventSourceRef" gettypeid_func="CGEventSourceGetTypeID"/>
+  <cftype name="CGFontRef" gettypeid_func="CGFontGetTypeID"/>
+  <cftype name="CGFunctionRef" gettypeid_func="CGFunctionGetTypeID"/>
+  <cftype name="CGImageRef" gettypeid_func="CGImageGetTypeID"/>
+  <cftype name="CGLayerRef" gettypeid_func="CGLayerGetTypeID"/>
+  <cftype name="CGMutablePathRef" gettypeid_func="CGPathGetTypeID"/>
+  <cftype name="CGPDFDocumentRef" gettypeid_func="CGPDFDocumentGetTypeID"/>
+  <cftype name="CGPDFPageRef" gettypeid_func="CGPDFPageGetTypeID"/>
+  <cftype name="CGPSConverterRef" gettypeid_func="CGPSConverterGetTypeID"/>
+  <cftype name="CGPathRef" gettypeid_func="CGPathGetTypeID"/>
+  <cftype name="CGPatternRef" gettypeid_func="CGPatternGetTypeID"/>
+  <cftype name="CGShadingRef" gettypeid_func="CGShadingGetTypeID"/>
+  <struct name="CGAffineTransform"/>
+  <struct name="CGDataConsumerCallbacks"/>
+  <struct name="CGDataProviderCallbacks"/>
+  <struct name="CGDataProviderDirectAccessCallbacks"/>
+  <struct name="CGDeviceByteColor"/>
+  <struct name="CGDeviceColor"/>
+  <struct name="CGEventTapInformation"/>
+  <struct name="CGFunctionCallbacks"/>
+  <struct name="CGPSConverterCallbacks"/>
+  <struct name="CGPathElement"/>
+  <struct name="CGPatternCallbacks"/>
+  <struct name="CGPoint"/>
+  <struct name="CGRect"/>
+  <struct name="CGScreenUpdateMoveDelta"/>
+  <struct name="CGSize"/>
+  <opaque name="CGDirectPaletteRef"/>
+  <opaque name="CGDisplayConfigRef"/>
+  <opaque name="CGPDFArrayRef"/>
+  <opaque name="CGPDFContentStreamRef"/>
+  <opaque name="CGPDFDictionaryRef"/>
+  <opaque name="CGPDFObjectRef"/>
+  <opaque name="CGPDFOperatorTableRef"/>
+  <opaque name="CGPDFScannerRef"/>
+  <opaque name="CGPDFStreamRef"/>
+  <opaque name="CGPDFStringRef"/>
+  <enum name="kCGDirectMainDisplay" ignore="true" suggestion="Call CGMainDisplayID."/>
+  <function_alias name="CGAffineTransformMake" original="__CGAffineTransformMake"/>
+  <function_alias name="CGPointApplyAffineTransform" original="__CGPointApplyAffineTransform"/>
+  <function_alias name="CGSizeApplyAffineTransform" original="__CGSizeApplyAffineTransform"/>
+  <function name="CGAcquireDisplayFadeReservation">
+    <arg index="1" type_modifier="o"/>
+  </function>
+  <function name="CGBeginDisplayConfiguration">
+    <arg index="0" type_modifier="o"/>
+  </function>
+  <function name="CGBitmapContextCreate">
+    <arg index="0" c_array_of_variable_length="true" type_modifier="n"/>
+  </function>
+  <function name="CGColorCreate">
+    <arg index="1" c_array_of_variable_length="true" type_modifier="n"/>
+  </function>
+  <function name="CGColorCreateWithPattern">
+    <arg index="2" c_array_of_variable_length="true" type_modifier="n"/>
+  </function>
+  <function name="CGColorSpaceCreateCalibratedGray">
+    <arg c_array_of_fixed_length="3" index="0" type_modifier="n"/>
+    <arg c_array_of_fixed_length="3" index="1" type_modifier="n"/>
+  </function>
+  <function name="CGColorSpaceCreateCalibratedRGB">
+    <arg c_array_of_fixed_length="3" index="0" type_modifier="n"/>
+    <arg c_array_of_fixed_length="3" index="1" type_modifier="n"/>
+    <arg c_array_of_fixed_length="3" index="2" type_modifier="n"/>
+    <arg c_array_of_fixed_length="3" index="3" type_modifier="n"/>
+  </function>
+  <function name="CGColorSpaceCreateICCBased">
+    <arg index="1" c_array_of_variable_length="true" type_modifier="n"/>
+  </function>
+  <function name="CGColorSpaceCreateIndexed">
+    <arg index="2" c_array_of_variable_length="true" type_modifier="n"/>
+  </function>
+  <function name="CGColorSpaceCreateLab">
+    <arg c_array_of_fixed_length="3" index="0" type_modifier="n"/>
+    <arg c_array_of_fixed_length="3" index="1" type_modifier="n"/>
+    <arg c_array_of_fixed_length="4" index="2" type_modifier="n"/>
+  </function>
+  <function name="CGColorSpaceCreateWithPlatformColorSpace">
+    <arg type="CMProfileRef" index="0"/>
+  </function>
+  <function name="CGContextAddLines">
+    <arg c_array_length_in_arg="2" index="1" type_modifier="n"/>
+  </function>
+  <function name="CGContextAddRects">
+    <arg c_array_length_in_arg="2" index="1" type_modifier="n"/>
+  </function>
+  <function name="CGContextBeginPage">
+    <arg index="1" type_modifier="n"/>
+  </function>
+  <function name="CGContextClipToRects">
+    <arg c_array_length_in_arg="2" index="1" type_modifier="n"/>
+  </function>
+  <function name="CGContextFillRects">
+    <arg c_array_length_in_arg="2" index="1" type_modifier="n"/>
+  </function>
+  <function name="CGContextSetFillColor">
+    <arg index="1" c_array_of_variable_length="true" type_modifier="n"/>
+  </function>
+  <function name="CGContextSetFillPattern">
+    <arg index="2" c_array_of_variable_length="true" type_modifier="n"/>
+  </function>
+  <function name="CGContextSetLineDash">
+    <arg c_array_length_in_arg="3" index="2" type_modifier="n"/>
+  </function>
+  <function name="CGContextSetStrokeColor">
+    <arg index="1" c_array_of_variable_length="true" type_modifier="n"/>
+  </function>
+  <function name="CGContextSetStrokePattern">
+    <arg index="2" c_array_of_variable_length="true" type_modifier="n"/>
+  </function>
+  <function name="CGContextShowGlyphs">
+    <arg c_array_length_in_arg="2" index="1" type_modifier="n"/>
+  </function>
+  <function name="CGContextShowGlyphsAtPoint">
+    <arg c_array_length_in_arg="4" index="3" type_modifier="n"/>
+  </function>
+  <function name="CGContextShowGlyphsWithAdvances">
+    <arg c_array_length_in_arg="3" index="1" type_modifier="n"/>
+    <arg c_array_length_in_arg="3" index="2" type_modifier="n"/>
+  </function>
+  <function name="CGContextShowText">
+    <arg c_array_length_in_arg="2" index="1" type_modifier="n"/>
+  </function>
+  <function name="CGContextShowTextAtPoint">
+    <arg c_array_length_in_arg="4" index="3" type_modifier="n"/>
+  </function>
+  <function name="CGContextStrokeLineSegments">
+    <arg c_array_length_in_arg="2" index="1" type_modifier="n"/>
+  </function>
+  <function name="CGDataConsumerCreate">
+    <arg index="0" type_modifier="n"/>
+    <arg index="1" type_modifier="n"/>
+  </function>
+  <function name="CGDataProviderCreateWithData">
+    <arg index="0" type_modifier="n"/>
+    <arg index="1" type_modifier="n"/>
+    <arg index="3" type_modifier="n"/>
+  </function>
+  <function name="CGDisplayBestModeForParameters">
+    <arg index="4" type_modifier="o"/>
+  </function>
+  <function name="CGDisplayBestModeForParametersAndRefreshRate">
+    <arg index="5" type_modifier="o"/>
+  </function>
+  <function name="CGDisplayBestModeForParametersAndRefreshRateWithProperty">
+    <arg index="6" type_modifier="o"/>
+  </function>
+  <function name="CGDisplayRegisterReconfigurationCallback">
+    <arg index="0" type_modifier="n"/>
+    <arg index="1" type_modifier="n"/>
+  </function>
+  <function name="CGDisplayRemoveReconfigurationCallback">
+    <arg index="0" type_modifier="n"/>
+    <arg index="1" type_modifier="n"/>
+  </function>
+  <function name="CGEventKeyboardGetUnicodeString">
+    <arg index="2" type_modifier="o"/>
+    <arg c_array_length_in_arg="1" index="3" type_modifier="o"/>
+  </function>
+  <function name="CGEventKeyboardSetUnicodeString">
+    <arg c_array_length_in_arg="1" index="2" type_modifier="n"/>
+  </function>
+  <function name="CGEventPostToPSN">
+    <arg index="0" type_modifier="n" type='ProcessSerialNumber *'/>
+  </function>
+  <function name="CGEventTapCreate">
+    <arg index="4" type_modifier="n"/>
+    <arg index="5" type_modifier="n"/>
+  </function>
+  <function name="CGEventTapCreateForPSN">
+    <arg index="0" type_modifier="n" type='ProcessSerialNumber *'/>
+    <arg index="4" type_modifier="n"/>
+    <arg index="5" type_modifier="n"/>
+  </function>
+  <function name="CGFontCreatePostScriptEncoding">
+    <arg index="1" c_array_of_variable_length="true" type_modifier="n"/>
+  </function>
+  <function name="CGFontCreatePostScriptSubset">
+    <arg c_array_length_in_arg="4" index="3" type_modifier="n"/>
+    <arg index="5" c_array_of_variable_length="true" type_modifier="n"/>
+  </function>
+  <function name="CGFontCreateWithPlatformFont">
+    <arg type="ATSFontRef" index="0"/>
+  </function>
+  <function name="CGFunctionCreate">
+    <arg index="0" type_modifier="n"/>
+    <arg index="2" c_array_of_variable_length="true" type_modifier="n"/>
+    <arg index="4" c_array_of_variable_length="true" type_modifier="n"/>
+    <arg index="5" type_modifier="n"/>
+  </function>
+  <function name="CGGLContextCreate">
+    <arg type="CGLContextObj" index="0"/>
+  </function>
+  <function name="CGGetActiveDisplayList">
+    <arg c_array_length_in_arg="0" index="1" type_modifier="o"/>
+    <arg index="2" type_modifier="o"/>
+  </function>
+  <function name="CGGetDisplayTransferByFormula">
+    <arg index="1" type_modifier="o"/>
+    <arg index="2" type_modifier="o"/>
+    <arg index="3" type_modifier="o"/>
+    <arg index="4" type_modifier="o"/>
+    <arg index="5" type_modifier="o"/>
+    <arg index="6" type_modifier="o"/>
+    <arg index="7" type_modifier="o"/>
+    <arg index="8" type_modifier="o"/>
+    <arg index="9" type_modifier="o"/>
+  </function>
+  <function name="CGGetDisplayTransferByTable">
+    <arg c_array_length_in_arg="1" index="2" type_modifier="o"/>
+    <arg c_array_length_in_arg="1" index="3" type_modifier="o"/>
+    <arg c_array_length_in_arg="1" index="4" type_modifier="o"/>
+    <arg index="5" type_modifier="o"/>
+  </function>
+  <function name="CGGetDisplaysWithOpenGLDisplayMask">
+    <arg c_array_length_in_arg="1" index="2" type_modifier="o"/>
+    <arg index="3" type_modifier="o"/>
+  </function>
+  <function name="CGGetDisplaysWithPoint">
+    <arg c_array_length_in_arg="1" index="2" type_modifier="o"/>
+    <arg index="3" type_modifier="o"/>
+  </function>
+  <function name="CGGetDisplaysWithRect">
+    <arg c_array_length_in_arg="1" index="2" type_modifier="o"/>
+    <arg index="3" type_modifier="o"/>
+  </function>
+  <function name="CGGetEventTapList">
+    <arg c_array_length_in_arg="0" index="1" type_modifier="n"/>
+    <arg index="2" type_modifier="o"/>
+  </function>
+  <function name="CGGetLastMouseDelta">
+    <arg index="0" type_modifier="o"/>
+    <arg index="1" type_modifier="o"/>
+  </function>
+  <function name="CGGetOnlineDisplayList">
+    <arg c_array_length_in_arg="0" index="1" type_modifier="o"/>
+    <arg index="2" type_modifier="o"/>
+  </function>
+  <function name="CGImageCreate">
+    <arg index="8" c_array_of_variable_length="true" type_modifier="n"/>
+  </function>
+  <function name="CGImageCreateWithJPEGDataProvider">
+    <arg index="1" c_array_of_variable_length="true" type_modifier="n"/>
+  </function>
+  <function name="CGImageCreateWithMaskingColors">
+    <arg index="1" c_array_of_variable_length="true" type_modifier="n"/>
+  </function>
+  <function name="CGImageCreateWithPNGDataProvider">
+    <arg index="1" c_array_of_variable_length="true" type_modifier="n"/>
+  </function>
+  <function name="CGImageMaskCreate">
+    <arg index="6" c_array_of_variable_length="true" type_modifier="n"/>
+  </function>
+  <function name="CGPDFArrayGetArray">
+    <arg index="2" type_modifier="o"/>
+  </function>
+  <function name="CGPDFArrayGetBoolean">
+    <arg index="2" type_modifier="o"/>
+  </function>
+  <function name="CGPDFArrayGetDictionary">
+    <arg index="2" type_modifier="o"/>
+  </function>
+  <function name="CGPDFArrayGetInteger">
+    <arg index="2" type_modifier="o"/>
+  </function>
+  <function name="CGPDFArrayGetNumber">
+    <arg index="2" type_modifier="o"/>
+  </function>
+  <function name="CGPDFArrayGetObject">
+    <arg index="2" type_modifier="o"/>
+  </function>
+  <function name="CGPDFArrayGetStream">
+    <arg index="2" type_modifier="o"/>
+  </function>
+  <function name="CGPDFArrayGetString">
+    <arg index="2" type_modifier="o"/>
+  </function>
+  <function name="CGPDFContextCreate">
+    <arg index="1" type_modifier="n"/>
+  </function>
+  <function name="CGPDFContextCreateWithURL">
+    <arg index="1" type_modifier="n"/>
+  </function>
+  <function name="CGPDFDictionaryApplyFunction">
+    <arg index="1" type_modifier="n"/>
+    <arg index="2" type_modifier="n"/>
+  </function>
+  <function name="CGPDFDictionaryGetArray">
+    <arg index="1" type_modifier="n"/>
+    <arg index="2" type_modifier="o"/>
+  </function>
+  <function name="CGPDFDictionaryGetBoolean">
+    <arg index="1" type_modifier="n"/>
+    <arg index="2" type_modifier="o"/>
+  </function>
+  <function name="CGPDFDictionaryGetDictionary">
+    <arg index="1" type_modifier="n"/>
+    <arg index="2" type_modifier="o"/>
+  </function>
+  <function name="CGPDFDictionaryGetInteger">
+    <arg index="1" type_modifier="n"/>
+    <arg index="2" type_modifier="o"/>
+  </function>
+  <function name="CGPDFDictionaryGetName">
+    <arg index="1" type_modifier="n"/>
+    <arg index="2" type_modifier="o"/>
+  </function>
+  <function name="CGPDFDictionaryGetNumber">
+    <arg index="1" type_modifier="n"/>
+    <arg index="2" type_modifier="o"/>
+  </function>
+  <function name="CGPDFDictionaryGetObject">
+    <arg index="1" type_modifier="n"/>
+    <arg index="2" type_modifier="o"/>
+  </function>
+  <function name="CGPDFDictionaryGetStream">
+    <arg index="1" type_modifier="n"/>
+    <arg index="2" type_modifier="o"/>
+  </function>
+  <function name="CGPDFDictionaryGetString">
+    <arg index="1" type_modifier="n"/>
+    <arg index="2" type_modifier="o"/>
+  </function>
+  <function name="CGPDFDocumentGetVersion">
+    <arg index="1" type_modifier="o"/>
+    <arg index="2" type_modifier="o"/>
+  </function>
+  <function name="CGPDFObjectGetValue">
+    <arg index="2" type_modifier="o"/>
+  </function>
+  <function name="CGPDFScannerCreate">
+    <arg index="2" type_modifier="n"/>
+  </function>
+  <function name="CGPDFScannerPopArray">
+    <arg index="1" type_modifier="o"/>
+  </function>
+  <function name="CGPDFScannerPopBoolean">
+    <arg index="1" type_modifier="o"/>
+  </function>
+  <function name="CGPDFScannerPopDictionary">
+    <arg index="1" type_modifier="o"/>
+  </function>
+  <function name="CGPDFScannerPopInteger">
+    <arg index="1" type_modifier="o"/>
+  </function>
+  <function name="CGPDFScannerPopNumber">
+    <arg index="1" type_modifier="o"/>
+  </function>
+  <function name="CGPDFScannerPopObject">
+    <arg index="1" type_modifier="o"/>
+  </function>
+  <function name="CGPDFScannerPopStream">
+    <arg index="1" type_modifier="o"/>
+  </function>
+  <function name="CGPDFScannerPopString">
+    <arg index="1" type_modifier="o"/>
+  </function>
+  <function name="CGPDFStreamCopyData">
+    <arg index="1" type_modifier="o"/>
+  </function>
+  <function name="CGPSConverterCreate">
+    <arg index="0" type_modifier="n"/>
+    <arg index="1" type_modifier="n"/>
+  </function>
+  <function name="CGPaletteCreateWithByteSamples">
+    <arg c_array_length_in_arg="1" index="0" type_modifier="n"/>
+  </function>
+  <function name="CGPaletteCreateWithSamples">
+    <arg c_array_length_in_arg="1" index="0" type_modifier="n"/>
+  </function>
+  <function name="CGPathAddArc">
+    <arg index="1" type_modifier="n"/>
+  </function>
+  <function name="CGPathAddArcToPoint">
+    <arg index="1" type_modifier="n"/>
+  </function>
+  <function name="CGPathAddCurveToPoint">
+    <arg index="1" type_modifier="n"/>
+  </function>
+  <function name="CGPathAddEllipseInRect">
+    <arg index="1" type_modifier="n"/>
+  </function>
+  <function name="CGPathAddLineToPoint">
+    <arg index="1" type_modifier="n"/>
+  </function>
+  <function name="CGPathAddLines">
+    <arg index="1" type_modifier="n"/>
+    <arg c_array_length_in_arg="3" index="2" type_modifier="n"/>
+  </function>
+  <function name="CGPathAddPath">
+    <arg index="1" type_modifier="n"/>
+  </function>
+  <function name="CGPathAddQuadCurveToPoint">
+    <arg index="1" type_modifier="n"/>
+  </function>
+  <function name="CGPathAddRect">
+    <arg index="1" type_modifier="n"/>
+  </function>
+  <function name="CGPathAddRects">
+    <arg index="1" type_modifier="n"/>
+    <arg c_array_length_in_arg="3" index="2" type_modifier="n"/>
+  </function>
+  <function name="CGPathApply">
+    <arg index="1" type_modifier="n"/>
+    <arg index="2" type_modifier="n"/>
+  </function>
+  <function name="CGPathContainsPoint">
+    <arg index="1" type_modifier="n"/>
+  </function>
+  <function name="CGPathIsRect">
+    <arg index="1" type_modifier="o"/>
+  </function>
+  <function name="CGPathMoveToPoint">
+    <arg index="1" type_modifier="n"/>
+  </function>
+  <function name="CGPatternCreate">
+    <arg index="0" type_modifier="n"/>
+    <arg index="7" type_modifier="n"/>
+  </function>
+  <function name="CGRectDivide">
+    <arg index="1" type_modifier="o"/>
+    <arg index="2" type_modifier="o"/>
+  </function>
+  <function name="CGRegisterScreenRefreshCallback">
+    <arg index="0" type_modifier="n"/>
+    <arg index="1" type_modifier="n"/>
+  </function>
+  <function name="CGReleaseScreenRefreshRects">
+    <arg index="0" type_modifier="n"/>
+  </function>
+  <function name="CGScreenRegisterMoveCallback">
+    <arg index="0" type_modifier="n"/>
+    <arg index="1" type_modifier="n"/>
+  </function>
+  <function name="CGScreenUnregisterMoveCallback">
+    <arg index="0" type_modifier="n"/>
+    <arg index="1" type_modifier="n"/>
+  </function>
+  <function name="CGSetDisplayTransferByByteTable">
+    <arg c_array_length_in_arg="1" index="2" type_modifier="o"/>
+    <arg c_array_length_in_arg="1" index="3" type_modifier="o"/>
+    <arg c_array_length_in_arg="1" index="4" type_modifier="o"/>
+  </function>
+  <function name="CGSetDisplayTransferByTable">
+    <arg c_array_length_in_arg="1" index="2" type_modifier="n"/>
+    <arg c_array_length_in_arg="1" index="3" type_modifier="n"/>
+    <arg c_array_length_in_arg="1" index="4" type_modifier="n"/>
+  </function>
+  <function name="CGUnregisterScreenRefreshCallback">
+    <arg index="0" type_modifier="n"/>
+    <arg index="1" type_modifier="n"/>
+  </function>
+  <function name="CGWaitForScreenRefreshRects">
+    <arg index="0" type_modifier="o"/>
+    <arg index="1" type_modifier="o"/>
+  </function>
+  <function name="CGWaitForScreenUpdateRects">
+    <arg index="1" type_modifier="o"/>
+    <arg index="2" type_modifier="o" c_array_length_in_arg='3'/>
+    <arg index="3" type_modifier="o"/>
+    <arg index="4" type_modifier="o"/>
+  </function>
+  <function name="CGDataProviderCreate">
+    <arg index="0" type_modifier="n"/>
+    <arg index="1" type_modifier="n"/>
+  </function>
+  <function name="CGPDFArrayGetName">
+    <arg index="2" type_modifier="o"/>
+  </function>
+  <function name="CGPDFOperatorTableSetCallback">
+    <arg index="2" type_modifier="n"/>
+  </function>
+  <function name="CGPDFScannerPopName">
+    <arg index="1" type_modifier="o"/>
+  </function>
+</signatures>
