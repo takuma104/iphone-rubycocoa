@@ -624,24 +624,12 @@ end
 #foundation
 
 module OSX
-  ns_import :NSObject
-  ns_import :NSArray
-  ns_import :NSMutableArray
-  ns_import :NSAutoreleasePool
-  ns_import :NSBundle
-  ns_import :NSCalendar
-  ns_import :NSDateComponents
-  ns_import :NSCalendarDate
-  ns_import :NSDate
-  ns_import :NSString
-
-  ns_import :UIApplication
-  ns_import :UIWindow
-  ns_import :UIScreen
-  ns_import :UIColor
-  ns_import :UILabel
-  ns_import :UIFont
-  
-  ns_import :UIAlertView
+  def self.const_missing(c)
+    begin
+      OSX::ns_import(c)
+    rescue
+      raise NameError, "uninitialized constant #{c}"
+    end
+  end
 end
 
