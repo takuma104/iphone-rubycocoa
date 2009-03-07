@@ -31,11 +31,26 @@ require 'fileutils'
 require 'optparse'
 require 'tmpdir'
 
+=begin
+module Kernel
+  alias :_original_system :system
+  def system(cmd)
+#    p caller
+#    puts cmd
+    _original_system(cmd)
+#    true
+  end
+end
+
+class File
+  def self.unlink(path)
+  end
+end
+=end
+
 class OCHeaderAnalyzer
-  CPP = ['/usr/bin/cpp-4.0', '/usr/bin/cpp-3.3', '/usr/bin/cpp3'].find { |x| File.exist?(x) }
-  raise "cpp not found" if CPP.nil?
-  CPPFLAGS = "-D__APPLE_CPP__ -include /usr/include/AvailabilityMacros.h"
-  CPPFLAGS << "-D__GNUC__" unless /\Acpp-4/.match(File.basename(CPP))
+  CPP = '/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/arm-apple-darwin9-gcc-4.0.1'
+  CPPFLAGS = " -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS2.0.sdk -E"
 
   def self.data(data)
     new(data)
@@ -471,6 +486,8 @@ IS_PPC = `arch`.strip == 'ppc'
 class BridgeSupportGenerator
   VERSION = '0.9'
 
+  GCC = '/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.0 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator2.0.sdk'
+
   FORMATS = ['final', 'exceptions-template', 'dylib', 'complete']
   FORMAT_FINAL, FORMAT_TEMPLATE, FORMAT_DYLIB, FORMAT_COMPLETE = FORMATS
  
@@ -836,7 +853,7 @@ EOS
     pure_numeric_lines = []
     numeric_re = /\)?\s*(0x[\da-fA-F]+|[\d\.]+)\s*\)*\s*$/
     skip_names = ['extern', 'return', '{', '}']
-    emulate_ppc = !(IS_PPC or @enable_64 or TIGER_OR_BELOW)
+    emulate_ppc = false #!(IS_PPC or @enable_64 or TIGER_OR_BELOW)
     @defines.each do |name, value|
       name.strip!
       value.strip!
@@ -1227,7 +1244,7 @@ EOC
     if File.extname(@out_file) != '.dylib'
       @out_file << '.dylib'
     end
-    gcc = "gcc #{ENV['CFLAGS']} #{tmp_src.path} -o #{@out_file} #{@compiler_flags} -dynamiclib -O3 -current_version #{VERSION} -compatibility_version #{VERSION}"
+    gcc = "#{GCC} #{ENV['CFLAGS']} #{tmp_src.path} -o #{@out_file} #{@compiler_flags} -dynamiclib -O3 -current_version #{VERSION} -compatibility_version #{VERSION}"
     unless system(gcc)
       raise "Can't compile dylib source file '#{tmp_src.path}'\nLine was: #{gcc}"
     end
@@ -1791,7 +1808,7 @@ EOC
         '' # nothing, by default the compiler choose the 32-bit arch
       end
 
-    line = "gcc #{arch_flag} #{tmp_src.path} -o #{tmp_bin_path} #{@compiler_flags} 2>#{tmp_log_path}"
+    line = "#{GCC} #{arch_flag} #{tmp_src.path} -o #{tmp_bin_path} #{@compiler_flags} 2>#{tmp_log_path}"
     unless system(line)
       msg = "Can't compile C code... aborting\ncommand was: #{line}\n\n#{File.read(tmp_log_path)}"
       $stderr.puts "Code was:\n<<<<<<<\n#{code}>>>>>>>\n" if $DEBUG
@@ -1801,15 +1818,27 @@ EOC
     end
     
     env = ''
-    if @framework_paths
-      env << "DYLD_FRAMEWORK_PATH=\"#{@framework_paths.join(':')}\""
+#    if @framework_paths
+#      env << "DYLD_FRAMEWORK_PATH=\"#{@framework_paths.join(':')}\""
+#    end
+    env = 'DYLD_ROOT_PATH=/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator2.0.sdk'
+
+    fn = unique_tmp_path('shell','.sh')
+    File.open(fn, 'w') do |f|
+#      f.puts 'export DYLD_ROOT_PATH=/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator2.0.sdk'
+#      f.puts tmp_bin_path
+      f.puts "#{env} #{tmp_bin_path}"
     end
 
-    line = "#{env} #{tmp_bin_path}"
+#    line = "#{env} #{tmp_bin_path}"
+#    out = `#{line}`
+    line = "sh #{fn}"
     out = `#{line}`
     unless $?.success?
-      raise "Can't execute compiled C code... aborting\nline was: #{line}\nbinary is #{tmp_bin_path}"
+      p out
+      raise "Can't execute compiled C code... aborting\nline was: #{line}\n"#binary is #{tmp_bin_path}"
     end
+
 
     if emulate_ppc
       line = "#{env} /usr/libexec/oah/translate #{tmp_bin_path}"
@@ -1838,7 +1867,7 @@ EOC
     tmp_log_path = unique_tmp_path('log')
     tmp_pch_path = "#{tmp_header.path}.gch"
 
-    line = "gcc -c -x objective-c-header #{tmp_header.path} -o #{tmp_pch_path} #{@compiler_flags} 2>#{tmp_log_path}"
+    line = "#{GCC} -c -x objective-c-header #{tmp_header.path} -o #{tmp_pch_path} #{@compiler_flags} 2>#{tmp_log_path}"
     unless system(line)
       msg = "Can't precompile header... aborting\ncommand was: #{line}\n\n#{File.read(tmp_log_path)}"
       File.unlink(tmp_log_path)

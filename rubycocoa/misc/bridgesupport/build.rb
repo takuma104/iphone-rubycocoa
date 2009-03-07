@@ -4,36 +4,27 @@ require 'fileutils'
 
 include FileUtils
 
-SLF = '/System/Library/Frameworks'
-SLPF = '/System/Library/PrivateFrameworks'
+SLF = '/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS2.0.sdk/System/Library/Frameworks'
+SLPF = '/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS2.0.sdk/System/Library/PrivateFrameworks'
 
 frameworks = {}
 %w{
-  CoreFoundation
   Foundation
-  AppKit
-  CoreData
-  WebKit
-  AddressBook
-  InstantMessage
-  QuartzCore
-  SyncServices
-  OpenGL
-  QTKit
-  Cocoa
-  Quartz
-  ApplicationServices
+  UIKit
 }.each { |n| frameworks[n] = "#{SLF}/#{n}.framework" }
 
-frameworks['CoreGraphics'] = "#{SLF}/ApplicationServices.framework/Frameworks/CoreGraphics.framework"
-frameworks['ImageIO'] = "#{SLF}/ApplicationServices.framework/Frameworks/ImageIO.framework"
-frameworks['PDFKit'] = "#{SLF}/Quartz.framework/Frameworks/PDFKit.framework"
-frameworks['QuartzComposer'] = "#{SLF}/Quartz.framework/Frameworks/QuartzComposer.framework"
+#frameworks['CoreGraphics'] = "#{SLF}/ApplicationServices.framework/Frameworks/CoreGraphics.framework"
+#frameworks['ImageIO'] = "#{SLF}/ApplicationServices.framework/Frameworks/ImageIO.framework"
+#frameworks['PDFKit'] = "#{SLF}/Quartz.framework/Frameworks/PDFKit.framework"
+#frameworks['QuartzComposer'] = "#{SLF}/Quartz.framework/Frameworks/QuartzComposer.framework"
 
 special_flags_32 = {
 }
 
 special_flags = {
+  'Foundation' => '-framework CoreFoundation',
+  'UIKit' => '-framework CoreFoundation -framework UIKit',
+=begin
   'AppKit' => '-include /System/Library/Frameworks/QuickTime.framework/Headers/Movies.h -framework ApplicationServices',
 
   'CoreGraphics' => '-framework ApplicationServices -F/System/Library/Frameworks/ApplicationServices.framework/Frameworks -include /System/Library/Frameworks/OpenGL.framework/Headers/CGLTypes.h',
@@ -41,6 +32,7 @@ special_flags = {
   'ImageIO' => '-framework ApplicationServices -F/System/Library/Frameworks/ApplicationServices.framework/Frameworks',
 
   'QuartzCore' => '-framework QuartzCore -include /System/Library/Frameworks/OpenGL.framework/Headers/CGLTypes.h'
+=end
 }
 
 frameworks.delete_if { |fname, path| !ARGV.include?(fname) } unless ARGV.empty?
@@ -52,7 +44,7 @@ def measure(something)
 end
 
 unless out_dir = ENV['BSROOT']
-  out_dir = '/Library/BridgeSupport'
+  out_dir = '/tmp/BridgeSupport'
   if dstroot = (ENV['DSTROOT'] or '')
     out_dir = File.join(dstroot, out_dir)
   end
