@@ -214,11 +214,11 @@ class OCHeaderAnalyzer
   def ocmethods
     if @ocmethods.nil?
       @inf_protocols ||= {}
-      interface_re = /^@(interface|protocol)\s+(\w+)\s*(\([^)]+\))?/
+      interface_re = /@(interface|protocol)\s+(\w+)\s*(\([^)]+\))?/
       end_re = /^@end/
       body_re = /^[-+]\s*(\([^)]+\))?\s*([^:\s;]+)/
       args_re = /\w+\s*:/
-      prop_re = /^@property\s*(\([^)]+\))?\s*([^;]+);$/
+      prop_re = /@property\s*(\([^)]+\))?\s*([^;]+);$/
       current_interface = current_category = nil
       @ocmethods = {}
       i = 0
@@ -1897,6 +1897,25 @@ def die(*msg)
   $stderr.puts msg
   exit 1
 end
+
+
+if __FILE__ == $0
+  require 'pp'
+  path = "/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS2.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UITableView.h"
+  analyzer = OCHeaderAnalyzer.path(path)#, !@private, @enable_64, @cpp_flags)
+#  pp analyzer.functions
+#  pp analyzer.functions(true)
+#  pp analyzer.constants
+#  pp analyzer.enums
+#  pp analyzer.defines
+#  pp analyzer.informal_protocols
+#  pp analyzer.function_pointer_types
+  pp analyzer.typedefs
+#  pp analyzer.ocmethods 
+end
+
+
+__END__
 
 if __FILE__ == $0
   g = BridgeSupportGenerator.new
