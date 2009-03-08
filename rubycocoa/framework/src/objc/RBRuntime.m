@@ -132,7 +132,7 @@ char* framework_resources_path()
 
 static char* framework_ruby_path()
 {
-  return resource_item_path_for("ruby", [RBObject class]);
+  return resource_item_path_for("lib", [RBObject class]);
 }
 
 static char* framework_bridge_support_path()

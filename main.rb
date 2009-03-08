@@ -1,4 +1,6 @@
-require 'rubycocoa'
+p $:
+
+require 'osx/cocoa'
 
 # require 'remote_irb'
 # RemoteIRB.new(6000).start
