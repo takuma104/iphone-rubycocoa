@@ -18,7 +18,7 @@
 
 #define RBOBJ_LOG(fmt, args...) DLOG("RBOBJ", fmt, ##args)
 
-extern ID _relaxed_syntax_ID;
+extern RB_ID _relaxed_syntax_ID;
 
 #if MAC_OS_X_VERSION_MAX_ALLOWED <= MAC_OS_X_VERSION_10_4
 // On MacOS X 10.4 or earlier, +signatureWithObjCTypes: is a SPI

@@ -10,7 +10,7 @@
 #ifndef _RUBYCOCOA_H_
 #define _RUBYCOCOA_H_
 
-#import <RubyCocoa/RBRuntime.h>
+#import "RBRuntime.h"
 #import <Foundation/NSObject.h>
 
 @interface RubyCocoa : NSObject

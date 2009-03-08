@@ -8,7 +8,7 @@
  */
 
 #import <Foundation/Foundation.h>
-#import <RubyCocoa/RubyCocoa.h>
+#import "RubyCocoa.h"
 
 @implementation RubyCocoa
 + (int) bundleInitWithProgram: (const char*) path_to_ruby_program

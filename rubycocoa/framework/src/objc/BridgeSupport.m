@@ -12,10 +12,9 @@
 #import "osx_intern.h"
 #import "BridgeSupport.h"
 #import <dlfcn.h>
-#import <st.h>
-#import <env.h>
-#import <objc/objc-class.h>
-#import <objc/objc-runtime.h>
+#import "st.h"
+//#import "env.h"
+#import <objc/runtime.h>
 #import "ocdata_conv.h"
 #import "ffi.h"
 #import "internal_macros.h"
@@ -27,7 +26,7 @@
 #import "objc_compat.h"
 
 static VALUE cOSXBoxed;
-static ID ivarEncodingID;
+static RB_ID ivarEncodingID;
 
 VALUE objboxed_s_class(void)
 {
@@ -62,6 +61,7 @@ struct bsFunction *current_function = NULL;
   }                           \
   while (0)
 
+#define HAS_LIBXML2 1
 #if HAS_LIBXML2
 #include <libxml/xmlreader.h>
 
@@ -370,10 +370,10 @@ bails:
   return NO;
 }
 
-static VALUE
+static VALUE 
 rb_bs_boxed_get_encoding (VALUE rcv)
 {
-  return rb_ivar_get(rcv, ivarEncodingID);  
+   return rb_ivar_get(rcv, ivarEncodingID);  
 }
 
 static VALUE
@@ -570,7 +570,7 @@ rb_bs_boxed_struct_get_data(VALUE obj, struct bsBoxed *bs_boxed, size_t *size, B
   // could have been modified as a copy in the Ruby world.
   for (i = 0; i < bs_boxed->opt.s.field_count; i++) {
     char buf[128];
-    ID ivar_id;
+    RB_ID ivar_id;
 
     snprintf(buf, sizeof buf, "@%s", bs_boxed->opt.s.fields[i].name);
     ivar_id = rb_intern(buf);
@@ -702,7 +702,7 @@ rb_bs_struct_get_field_data(VALUE rcv, char **field_encoding_out)
   return data;
 }
 
-static ID
+static RB_ID
 rb_bs_struct_field_ivar_id(void)
 {
   char ivar_name[128];
@@ -718,7 +718,7 @@ rb_bs_struct_field_ivar_id(void)
 static VALUE
 rb_bs_struct_get (VALUE rcv)
 {
-  ID ivar_id;  
+  RB_ID ivar_id;  
   VALUE result;
 
   ivar_id = rb_bs_struct_field_ivar_id();
@@ -801,7 +801,7 @@ rb_bs_struct_is_equal (VALUE rcv, VALUE other)
 
   for (i = 0; i < bs_struct->opt.s.field_count; i++) {
     VALUE lval, rval;
-    ID msg;
+    RB_ID msg;
 
     msg = rb_intern(bs_struct->opt.s.fields[i].name);
     lval = rb_funcall(rcv, msg, 0, NULL);

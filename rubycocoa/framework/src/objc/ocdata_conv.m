@@ -7,7 +7,7 @@
  * LGPL. See the COPYRIGHT file for more information.
  */
 
-#import <objc/objc-class.h>
+#import <objc/runtime.h>
 #import <Foundation/Foundation.h>
 #import "ocdata_conv.h"
 #import "RBObject.h"

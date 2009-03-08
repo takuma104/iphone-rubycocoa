@@ -9,7 +9,7 @@
 
 #import <string.h>
 #include <mach-o/dyld.h>
-#include <objc/objc-runtime.h>
+#include <objc/runtime.h>
 #include <dlfcn.h>
 #import <Foundation/NSBundle.h>
 #import <Foundation/NSAutoreleasePool.h>
@@ -909,79 +909,7 @@ static void rb_cocoa_thread_schedule_hook(rb_threadswitch_event_t event,
 
 static void RBCocoaInstallRubyThreadSchedulerHooks()
 {
-  if (getenv("RUBYCOCOA_THREAD_HOOK_DISABLE") != NULL) {
-    if (rb_cocoa_thread_debug) {
-      NSLog(@"RBCocoaInstallRubyThreadSchedulerHooks: warning: disabled hooks due to RUBYCOCOA_THREAD_HOOK_DISABLE environment variable");
-    }
-    return;
-  }
-  
-  rb_cocoa_thread_debug = getenv("RUBYCOCOA_THREAD_DEBUG") != NULL;
-  
-  if (rb_add_threadswitch_hook == NULL) {
-    if (rb_cocoa_thread_debug) {
-      NSLog(@"RBCocoaInstallRubyThreadSchedulerHooks: warning: rb_set_cocoa_thread_hooks not present in ruby core");
-    }
-    return;
-  }
-  
-  NSSymbol threadswitch_symbol = 
-    NSLookupAndBindSymbol("_rb_add_threadswitch_hook");
-  NSSymbol ruby_init_symbol = 
-    NSLookupAndBindSymbol("_ruby_init");
-  
-  if (NSModuleForSymbol(threadswitch_symbol) 
-      != NSModuleForSymbol(ruby_init_symbol)) {
-    NSLog(@"RBCocoaInstallRubyThreadSchedulerHooks: warning: rb_set_cocoa_thread_hooks is linked from a different library (%s) than ruby_init (%s)",
-      NSNameOfModule(NSModuleForSymbol(threadswitch_symbol)), NSNameOfModule(NSModuleForSymbol(ruby_init_symbol)));
-    return;
-  }
-
-  rb_cocoa_thread_state = st_init_numtable();  
-  rb_cocoa_main_nsthread = [NSThread currentThread];
-  
-  rb_cocoa_NSThread_class = objc_lookUpClass("NSThread");
-  if (rb_cocoa_NSThread_class == NULL) {
-    NSLog(@"RBCocoaInstallRubyThreadSchedulerHooks: couldn't find NSThread class");
-    return;
-  }
-
-#if MAC_OS_X_VERSION_MAX_ALLOWED <= MAC_OS_X_VERSION_10_4  
-  Ivar v;
-
-  v = class_getInstanceVariable(rb_cocoa_NSThread_class, "autoreleasePool");
-  if (v == NULL) {
-    NSLog(@"RBCocoaInstallRubyThreadSchedulerHooks: couldn't find autoreleasePool ivar");
-    return;
-  }
-  
-  rb_cocoa_NSThread_autoreleasePool = v->ivar_offset;
-  
-  v = class_getInstanceVariable(rb_cocoa_NSThread_class, "excHandlers");
-  if (v == NULL) {
-    NSLog(@"RBCocoaInstallRubyThreadSchedulerHooks: couldn't find excHandlers ivar");
-    return;
-  }
-  
-  rb_cocoa_NSThread_excHandlers = v->ivar_offset;
-#endif
-
-  rb_cocoa_currentThread_SEL = @selector(currentThread);
-  Method method = class_getClassMethod(rb_cocoa_NSThread_class, 
-    rb_cocoa_currentThread_SEL);
-  if (method == NULL) {
-    NSLog(@"RBCocoaInstallRubyThreadSchedulerHooks: can't find IMP for +[NSThread currentThread]");
-    return;
-  }
-  rb_cocoa_NSThread_currentThread_imp = (NSThread*(*)(id, SEL)) 
-    method_getImplementation(method);
-
-  /* Finally, register the hook with the ruby core */
-  rb_add_threadswitch_hook(rb_cocoa_thread_schedule_hook);
-  rb_cocoa_did_install_thread_hooks = YES;
-
-  DLOG("Thread hooks done, main Ruby thread is %p\n", 
-    (void *)rb_thread_current());
+	rb_cocoa_did_install_thread_hooks = YES;
 }
 
 @interface RBRuntime : NSObject

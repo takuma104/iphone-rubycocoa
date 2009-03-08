@@ -19,7 +19,7 @@
 #import <mach-o/dyld.h>
 #import <string.h>
 #import "BridgeSupport.h"
-#import <objc/objc-runtime.h>
+#import <objc/runtime.h>
 #import "cls_objcid.h"
 #import "objc_compat.h"
 #import "OverrideMixin.h"
@@ -27,7 +27,7 @@
 #define OSX_MODULE_NAME "OSX"
 
 static VALUE _cOCObject = Qnil;
-ID _relaxed_syntax_ID;
+RB_ID _relaxed_syntax_ID;
 
 static VALUE init_module_OSX()
 {
@@ -178,7 +178,7 @@ rb_osx_class_const (const char* name)
 {
   VALUE mOSX;
   VALUE constant;
-  ID name_id;
+  RB_ID name_id;
  
   if (strlen(name) == 0)
     return Qnil;

@@ -7,7 +7,7 @@
  * LGPL. See the COPYRIGHT file for more information.
  */
 
-#import <Cocoa/Cocoa.h>
+#import <Foundation/Foundation.h>
 #import <stdarg.h>
 #import <pthread.h>
 #import "OverrideMixin.h"
@@ -18,7 +18,7 @@
 #import "ocdata_conv.h"
 #import "BridgeSupport.h"
 #import "st.h"
-#import <objc/objc-runtime.h>
+#import <objc/runtime.h>
 #import "mdl_osxobjc.h"
 #import "objc_compat.h"
 

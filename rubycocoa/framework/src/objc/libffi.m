@@ -15,7 +15,7 @@
 #import "cls_objcid.h"
 #import "cls_objcptr.h"
 #import "internal_macros.h"
-#import <st.h>
+#import "st.h"
 
 #define FFI_LOG(fmt, args...) DLOG("LIBFFI", fmt, ##args)
 

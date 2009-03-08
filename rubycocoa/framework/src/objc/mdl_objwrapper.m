@@ -14,11 +14,12 @@
 #import <string.h>
 #import <stdlib.h>
 #import <stdarg.h>
-#import <objc/objc-runtime.h>
+#import <objc/runtime.h>
 #import "BridgeSupport.h"
 #import "internal_macros.h"
 #import "ocexception.h"
 #import "objc_compat.h"
+#import <CoreFoundation/CoreFoundation.h>
 
 #define OCM_AUTO_REGISTER 1
 
@@ -227,6 +228,9 @@ ocm_register(Class klass, VALUE oc_mname, VALUE rb_mname, VALUE is_predicate,
     is_class_method ? "class" : "instance", rb_mname_str, 
     rb_class2name(rclass));
 }
+
+id objc_msgSend(id theReceiver, SEL theSelector, ...);
+
 
 static VALUE
 ocm_send(int argc, VALUE* argv, VALUE rcv, VALUE* result)

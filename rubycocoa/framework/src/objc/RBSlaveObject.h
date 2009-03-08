@@ -7,8 +7,8 @@
  * LGPL. See the COPYRIGHT file for more information.
  */
 
-#import <RubyCocoa/RBObject.h>
-#import <RubyCocoa/osx_ruby.h>
+#import "RBObject.h"
+#import "osx_ruby.h"
 
 @interface RBObject(RBSlaveObject)
 - initWithMasterObject: master;
