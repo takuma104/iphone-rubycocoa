@@ -1,3 +1,4 @@
+$DEBUG=true
 p $:
 
 require 'osx/cocoa'

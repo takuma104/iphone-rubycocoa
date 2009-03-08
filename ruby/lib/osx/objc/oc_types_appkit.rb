@@ -7,6 +7,7 @@
 
 # Same as oc_types but AppKit-specific.
 
+=begin
 class OSX::NSRange
   class << self
     alias_method :orig_new, :new
@@ -64,3 +65,4 @@ class OSX::NSRange
   def not_found?; location == OSX::NSNotFound; end
   def inspect; "#<#{self.class} location=#{location}, length=#{length}>"; end
 end
+=end

@@ -1,0 +1,11 @@
+<?xml version='1.0'?>
+<!DOCTYPE signatures SYSTEM "file://localhost/System/Library/DTDs/BridgeSupport.dtd">
+<signatures version='0.9'>
+<enum name='MPMovieControlModeDefault' value='0'/>
+<enum name='MPMovieControlModeHidden' value='2'/>
+<enum name='MPMovieControlModeVolumeOnly' value='1'/>
+<enum name='MPMovieScalingModeAspectFill' value='2'/>
+<enum name='MPMovieScalingModeAspectFit' value='1'/>
+<enum name='MPMovieScalingModeFill' value='3'/>
+<enum name='MPMovieScalingModeNone' value='0'/>
+</signatures>

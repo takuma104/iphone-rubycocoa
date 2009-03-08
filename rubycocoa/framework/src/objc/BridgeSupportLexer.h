@@ -81,9 +81,9 @@ hash (register const char *str, register unsigned int len)
   return len + asso_values[(unsigned char)str[0]];
 }
 
-#ifdef __GNUC__
-__inline
-#endif
+//#ifdef __GNUC__
+//__inline
+//#endif
 struct bs_xml_atom *
 bs_xml_element (register const char *str, register unsigned int len)
 {

@@ -1,0 +1,1288 @@
+<?xml version='1.0'?>
+<!DOCTYPE signatures SYSTEM "file://localhost/System/Library/DTDs/BridgeSupport.dtd">
+<signatures version='0.9'>
+<depends_on path='/System/Library/Frameworks/IOKit.framework'/>
+<enum name='GL_ACTIVE_TEXTURE' value='34016'/>
+<enum name='GL_ADD' value='260'/>
+<enum name='GL_ADD_SIGNED' value='34164'/>
+<enum name='GL_ALIASED_LINE_WIDTH_RANGE' value='33902'/>
+<enum name='GL_ALIASED_POINT_SIZE_RANGE' value='33901'/>
+<enum name='GL_ALPHA' value='6406'/>
+<enum name='GL_ALPHA_BITS' value='3413'/>
+<enum name='GL_ALPHA_SCALE' value='3356'/>
+<enum name='GL_ALPHA_TEST' value='3008'/>
+<enum name='GL_ALPHA_TEST_FUNC' value='3009'/>
+<enum name='GL_ALPHA_TEST_REF' value='3010'/>
+<enum name='GL_ALWAYS' value='519'/>
+<enum name='GL_AMBIENT' value='4608'/>
+<enum name='GL_AMBIENT_AND_DIFFUSE' value='5634'/>
+<enum name='GL_AND' value='5377'/>
+<enum name='GL_AND_INVERTED' value='5380'/>
+<enum name='GL_AND_REVERSE' value='5378'/>
+<enum name='GL_ARRAY_BUFFER' value='34962'/>
+<enum name='GL_ARRAY_BUFFER_BINDING' value='34964'/>
+<enum name='GL_BACK' value='1029'/>
+<enum name='GL_BGRA' value='32993'/>
+<enum name='GL_BLEND' value='3042'/>
+<enum name='GL_BLEND_DST' value='3040'/>
+<enum name='GL_BLEND_EQUATION_OES' value='32777'/>
+<enum name='GL_BLEND_SRC' value='3041'/>
+<enum name='GL_BLUE_BITS' value='3412'/>
+<enum name='GL_BUFFER_ACCESS_OES' value='35003'/>
+<enum name='GL_BUFFER_MAPPED_OES' value='35004'/>
+<enum name='GL_BUFFER_MAP_POINTER_OES' value='35005'/>
+<enum name='GL_BUFFER_SIZE' value='34660'/>
+<enum name='GL_BUFFER_USAGE' value='34661'/>
+<enum name='GL_BYTE' value='5120'/>
+<enum name='GL_CCW' value='2305'/>
+<enum name='GL_CLAMP_TO_EDGE' value='33071'/>
+<enum name='GL_CLEAR' value='5376'/>
+<enum name='GL_CLIENT_ACTIVE_TEXTURE' value='34017'/>
+<enum name='GL_CLIP_PLANE0' value='12288'/>
+<enum name='GL_CLIP_PLANE1' value='12289'/>
+<enum name='GL_CLIP_PLANE2' value='12290'/>
+<enum name='GL_CLIP_PLANE3' value='12291'/>
+<enum name='GL_CLIP_PLANE4' value='12292'/>
+<enum name='GL_CLIP_PLANE5' value='12293'/>
+<enum name='GL_COLOR_ARRAY' value='32886'/>
+<enum name='GL_COLOR_ARRAY_BUFFER_BINDING' value='34968'/>
+<enum name='GL_COLOR_ARRAY_POINTER' value='32912'/>
+<enum name='GL_COLOR_ARRAY_SIZE' value='32897'/>
+<enum name='GL_COLOR_ARRAY_STRIDE' value='32899'/>
+<enum name='GL_COLOR_ARRAY_TYPE' value='32898'/>
+<enum name='GL_COLOR_ATTACHMENT0_OES' value='36064'/>
+<enum name='GL_COLOR_BUFFER_BIT' value='16384'/>
+<enum name='GL_COLOR_CLEAR_VALUE' value='3106'/>
+<enum name='GL_COLOR_LOGIC_OP' value='3058'/>
+<enum name='GL_COLOR_MATERIAL' value='2903'/>
+<enum name='GL_COLOR_WRITEMASK' value='3107'/>
+<enum name='GL_COMBINE' value='34160'/>
+<enum name='GL_COMBINE_ALPHA' value='34162'/>
+<enum name='GL_COMBINE_RGB' value='34161'/>
+<enum name='GL_COMPRESSED_RGBA_PVRTC_2BPPV1_IMG' value='35843'/>
+<enum name='GL_COMPRESSED_RGBA_PVRTC_4BPPV1_IMG' value='35842'/>
+<enum name='GL_COMPRESSED_RGB_PVRTC_2BPPV1_IMG' value='35841'/>
+<enum name='GL_COMPRESSED_RGB_PVRTC_4BPPV1_IMG' value='35840'/>
+<enum name='GL_COMPRESSED_TEXTURE_FORMATS' value='34467'/>
+<enum name='GL_CONSTANT' value='34166'/>
+<enum name='GL_CONSTANT_ATTENUATION' value='4615'/>
+<enum name='GL_COORD_REPLACE_OES' value='34914'/>
+<enum name='GL_COPY' value='5379'/>
+<enum name='GL_COPY_INVERTED' value='5388'/>
+<enum name='GL_CULL_FACE' value='2884'/>
+<enum name='GL_CULL_FACE_MODE' value='2885'/>
+<enum name='GL_CURRENT_COLOR' value='2816'/>
+<enum name='GL_CURRENT_NORMAL' value='2818'/>
+<enum name='GL_CURRENT_PALETTE_MATRIX_OES' value='34883'/>
+<enum name='GL_CURRENT_TEXTURE_COORDS' value='2819'/>
+<enum name='GL_CW' value='2304'/>
+<enum name='GL_DECAL' value='8449'/>
+<enum name='GL_DECR' value='7683'/>
+<enum name='GL_DEPTH_ATTACHMENT_OES' value='36096'/>
+<enum name='GL_DEPTH_BITS' value='3414'/>
+<enum name='GL_DEPTH_BUFFER_BIT' value='256'/>
+<enum name='GL_DEPTH_CLEAR_VALUE' value='2931'/>
+<enum name='GL_DEPTH_COMPONENT16_OES' value='33189'/>
+<enum name='GL_DEPTH_COMPONENT24_OES' value='33190'/>
+<enum name='GL_DEPTH_FUNC' value='2932'/>
+<enum name='GL_DEPTH_RANGE' value='2928'/>
+<enum name='GL_DEPTH_TEST' value='2929'/>
+<enum name='GL_DEPTH_WRITEMASK' value='2930'/>
+<enum name='GL_DIFFUSE' value='4609'/>
+<enum name='GL_DITHER' value='3024'/>
+<enum name='GL_DONT_CARE' value='4352'/>
+<enum name='GL_DOT3_RGB' value='34478'/>
+<enum name='GL_DOT3_RGBA' value='34479'/>
+<enum name='GL_DST_ALPHA' value='772'/>
+<enum name='GL_DST_COLOR' value='774'/>
+<enum name='GL_DYNAMIC_DRAW' value='35048'/>
+<enum name='GL_ELEMENT_ARRAY_BUFFER' value='34963'/>
+<enum name='GL_ELEMENT_ARRAY_BUFFER_BINDING' value='34965'/>
+<enum name='GL_EMISSION' value='5632'/>
+<enum name='GL_EQUAL' value='514'/>
+<enum name='GL_EQUIV' value='5385'/>
+<enum name='GL_EXP' value='2048'/>
+<enum name='GL_EXP2' value='2049'/>
+<enum name='GL_EXTENSIONS' value='7939'/>
+<enum name='GL_EXT_texture_filter_anisotropic' value='1'/>
+<enum name='GL_EXT_texture_lod_bias' value='1'/>
+<enum name='GL_FALSE' value='0'/>
+<enum name='GL_FASTEST' value='4353'/>
+<enum name='GL_FIXED' value='5132'/>
+<enum name='GL_FLAT' value='7424'/>
+<enum name='GL_FLOAT' value='5126'/>
+<enum name='GL_FOG' value='2912'/>
+<enum name='GL_FOG_COLOR' value='2918'/>
+<enum name='GL_FOG_DENSITY' value='2914'/>
+<enum name='GL_FOG_END' value='2916'/>
+<enum name='GL_FOG_HINT' value='3156'/>
+<enum name='GL_FOG_MODE' value='2917'/>
+<enum name='GL_FOG_START' value='2915'/>
+<enum name='GL_FRAMEBUFFER_ATTACHMENT_OBJECT_NAME_OES' value='36049'/>
+<enum name='GL_FRAMEBUFFER_ATTACHMENT_OBJECT_TYPE_OES' value='36048'/>
+<enum name='GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_CUBE_MAP_FACE_OES' value='36051'/>
+<enum name='GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_LEVEL_OES' value='36050'/>
+<enum name='GL_FRAMEBUFFER_BINDING_OES' value='36006'/>
+<enum name='GL_FRAMEBUFFER_COMPLETE_OES' value='36053'/>
+<enum name='GL_FRAMEBUFFER_INCOMPLETE_ATTACHMENT_OES' value='36054'/>
+<enum name='GL_FRAMEBUFFER_INCOMPLETE_DIMENSIONS_OES' value='36057'/>
+<enum name='GL_FRAMEBUFFER_INCOMPLETE_FORMATS_OES' value='36058'/>
+<enum name='GL_FRAMEBUFFER_INCOMPLETE_MISSING_ATTACHMENT_OES' value='36055'/>
+<enum name='GL_FRAMEBUFFER_OES' value='36160'/>
+<enum name='GL_FRAMEBUFFER_UNSUPPORTED_OES' value='36061'/>
+<enum name='GL_FRONT' value='1028'/>
+<enum name='GL_FRONT_AND_BACK' value='1032'/>
+<enum name='GL_FRONT_FACE' value='2886'/>
+<enum name='GL_FUNC_ADD_OES' value='32774'/>
+<enum name='GL_FUNC_REVERSE_SUBTRACT_OES' value='32779'/>
+<enum name='GL_FUNC_SUBTRACT_OES' value='32778'/>
+<enum name='GL_GENERATE_MIPMAP' value='33169'/>
+<enum name='GL_GENERATE_MIPMAP_HINT' value='33170'/>
+<enum name='GL_GEQUAL' value='518'/>
+<enum name='GL_GREATER' value='516'/>
+<enum name='GL_GREEN_BITS' value='3411'/>
+<enum name='GL_IMG_read_format' value='1'/>
+<enum name='GL_IMG_texture_compression_pvrtc' value='1'/>
+<enum name='GL_IMG_texture_format_BGRA8888' value='1'/>
+<enum name='GL_IMPLEMENTATION_COLOR_READ_FORMAT_OES' value='35739'/>
+<enum name='GL_IMPLEMENTATION_COLOR_READ_TYPE_OES' value='35738'/>
+<enum name='GL_INCR' value='7682'/>
+<enum name='GL_INTERPOLATE' value='34165'/>
+<enum name='GL_INVALID_ENUM' value='1280'/>
+<enum name='GL_INVALID_FRAMEBUFFER_OPERATION_OES' value='1286'/>
+<enum name='GL_INVALID_OPERATION' value='1282'/>
+<enum name='GL_INVALID_VALUE' value='1281'/>
+<enum name='GL_INVERT' value='5386'/>
+<enum name='GL_KEEP' value='7680'/>
+<enum name='GL_LEQUAL' value='515'/>
+<enum name='GL_LESS' value='513'/>
+<enum name='GL_LIGHT0' value='16384'/>
+<enum name='GL_LIGHT1' value='16385'/>
+<enum name='GL_LIGHT2' value='16386'/>
+<enum name='GL_LIGHT3' value='16387'/>
+<enum name='GL_LIGHT4' value='16388'/>
+<enum name='GL_LIGHT5' value='16389'/>
+<enum name='GL_LIGHT6' value='16390'/>
+<enum name='GL_LIGHT7' value='16391'/>
+<enum name='GL_LIGHTING' value='2896'/>
+<enum name='GL_LIGHT_MODEL_AMBIENT' value='2899'/>
+<enum name='GL_LIGHT_MODEL_TWO_SIDE' value='2898'/>
+<enum name='GL_LINEAR' value='9729'/>
+<enum name='GL_LINEAR_ATTENUATION' value='4616'/>
+<enum name='GL_LINEAR_MIPMAP_LINEAR' value='9987'/>
+<enum name='GL_LINEAR_MIPMAP_NEAREST' value='9985'/>
+<enum name='GL_LINES' value='1'/>
+<enum name='GL_LINE_LOOP' value='2'/>
+<enum name='GL_LINE_SMOOTH' value='2848'/>
+<enum name='GL_LINE_SMOOTH_HINT' value='3154'/>
+<enum name='GL_LINE_STRIP' value='3'/>
+<enum name='GL_LINE_WIDTH' value='2849'/>
+<enum name='GL_LOGIC_OP_MODE' value='3056'/>
+<enum name='GL_LUMINANCE' value='6409'/>
+<enum name='GL_LUMINANCE_ALPHA' value='6410'/>
+<enum name='GL_MATRIX_INDEX_ARRAY_BUFFER_BINDING_OES' value='35742'/>
+<enum name='GL_MATRIX_INDEX_ARRAY_OES' value='34884'/>
+<enum name='GL_MATRIX_INDEX_ARRAY_POINTER_OES' value='34889'/>
+<enum name='GL_MATRIX_INDEX_ARRAY_SIZE_OES' value='34886'/>
+<enum name='GL_MATRIX_INDEX_ARRAY_STRIDE_OES' value='34888'/>
+<enum name='GL_MATRIX_INDEX_ARRAY_TYPE_OES' value='34887'/>
+<enum name='GL_MATRIX_MODE' value='2976'/>
+<enum name='GL_MATRIX_PALETTE_OES' value='34880'/>
+<enum name='GL_MAX_CLIP_PLANES' value='3378'/>
+<enum name='GL_MAX_LIGHTS' value='3377'/>
+<enum name='GL_MAX_MODELVIEW_STACK_DEPTH' value='3382'/>
+<enum name='GL_MAX_PALETTE_MATRICES_OES' value='34882'/>
+<enum name='GL_MAX_PROJECTION_STACK_DEPTH' value='3384'/>
+<enum name='GL_MAX_RENDERBUFFER_SIZE_OES' value='34024'/>
+<enum name='GL_MAX_TEXTURE_LOD_BIAS_EXT' value='34045'/>
+<enum name='GL_MAX_TEXTURE_MAX_ANISOTROPY_EXT' value='34047'/>
+<enum name='GL_MAX_TEXTURE_SIZE' value='3379'/>
+<enum name='GL_MAX_TEXTURE_STACK_DEPTH' value='3385'/>
+<enum name='GL_MAX_TEXTURE_UNITS' value='34018'/>
+<enum name='GL_MAX_VERTEX_UNITS_OES' value='34468'/>
+<enum name='GL_MAX_VIEWPORT_DIMS' value='3386'/>
+<enum name='GL_MIRRORED_REPEAT_OES' value='33648'/>
+<enum name='GL_MODELVIEW' value='5888'/>
+<enum name='GL_MODELVIEW_MATRIX' value='2982'/>
+<enum name='GL_MODELVIEW_MATRIX_FLOAT_AS_INT_BITS_OES' value='35213'/>
+<enum name='GL_MODELVIEW_STACK_DEPTH' value='2979'/>
+<enum name='GL_MODULATE' value='8448'/>
+<enum name='GL_MULTISAMPLE' value='32925'/>
+<enum name='GL_NAND' value='5390'/>
+<enum name='GL_NEAREST' value='9728'/>
+<enum name='GL_NEAREST_MIPMAP_LINEAR' value='9986'/>
+<enum name='GL_NEAREST_MIPMAP_NEAREST' value='9984'/>
+<enum name='GL_NEVER' value='512'/>
+<enum name='GL_NICEST' value='4354'/>
+<enum name='GL_NOOP' value='5381'/>
+<enum name='GL_NOR' value='5384'/>
+<enum name='GL_NORMALIZE' value='2977'/>
+<enum name='GL_NORMAL_ARRAY' value='32885'/>
+<enum name='GL_NORMAL_ARRAY_BUFFER_BINDING' value='34967'/>
+<enum name='GL_NORMAL_ARRAY_POINTER' value='32911'/>
+<enum name='GL_NORMAL_ARRAY_STRIDE' value='32895'/>
+<enum name='GL_NORMAL_ARRAY_TYPE' value='32894'/>
+<enum name='GL_NOTEQUAL' value='517'/>
+<enum name='GL_NO_ERROR' value='0'/>
+<enum name='GL_NUM_COMPRESSED_TEXTURE_FORMATS' value='34466'/>
+<enum name='GL_OES_VERSION_1_0' value='1'/>
+<enum name='GL_OES_VERSION_1_1' value='1'/>
+<enum name='GL_OES_blend_subtract' value='1'/>
+<enum name='GL_OES_byte_coordinates' value='1'/>
+<enum name='GL_OES_compressed_paletted_texture' value='1'/>
+<enum name='GL_OES_depth24' value='1'/>
+<enum name='GL_OES_draw_texture' value='1'/>
+<enum name='GL_OES_fixed_point' value='1'/>
+<enum name='GL_OES_framebuffer_object' value='1'/>
+<enum name='GL_OES_mapbuffer' value='1'/>
+<enum name='GL_OES_matrix_get' value='1'/>
+<enum name='GL_OES_matrix_palette' value='1'/>
+<enum name='GL_OES_point_size_array' value='1'/>
+<enum name='GL_OES_point_sprite' value='1'/>
+<enum name='GL_OES_read_format' value='1'/>
+<enum name='GL_OES_rgb8_rgba8' value='1'/>
+<enum name='GL_OES_single_precision' value='1'/>
+<enum name='GL_OES_texture_mirrored_repeat' value='1'/>
+<enum name='GL_ONE' value='1'/>
+<enum name='GL_ONE_MINUS_DST_ALPHA' value='773'/>
+<enum name='GL_ONE_MINUS_DST_COLOR' value='775'/>
+<enum name='GL_ONE_MINUS_SRC_ALPHA' value='771'/>
+<enum name='GL_ONE_MINUS_SRC_COLOR' value='769'/>
+<enum name='GL_OPERAND0_ALPHA' value='34200'/>
+<enum name='GL_OPERAND0_RGB' value='34192'/>
+<enum name='GL_OPERAND1_ALPHA' value='34201'/>
+<enum name='GL_OPERAND1_RGB' value='34193'/>
+<enum name='GL_OPERAND2_ALPHA' value='34202'/>
+<enum name='GL_OPERAND2_RGB' value='34194'/>
+<enum name='GL_OR' value='5383'/>
+<enum name='GL_OR_INVERTED' value='5389'/>
+<enum name='GL_OR_REVERSE' value='5387'/>
+<enum name='GL_OUT_OF_MEMORY' value='1285'/>
+<enum name='GL_PACK_ALIGNMENT' value='3333'/>
+<enum name='GL_PALETTE4_R5_G6_B5_OES' value='35730'/>
+<enum name='GL_PALETTE4_RGB5_A1_OES' value='35732'/>
+<enum name='GL_PALETTE4_RGB8_OES' value='35728'/>
+<enum name='GL_PALETTE4_RGBA4_OES' value='35731'/>
+<enum name='GL_PALETTE4_RGBA8_OES' value='35729'/>
+<enum name='GL_PALETTE8_R5_G6_B5_OES' value='35735'/>
+<enum name='GL_PALETTE8_RGB5_A1_OES' value='35737'/>
+<enum name='GL_PALETTE8_RGB8_OES' value='35733'/>
+<enum name='GL_PALETTE8_RGBA4_OES' value='35736'/>
+<enum name='GL_PALETTE8_RGBA8_OES' value='35734'/>
+<enum name='GL_PERSPECTIVE_CORRECTION_HINT' value='3152'/>
+<enum name='GL_POINTS' value='0'/>
+<enum name='GL_POINT_DISTANCE_ATTENUATION' value='33065'/>
+<enum name='GL_POINT_FADE_THRESHOLD_SIZE' value='33064'/>
+<enum name='GL_POINT_SIZE' value='2833'/>
+<enum name='GL_POINT_SIZE_ARRAY_BUFFER_BINDING_OES' value='35743'/>
+<enum name='GL_POINT_SIZE_ARRAY_OES' value='35740'/>
+<enum name='GL_POINT_SIZE_ARRAY_POINTER_OES' value='35212'/>
+<enum name='GL_POINT_SIZE_ARRAY_STRIDE_OES' value='35211'/>
+<enum name='GL_POINT_SIZE_ARRAY_TYPE_OES' value='35210'/>
+<enum name='GL_POINT_SIZE_MAX' value='33063'/>
+<enum name='GL_POINT_SIZE_MIN' value='33062'/>
+<enum name='GL_POINT_SMOOTH' value='2832'/>
+<enum name='GL_POINT_SMOOTH_HINT' value='3153'/>
+<enum name='GL_POINT_SPRITE_OES' value='34913'/>
+<enum name='GL_POLYGON_OFFSET_FACTOR' value='32824'/>
+<enum name='GL_POLYGON_OFFSET_FILL' value='32823'/>
+<enum name='GL_POLYGON_OFFSET_UNITS' value='10752'/>
+<enum name='GL_POSITION' value='4611'/>
+<enum name='GL_PREVIOUS' value='34168'/>
+<enum name='GL_PRIMARY_COLOR' value='34167'/>
+<enum name='GL_PROJECTION' value='5889'/>
+<enum name='GL_PROJECTION_MATRIX' value='2983'/>
+<enum name='GL_PROJECTION_MATRIX_FLOAT_AS_INT_BITS_OES' value='35214'/>
+<enum name='GL_PROJECTION_STACK_DEPTH' value='2980'/>
+<enum name='GL_QUADRATIC_ATTENUATION' value='4617'/>
+<enum name='GL_RED_BITS' value='3410'/>
+<enum name='GL_RENDERBUFFER_ALPHA_SIZE_OES' value='36179'/>
+<enum name='GL_RENDERBUFFER_BINDING_OES' value='36007'/>
+<enum name='GL_RENDERBUFFER_BLUE_SIZE_OES' value='36178'/>
+<enum name='GL_RENDERBUFFER_DEPTH_SIZE_OES' value='36180'/>
+<enum name='GL_RENDERBUFFER_GREEN_SIZE_OES' value='36177'/>
+<enum name='GL_RENDERBUFFER_HEIGHT_OES' value='36163'/>
+<enum name='GL_RENDERBUFFER_INTERNAL_FORMAT_OES' value='36164'/>
+<enum name='GL_RENDERBUFFER_OES' value='36161'/>
+<enum name='GL_RENDERBUFFER_RED_SIZE_OES' value='36176'/>
+<enum name='GL_RENDERBUFFER_STENCIL_SIZE_OES' value='36181'/>
+<enum name='GL_RENDERBUFFER_WIDTH_OES' value='36162'/>
+<enum name='GL_RENDERER' value='7937'/>
+<enum name='GL_REPEAT' value='10497'/>
+<enum name='GL_REPLACE' value='7681'/>
+<enum name='GL_RESCALE_NORMAL' value='32826'/>
+<enum name='GL_RGB' value='6407'/>
+<enum name='GL_RGB565_OES' value='36194'/>
+<enum name='GL_RGB5_A1_OES' value='32855'/>
+<enum name='GL_RGB8_OES' value='32849'/>
+<enum name='GL_RGBA' value='6408'/>
+<enum name='GL_RGBA4_OES' value='32854'/>
+<enum name='GL_RGBA8_OES' value='32856'/>
+<enum name='GL_RGB_SCALE' value='34163'/>
+<enum name='GL_SAMPLES' value='32937'/>
+<enum name='GL_SAMPLE_ALPHA_TO_COVERAGE' value='32926'/>
+<enum name='GL_SAMPLE_ALPHA_TO_ONE' value='32927'/>
+<enum name='GL_SAMPLE_BUFFERS' value='32936'/>
+<enum name='GL_SAMPLE_COVERAGE' value='32928'/>
+<enum name='GL_SAMPLE_COVERAGE_INVERT' value='32939'/>
+<enum name='GL_SAMPLE_COVERAGE_VALUE' value='32938'/>
+<enum name='GL_SCISSOR_BOX' value='3088'/>
+<enum name='GL_SCISSOR_TEST' value='3089'/>
+<enum name='GL_SET' value='5391'/>
+<enum name='GL_SHADE_MODEL' value='2900'/>
+<enum name='GL_SHININESS' value='5633'/>
+<enum name='GL_SHORT' value='5122'/>
+<enum name='GL_SMOOTH' value='7425'/>
+<enum name='GL_SMOOTH_LINE_WIDTH_RANGE' value='2850'/>
+<enum name='GL_SMOOTH_POINT_SIZE_RANGE' value='2834'/>
+<enum name='GL_SPECULAR' value='4610'/>
+<enum name='GL_SPOT_CUTOFF' value='4614'/>
+<enum name='GL_SPOT_DIRECTION' value='4612'/>
+<enum name='GL_SPOT_EXPONENT' value='4613'/>
+<enum name='GL_SRC0_ALPHA' value='34184'/>
+<enum name='GL_SRC0_RGB' value='34176'/>
+<enum name='GL_SRC1_ALPHA' value='34185'/>
+<enum name='GL_SRC1_RGB' value='34177'/>
+<enum name='GL_SRC2_ALPHA' value='34186'/>
+<enum name='GL_SRC2_RGB' value='34178'/>
+<enum name='GL_SRC_ALPHA' value='770'/>
+<enum name='GL_SRC_ALPHA_SATURATE' value='776'/>
+<enum name='GL_SRC_COLOR' value='768'/>
+<enum name='GL_STACK_OVERFLOW' value='1283'/>
+<enum name='GL_STACK_UNDERFLOW' value='1284'/>
+<enum name='GL_STATIC_DRAW' value='35044'/>
+<enum name='GL_STENCIL_ATTACHMENT_OES' value='36128'/>
+<enum name='GL_STENCIL_BITS' value='3415'/>
+<enum name='GL_STENCIL_BUFFER_BIT' value='1024'/>
+<enum name='GL_STENCIL_CLEAR_VALUE' value='2961'/>
+<enum name='GL_STENCIL_FAIL' value='2964'/>
+<enum name='GL_STENCIL_FUNC' value='2962'/>
+<enum name='GL_STENCIL_PASS_DEPTH_FAIL' value='2965'/>
+<enum name='GL_STENCIL_PASS_DEPTH_PASS' value='2966'/>
+<enum name='GL_STENCIL_REF' value='2967'/>
+<enum name='GL_STENCIL_TEST' value='2960'/>
+<enum name='GL_STENCIL_VALUE_MASK' value='2963'/>
+<enum name='GL_STENCIL_WRITEMASK' value='2968'/>
+<enum name='GL_SUBPIXEL_BITS' value='3408'/>
+<enum name='GL_SUBTRACT' value='34023'/>
+<enum name='GL_TEXTURE' value='5890'/>
+<enum name='GL_TEXTURE0' value='33984'/>
+<enum name='GL_TEXTURE1' value='33985'/>
+<enum name='GL_TEXTURE10' value='33994'/>
+<enum name='GL_TEXTURE11' value='33995'/>
+<enum name='GL_TEXTURE12' value='33996'/>
+<enum name='GL_TEXTURE13' value='33997'/>
+<enum name='GL_TEXTURE14' value='33998'/>
+<enum name='GL_TEXTURE15' value='33999'/>
+<enum name='GL_TEXTURE16' value='34000'/>
+<enum name='GL_TEXTURE17' value='34001'/>
+<enum name='GL_TEXTURE18' value='34002'/>
+<enum name='GL_TEXTURE19' value='34003'/>
+<enum name='GL_TEXTURE2' value='33986'/>
+<enum name='GL_TEXTURE20' value='34004'/>
+<enum name='GL_TEXTURE21' value='34005'/>
+<enum name='GL_TEXTURE22' value='34006'/>
+<enum name='GL_TEXTURE23' value='34007'/>
+<enum name='GL_TEXTURE24' value='34008'/>
+<enum name='GL_TEXTURE25' value='34009'/>
+<enum name='GL_TEXTURE26' value='34010'/>
+<enum name='GL_TEXTURE27' value='34011'/>
+<enum name='GL_TEXTURE28' value='34012'/>
+<enum name='GL_TEXTURE29' value='34013'/>
+<enum name='GL_TEXTURE3' value='33987'/>
+<enum name='GL_TEXTURE30' value='34014'/>
+<enum name='GL_TEXTURE31' value='34015'/>
+<enum name='GL_TEXTURE4' value='33988'/>
+<enum name='GL_TEXTURE5' value='33989'/>
+<enum name='GL_TEXTURE6' value='33990'/>
+<enum name='GL_TEXTURE7' value='33991'/>
+<enum name='GL_TEXTURE8' value='33992'/>
+<enum name='GL_TEXTURE9' value='33993'/>
+<enum name='GL_TEXTURE_2D' value='3553'/>
+<enum name='GL_TEXTURE_BINDING_2D' value='32873'/>
+<enum name='GL_TEXTURE_COORD_ARRAY' value='32888'/>
+<enum name='GL_TEXTURE_COORD_ARRAY_BUFFER_BINDING' value='34970'/>
+<enum name='GL_TEXTURE_COORD_ARRAY_POINTER' value='32914'/>
+<enum name='GL_TEXTURE_COORD_ARRAY_SIZE' value='32904'/>
+<enum name='GL_TEXTURE_COORD_ARRAY_STRIDE' value='32906'/>
+<enum name='GL_TEXTURE_COORD_ARRAY_TYPE' value='32905'/>
+<enum name='GL_TEXTURE_CROP_RECT_OES' value='35741'/>
+<enum name='GL_TEXTURE_ENV' value='8960'/>
+<enum name='GL_TEXTURE_ENV_COLOR' value='8705'/>
+<enum name='GL_TEXTURE_ENV_MODE' value='8704'/>
+<enum name='GL_TEXTURE_FILTER_CONTROL_EXT' value='34048'/>
+<enum name='GL_TEXTURE_LOD_BIAS_EXT' value='34049'/>
+<enum name='GL_TEXTURE_MAG_FILTER' value='10240'/>
+<enum name='GL_TEXTURE_MATRIX' value='2984'/>
+<enum name='GL_TEXTURE_MATRIX_FLOAT_AS_INT_BITS_OES' value='35215'/>
+<enum name='GL_TEXTURE_MAX_ANISOTROPY_EXT' value='34046'/>
+<enum name='GL_TEXTURE_MIN_FILTER' value='10241'/>
+<enum name='GL_TEXTURE_STACK_DEPTH' value='2981'/>
+<enum name='GL_TEXTURE_WRAP_S' value='10242'/>
+<enum name='GL_TEXTURE_WRAP_T' value='10243'/>
+<enum name='GL_TRIANGLES' value='4'/>
+<enum name='GL_TRIANGLE_FAN' value='6'/>
+<enum name='GL_TRIANGLE_STRIP' value='5'/>
+<enum name='GL_TRUE' value='1'/>
+<enum name='GL_UNPACK_ALIGNMENT' value='3317'/>
+<enum name='GL_UNSIGNED_BYTE' value='5121'/>
+<enum name='GL_UNSIGNED_SHORT' value='5123'/>
+<enum name='GL_UNSIGNED_SHORT_4_4_4_4' value='32819'/>
+<enum name='GL_UNSIGNED_SHORT_4_4_4_4_REV' value='33637'/>
+<enum name='GL_UNSIGNED_SHORT_5_5_5_1' value='32820'/>
+<enum name='GL_UNSIGNED_SHORT_5_6_5' value='33635'/>
+<enum name='GL_VENDOR' value='7936'/>
+<enum name='GL_VERSION' value='7938'/>
+<enum name='GL_VERSION_ES_CL_1_0' value='1'/>
+<enum name='GL_VERSION_ES_CL_1_1' value='1'/>
+<enum name='GL_VERSION_ES_CM_1_0' value='1'/>
+<enum name='GL_VERSION_ES_CM_1_1' value='1'/>
+<enum name='GL_VERTEX_ARRAY' value='32884'/>
+<enum name='GL_VERTEX_ARRAY_BUFFER_BINDING' value='34966'/>
+<enum name='GL_VERTEX_ARRAY_POINTER' value='32910'/>
+<enum name='GL_VERTEX_ARRAY_SIZE' value='32890'/>
+<enum name='GL_VERTEX_ARRAY_STRIDE' value='32892'/>
+<enum name='GL_VERTEX_ARRAY_TYPE' value='32891'/>
+<enum name='GL_VIEWPORT' value='2978'/>
+<enum name='GL_WEIGHT_ARRAY_BUFFER_BINDING_OES' value='34974'/>
+<enum name='GL_WEIGHT_ARRAY_OES' value='34477'/>
+<enum name='GL_WEIGHT_ARRAY_POINTER_OES' value='34476'/>
+<enum name='GL_WEIGHT_ARRAY_SIZE_OES' value='34475'/>
+<enum name='GL_WEIGHT_ARRAY_STRIDE_OES' value='34474'/>
+<enum name='GL_WEIGHT_ARRAY_TYPE_OES' value='34473'/>
+<enum name='GL_WRITE_ONLY_OES' value='35001'/>
+<enum name='GL_XOR' value='5382'/>
+<enum name='GL_ZERO' value='0'/>
+<enum name='kEAGLRenderingAPIOpenGLES1' value='1'/>
+<function name='glActiveTexture'>
+<arg type='I'/>
+</function>
+<function name='glAlphaFunc'>
+<arg type='I'/>
+<arg type='f'/>
+</function>
+<function name='glAlphaFuncx'>
+<arg type='I'/>
+<arg type='i'/>
+</function>
+<function name='glBindBuffer'>
+<arg type='I'/>
+<arg type='I'/>
+</function>
+<function name='glBindFramebufferOES'>
+<arg type='I'/>
+<arg type='I'/>
+</function>
+<function name='glBindRenderbufferOES'>
+<arg type='I'/>
+<arg type='I'/>
+</function>
+<function name='glBindTexture'>
+<arg type='I'/>
+<arg type='I'/>
+</function>
+<function name='glBlendEquationOES'>
+<arg type='I'/>
+</function>
+<function name='glBlendFunc'>
+<arg type='I'/>
+<arg type='I'/>
+</function>
+<function name='glBufferData'>
+<arg type='I'/>
+<arg type='i'/>
+<arg type='^v'/>
+<arg type='I'/>
+</function>
+<function name='glBufferSubData'>
+<arg type='I'/>
+<arg type='i'/>
+<arg type='i'/>
+<arg type='^v'/>
+</function>
+<function name='glCheckFramebufferStatusOES'>
+<arg type='I'/>
+<retval type='I'/>
+</function>
+<function name='glClear'>
+<arg type='I'/>
+</function>
+<function name='glClearColor'>
+<arg type='f'/>
+<arg type='f'/>
+<arg type='f'/>
+<arg type='f'/>
+</function>
+<function name='glClearColorx'>
+<arg type='i'/>
+<arg type='i'/>
+<arg type='i'/>
+<arg type='i'/>
+</function>
+<function name='glClearDepthf'>
+<arg type='f'/>
+</function>
+<function name='glClearDepthx'>
+<arg type='i'/>
+</function>
+<function name='glClearStencil'>
+<arg type='i'/>
+</function>
+<function name='glClientActiveTexture'>
+<arg type='I'/>
+</function>
+<function name='glClipPlanef'>
+<arg type='I'/>
+<arg type='^f'/>
+</function>
+<function name='glClipPlanex'>
+<arg type='I'/>
+<arg type='^i'/>
+</function>
+<function name='glColor4f'>
+<arg type='f'/>
+<arg type='f'/>
+<arg type='f'/>
+<arg type='f'/>
+</function>
+<function name='glColor4ub'>
+<arg type='C'/>
+<arg type='C'/>
+<arg type='C'/>
+<arg type='C'/>
+</function>
+<function name='glColor4x'>
+<arg type='i'/>
+<arg type='i'/>
+<arg type='i'/>
+<arg type='i'/>
+</function>
+<function name='glColorMask'>
+<arg type='C'/>
+<arg type='C'/>
+<arg type='C'/>
+<arg type='C'/>
+</function>
+<function name='glColorPointer'>
+<arg type='i'/>
+<arg type='I'/>
+<arg type='i'/>
+<arg type='^v'/>
+</function>
+<function name='glCompressedTexImage2D'>
+<arg type='I'/>
+<arg type='i'/>
+<arg type='I'/>
+<arg type='i'/>
+<arg type='i'/>
+<arg type='i'/>
+<arg type='i'/>
+<arg type='^v'/>
+</function>
+<function name='glCompressedTexSubImage2D'>
+<arg type='I'/>
+<arg type='i'/>
+<arg type='i'/>
+<arg type='i'/>
+<arg type='i'/>
+<arg type='i'/>
+<arg type='I'/>
+<arg type='i'/>
+<arg type='^v'/>
+</function>
+<function name='glCopyTexImage2D'>
+<arg type='I'/>
+<arg type='i'/>
+<arg type='I'/>
+<arg type='i'/>
+<arg type='i'/>
+<arg type='i'/>
+<arg type='i'/>
+<arg type='i'/>
+</function>
+<function name='glCopyTexSubImage2D'>
+<arg type='I'/>
+<arg type='i'/>
+<arg type='i'/>
+<arg type='i'/>
+<arg type='i'/>
+<arg type='i'/>
+<arg type='i'/>
+<arg type='i'/>
+</function>
+<function name='glCullFace'>
+<arg type='I'/>
+</function>
+<function name='glCurrentPaletteMatrixOES'>
+<arg type='I'/>
+</function>
+<function name='glDeleteBuffers'>
+<arg type='i'/>
+<arg type='^I'/>
+</function>
+<function name='glDeleteFramebuffersOES'>
+<arg type='i'/>
+<arg type='^I'/>
+</function>
+<function name='glDeleteRenderbuffersOES'>
+<arg type='i'/>
+<arg type='^I'/>
+</function>
+<function name='glDeleteTextures'>
+<arg type='i'/>
+<arg type='^I'/>
+</function>
+<function name='glDepthFunc'>
+<arg type='I'/>
+</function>
+<function name='glDepthMask'>
+<arg type='C'/>
+</function>
+<function name='glDepthRangef'>
+<arg type='f'/>
+<arg type='f'/>
+</function>
+<function name='glDepthRangex'>
+<arg type='i'/>
+<arg type='i'/>
+</function>
+<function name='glDisable'>
+<arg type='I'/>
+</function>
+<function name='glDisableClientState'>
+<arg type='I'/>
+</function>
+<function name='glDrawArrays'>
+<arg type='I'/>
+<arg type='i'/>
+<arg type='i'/>
+</function>
+<function name='glDrawElements'>
+<arg type='I'/>
+<arg type='i'/>
+<arg type='I'/>
+<arg type='^v'/>
+</function>
+<function name='glDrawTexfOES'>
+<arg type='f'/>
+<arg type='f'/>
+<arg type='f'/>
+<arg type='f'/>
+<arg type='f'/>
+</function>
+<function name='glDrawTexfvOES'>
+<arg type='^f'/>
+</function>
+<function name='glDrawTexiOES'>
+<arg type='i'/>
+<arg type='i'/>
+<arg type='i'/>
+<arg type='i'/>
+<arg type='i'/>
+</function>
+<function name='glDrawTexivOES'>
+<arg type='^i'/>
+</function>
+<function name='glDrawTexsOES'>
+<arg type='s'/>
+<arg type='s'/>
+<arg type='s'/>
+<arg type='s'/>
+<arg type='s'/>
+</function>
+<function name='glDrawTexsvOES'>
+<arg type='^s'/>
+</function>
+<function name='glDrawTexxOES'>
+<arg type='i'/>
+<arg type='i'/>
+<arg type='i'/>
+<arg type='i'/>
+<arg type='i'/>
+</function>
+<function name='glDrawTexxvOES'>
+<arg type='^i'/>
+</function>
+<function name='glEnable'>
+<arg type='I'/>
+</function>
+<function name='glEnableClientState'>
+<arg type='I'/>
+</function>
+<function name='glFinish'/>
+<function name='glFlush'/>
+<function name='glFogf'>
+<arg type='I'/>
+<arg type='f'/>
+</function>
+<function name='glFogfv'>
+<arg type='I'/>
+<arg type='^f'/>
+</function>
+<function name='glFogx'>
+<arg type='I'/>
+<arg type='i'/>
+</function>
+<function name='glFogxv'>
+<arg type='I'/>
+<arg type='^i'/>
+</function>
+<function name='glFramebufferRenderbufferOES'>
+<arg type='I'/>
+<arg type='I'/>
+<arg type='I'/>
+<arg type='I'/>
+</function>
+<function name='glFramebufferTexture2DOES'>
+<arg type='I'/>
+<arg type='I'/>
+<arg type='I'/>
+<arg type='I'/>
+<arg type='i'/>
+</function>
+<function name='glFrontFace'>
+<arg type='I'/>
+</function>
+<function name='glFrustumf'>
+<arg type='f'/>
+<arg type='f'/>
+<arg type='f'/>
+<arg type='f'/>
+<arg type='f'/>
+<arg type='f'/>
+</function>
+<function name='glFrustumx'>
+<arg type='i'/>
+<arg type='i'/>
+<arg type='i'/>
+<arg type='i'/>
+<arg type='i'/>
+<arg type='i'/>
+</function>
+<function name='glGenBuffers'>
+<arg type='i'/>
+<arg type='^I'/>
+</function>
+<function name='glGenFramebuffersOES'>
+<arg type='i'/>
+<arg type='^I'/>
+</function>
+<function name='glGenRenderbuffersOES'>
+<arg type='i'/>
+<arg type='^I'/>
+</function>
+<function name='glGenTextures'>
+<arg type='i'/>
+<arg type='^I'/>
+</function>
+<function name='glGenerateMipmapOES'>
+<arg type='I'/>
+</function>
+<function name='glGetBooleanv'>
+<arg type='I'/>
+<arg type='*'/>
+</function>
+<function name='glGetBufferParameteriv'>
+<arg type='I'/>
+<arg type='I'/>
+<arg type='^i'/>
+</function>
+<function name='glGetBufferPointervOES'>
+<arg type='I'/>
+<arg type='I'/>
+<arg type='^^v'/>
+</function>
+<function name='glGetClipPlanef'>
+<arg type='I'/>
+<arg type='^f'/>
+</function>
+<function name='glGetClipPlanex'>
+<arg type='I'/>
+<arg type='^i'/>
+</function>
+<function name='glGetError'>
+<retval type='I'/>
+</function>
+<function name='glGetFixedv'>
+<arg type='I'/>
+<arg type='^i'/>
+</function>
+<function name='glGetFloatv'>
+<arg type='I'/>
+<arg type='^f'/>
+</function>
+<function name='glGetFramebufferAttachmentParameterivOES'>
+<arg type='I'/>
+<arg type='I'/>
+<arg type='I'/>
+<arg type='^i'/>
+</function>
+<function name='glGetIntegerv'>
+<arg type='I'/>
+<arg type='^i'/>
+</function>
+<function name='glGetLightfv'>
+<arg type='I'/>
+<arg type='I'/>
+<arg type='^f'/>
+</function>
+<function name='glGetLightxv'>
+<arg type='I'/>
+<arg type='I'/>
+<arg type='^i'/>
+</function>
+<function name='glGetMaterialfv'>
+<arg type='I'/>
+<arg type='I'/>
+<arg type='^f'/>
+</function>
+<function name='glGetMaterialxv'>
+<arg type='I'/>
+<arg type='I'/>
+<arg type='^i'/>
+</function>
+<function name='glGetPointerv'>
+<arg type='I'/>
+<arg type='^^v'/>
+</function>
+<function name='glGetRenderbufferParameterivOES'>
+<arg type='I'/>
+<arg type='I'/>
+<arg type='^i'/>
+</function>
+<function name='glGetString'>
+<arg type='I'/>
+<retval type='*'/>
+</function>
+<function name='glGetTexEnvfv'>
+<arg type='I'/>
+<arg type='I'/>
+<arg type='^f'/>
+</function>
+<function name='glGetTexEnviv'>
+<arg type='I'/>
+<arg type='I'/>
+<arg type='^i'/>
+</function>
+<function name='glGetTexEnvxv'>
+<arg type='I'/>
+<arg type='I'/>
+<arg type='^i'/>
+</function>
+<function name='glGetTexParameterfv'>
+<arg type='I'/>
+<arg type='I'/>
+<arg type='^f'/>
+</function>
+<function name='glGetTexParameteriv'>
+<arg type='I'/>
+<arg type='I'/>
+<arg type='^i'/>
+</function>
+<function name='glGetTexParameterxv'>
+<arg type='I'/>
+<arg type='I'/>
+<arg type='^i'/>
+</function>
+<function name='glHint'>
+<arg type='I'/>
+<arg type='I'/>
+</function>
+<function name='glIsBuffer'>
+<arg type='I'/>
+<retval type='C'/>
+</function>
+<function name='glIsEnabled'>
+<arg type='I'/>
+<retval type='C'/>
+</function>
+<function name='glIsFramebufferOES'>
+<arg type='I'/>
+<retval type='C'/>
+</function>
+<function name='glIsRenderbufferOES'>
+<arg type='I'/>
+<retval type='C'/>
+</function>
+<function name='glIsTexture'>
+<arg type='I'/>
+<retval type='C'/>
+</function>
+<function name='glLightModelf'>
+<arg type='I'/>
+<arg type='f'/>
+</function>
+<function name='glLightModelfv'>
+<arg type='I'/>
+<arg type='^f'/>
+</function>
+<function name='glLightModelx'>
+<arg type='I'/>
+<arg type='i'/>
+</function>
+<function name='glLightModelxv'>
+<arg type='I'/>
+<arg type='^i'/>
+</function>
+<function name='glLightf'>
+<arg type='I'/>
+<arg type='I'/>
+<arg type='f'/>
+</function>
+<function name='glLightfv'>
+<arg type='I'/>
+<arg type='I'/>
+<arg type='^f'/>
+</function>
+<function name='glLightx'>
+<arg type='I'/>
+<arg type='I'/>
+<arg type='i'/>
+</function>
+<function name='glLightxv'>
+<arg type='I'/>
+<arg type='I'/>
+<arg type='^i'/>
+</function>
+<function name='glLineWidth'>
+<arg type='f'/>
+</function>
+<function name='glLineWidthx'>
+<arg type='i'/>
+</function>
+<function name='glLoadIdentity'/>
+<function name='glLoadMatrixf'>
+<arg type='^f'/>
+</function>
+<function name='glLoadMatrixx'>
+<arg type='^i'/>
+</function>
+<function name='glLoadPaletteFromModelViewMatrixOES'/>
+<function name='glLogicOp'>
+<arg type='I'/>
+</function>
+<function name='glMapBufferOES'>
+<arg type='I'/>
+<arg type='I'/>
+<retval type='^v'/>
+</function>
+<function name='glMaterialf'>
+<arg type='I'/>
+<arg type='I'/>
+<arg type='f'/>
+</function>
+<function name='glMaterialfv'>
+<arg type='I'/>
+<arg type='I'/>
+<arg type='^f'/>
+</function>
+<function name='glMaterialx'>
+<arg type='I'/>
+<arg type='I'/>
+<arg type='i'/>
+</function>
+<function name='glMaterialxv'>
+<arg type='I'/>
+<arg type='I'/>
+<arg type='^i'/>
+</function>
+<function name='glMatrixIndexPointerOES'>
+<arg type='i'/>
+<arg type='I'/>
+<arg type='i'/>
+<arg type='^v'/>
+</function>
+<function name='glMatrixMode'>
+<arg type='I'/>
+</function>
+<function name='glMultMatrixf'>
+<arg type='^f'/>
+</function>
+<function name='glMultMatrixx'>
+<arg type='^i'/>
+</function>
+<function name='glMultiTexCoord4f'>
+<arg type='I'/>
+<arg type='f'/>
+<arg type='f'/>
+<arg type='f'/>
+<arg type='f'/>
+</function>
+<function name='glMultiTexCoord4x'>
+<arg type='I'/>
+<arg type='i'/>
+<arg type='i'/>
+<arg type='i'/>
+<arg type='i'/>
+</function>
+<function name='glNormal3f'>
+<arg type='f'/>
+<arg type='f'/>
+<arg type='f'/>
+</function>
+<function name='glNormal3x'>
+<arg type='i'/>
+<arg type='i'/>
+<arg type='i'/>
+</function>
+<function name='glNormalPointer'>
+<arg type='I'/>
+<arg type='i'/>
+<arg type='^v'/>
+</function>
+<function name='glOrthof'>
+<arg type='f'/>
+<arg type='f'/>
+<arg type='f'/>
+<arg type='f'/>
+<arg type='f'/>
+<arg type='f'/>
+</function>
+<function name='glOrthox'>
+<arg type='i'/>
+<arg type='i'/>
+<arg type='i'/>
+<arg type='i'/>
+<arg type='i'/>
+<arg type='i'/>
+</function>
+<function name='glPixelStorei'>
+<arg type='I'/>
+<arg type='i'/>
+</function>
+<function name='glPointParameterf'>
+<arg type='I'/>
+<arg type='f'/>
+</function>
+<function name='glPointParameterfv'>
+<arg type='I'/>
+<arg type='^f'/>
+</function>
+<function name='glPointParameterx'>
+<arg type='I'/>
+<arg type='i'/>
+</function>
+<function name='glPointParameterxv'>
+<arg type='I'/>
+<arg type='^i'/>
+</function>
+<function name='glPointSize'>
+<arg type='f'/>
+</function>
+<function name='glPointSizePointerOES'>
+<arg type='I'/>
+<arg type='i'/>
+<arg type='^v'/>
+</function>
+<function name='glPointSizex'>
+<arg type='i'/>
+</function>
+<function name='glPolygonOffset'>
+<arg type='f'/>
+<arg type='f'/>
+</function>
+<function name='glPolygonOffsetx'>
+<arg type='i'/>
+<arg type='i'/>
+</function>
+<function name='glPopMatrix'/>
+<function name='glPushMatrix'/>
+<function name='glReadPixels'>
+<arg type='i'/>
+<arg type='i'/>
+<arg type='i'/>
+<arg type='i'/>
+<arg type='I'/>
+<arg type='I'/>
+<arg type='^v'/>
+</function>
+<function name='glRenderbufferStorageOES'>
+<arg type='I'/>
+<arg type='I'/>
+<arg type='i'/>
+<arg type='i'/>
+</function>
+<function name='glRotatef'>
+<arg type='f'/>
+<arg type='f'/>
+<arg type='f'/>
+<arg type='f'/>
+</function>
+<function name='glRotatex'>
+<arg type='i'/>
+<arg type='i'/>
+<arg type='i'/>
+<arg type='i'/>
+</function>
+<function name='glSampleCoverage'>
+<arg type='f'/>
+<arg type='C'/>
+</function>
+<function name='glSampleCoveragex'>
+<arg type='i'/>
+<arg type='C'/>
+</function>
+<function name='glScalef'>
+<arg type='f'/>
+<arg type='f'/>
+<arg type='f'/>
+</function>
+<function name='glScalex'>
+<arg type='i'/>
+<arg type='i'/>
+<arg type='i'/>
+</function>
+<function name='glScissor'>
+<arg type='i'/>
+<arg type='i'/>
+<arg type='i'/>
+<arg type='i'/>
+</function>
+<function name='glShadeModel'>
+<arg type='I'/>
+</function>
+<function name='glStencilFunc'>
+<arg type='I'/>
+<arg type='i'/>
+<arg type='I'/>
+</function>
+<function name='glStencilMask'>
+<arg type='I'/>
+</function>
+<function name='glStencilOp'>
+<arg type='I'/>
+<arg type='I'/>
+<arg type='I'/>
+</function>
+<function name='glTexCoordPointer'>
+<arg type='i'/>
+<arg type='I'/>
+<arg type='i'/>
+<arg type='^v'/>
+</function>
+<function name='glTexEnvf'>
+<arg type='I'/>
+<arg type='I'/>
+<arg type='f'/>
+</function>
+<function name='glTexEnvfv'>
+<arg type='I'/>
+<arg type='I'/>
+<arg type='^f'/>
+</function>
+<function name='glTexEnvi'>
+<arg type='I'/>
+<arg type='I'/>
+<arg type='i'/>
+</function>
+<function name='glTexEnviv'>
+<arg type='I'/>
+<arg type='I'/>
+<arg type='^i'/>
+</function>
+<function name='glTexEnvx'>
+<arg type='I'/>
+<arg type='I'/>
+<arg type='i'/>
+</function>
+<function name='glTexEnvxv'>
+<arg type='I'/>
+<arg type='I'/>
+<arg type='^i'/>
+</function>
+<function name='glTexImage2D'>
+<arg type='I'/>
+<arg type='i'/>
+<arg type='i'/>
+<arg type='i'/>
+<arg type='i'/>
+<arg type='i'/>
+<arg type='I'/>
+<arg type='I'/>
+<arg type='^v'/>
+</function>
+<function name='glTexParameterf'>
+<arg type='I'/>
+<arg type='I'/>
+<arg type='f'/>
+</function>
+<function name='glTexParameterfv'>
+<arg type='I'/>
+<arg type='I'/>
+<arg type='^f'/>
+</function>
+<function name='glTexParameteri'>
+<arg type='I'/>
+<arg type='I'/>
+<arg type='i'/>
+</function>
+<function name='glTexParameteriv'>
+<arg type='I'/>
+<arg type='I'/>
+<arg type='^i'/>
+</function>
+<function name='glTexParameterx'>
+<arg type='I'/>
+<arg type='I'/>
+<arg type='i'/>
+</function>
+<function name='glTexParameterxv'>
+<arg type='I'/>
+<arg type='I'/>
+<arg type='^i'/>
+</function>
+<function name='glTexSubImage2D'>
+<arg type='I'/>
+<arg type='i'/>
+<arg type='i'/>
+<arg type='i'/>
+<arg type='i'/>
+<arg type='i'/>
+<arg type='I'/>
+<arg type='I'/>
+<arg type='^v'/>
+</function>
+<function name='glTranslatef'>
+<arg type='f'/>
+<arg type='f'/>
+<arg type='f'/>
+</function>
+<function name='glTranslatex'>
+<arg type='i'/>
+<arg type='i'/>
+<arg type='i'/>
+</function>
+<function name='glUnmapBufferOES'>
+<arg type='I'/>
+<retval type='C'/>
+</function>
+<function name='glVertexPointer'>
+<arg type='i'/>
+<arg type='I'/>
+<arg type='i'/>
+<arg type='^v'/>
+</function>
+<function name='glViewport'>
+<arg type='i'/>
+<arg type='i'/>
+<arg type='i'/>
+<arg type='i'/>
+</function>
+<function name='glWeightPointerOES'>
+<arg type='i'/>
+<arg type='I'/>
+<arg type='i'/>
+<arg type='^v'/>
+</function>
+<class name='EAGLContext'>
+<method selector='presentRenderbuffer:'>
+<retval type='B'/>
+</method>
+<method selector='renderbufferStorage:fromDrawable:'>
+<retval type='B'/>
+</method>
+<method class_method='true' selector='setCurrentContext:'>
+<retval type='B'/>
+</method>
+</class>
+</signatures>

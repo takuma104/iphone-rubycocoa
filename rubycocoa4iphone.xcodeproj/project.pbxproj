@@ -10,7 +10,6 @@
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
-		288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
 		8D54FD370F63DDEC009AD3C4 /* RubyCocoa.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D54FD130F63DDEC009AD3C4 /* RubyCocoa.m */; };
 		8D54FD380F63DDEC009AD3C4 /* RBThreadSwitcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D54FD150F63DDEC009AD3C4 /* RBThreadSwitcher.m */; };
 		8D54FD390F63DDEC009AD3C4 /* RBTestProbe.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D54FD170F63DDEC009AD3C4 /* RBTestProbe.m */; };
@@ -43,6 +42,7 @@
 		F15851E70F5EDF13009A700F /* iconv.c in Sources */ = {isa = PBXBuildFile; fileRef = F15851E00F5EDF13009A700F /* iconv.c */; };
 		F158522B0F5EDFE5009A700F /* libiconv.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F158522A0F5EDFE5009A700F /* libiconv.2.dylib */; };
 		F158523D0F5EE261009A700F /* webdav.rb in Resources */ = {isa = PBXBuildFile; fileRef = F158523C0F5EE261009A700F /* webdav.rb */; };
+		F17B38C80F64228C0000C7DC /* BridgeSupport in Resources */ = {isa = PBXBuildFile; fileRef = F17B38BB0F64228C0000C7DC /* BridgeSupport */; };
 		F1CE7B510F4B2CB2006BAA18 /* main.rb in Resources */ = {isa = PBXBuildFile; fileRef = F1CE7B500F4B2CB2006BAA18 /* main.rb */; };
 /* End PBXBuildFile section */
 
@@ -50,7 +50,6 @@
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D6058910D05DD3D006BFB54 /* rubycocoa4iphone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rubycocoa4iphone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		288765FC0DF74451002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* rubycocoa4iphone_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rubycocoa4iphone_Prefix.pch; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -113,6 +112,7 @@
 		F15851EB0F5EDF7E009A700F /* st.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = st.h; sourceTree = "<group>"; };
 		F158522A0F5EDFE5009A700F /* libiconv.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.2.dylib; path = usr/lib/libiconv.2.dylib; sourceTree = SDKROOT; };
 		F158523C0F5EE261009A700F /* webdav.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = webdav.rb; sourceTree = "<group>"; };
+		F17B38BB0F64228C0000C7DC /* BridgeSupport */ = {isa = PBXFileReference; lastKnownFileType = folder; path = BridgeSupport; sourceTree = "<group>"; };
 		F1CE7A550F4B1BF7006BAA18 /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
 		F1CE7A560F4B1BF7006BAA18 /* defines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = defines.h; sourceTree = "<group>"; };
 		F1CE7A570F4B1BF7006BAA18 /* intern.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = intern.h; sourceTree = "<group>"; };
@@ -129,7 +129,6 @@
 			files = (
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
-				288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */,
 				8DE53D0E0F55A7C000A77153 /* libruby-static-full.a in Frameworks */,
 				F158522B0F5EDFE5009A700F /* libiconv.2.dylib in Frameworks */,
 				8D6942A90F63F449007B2F46 /* sysv.o in Frameworks */,
@@ -192,7 +191,6 @@
 			children = (
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
-				288765FC0DF74451002DB57D /* CoreGraphics.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -235,6 +233,7 @@
 		F1584BC40F5ED870009A700F /* Ruby */ = {
 			isa = PBXGroup;
 			children = (
+				F17B38BB0F64228C0000C7DC /* BridgeSupport */,
 				F1584F380F5EDE6E009A700F /* lib */,
 			);
 			name = Ruby;
@@ -378,6 +377,7 @@
 				8D93B3BD0F5AC31800C653F0 /* remote_irb.rb in Resources */,
 				F15851D00F5EDE6F009A700F /* lib in Resources */,
 				F158523D0F5EE261009A700F /* webdav.rb in Resources */,
+				F17B38C80F64228C0000C7DC /* BridgeSupport in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,6 +446,7 @@
 					"\"$(SRCROOT)/ruby/ext/strscan\"",
 					"\"$(SRCROOT)/ruby/ext/syck\"",
 					"\"$(SRCROOT)/ruby/ext/thread\"",
+					"\"$(SRCROOT)/BridgeSupport\"",
 				);
 				PRODUCT_NAME = rubycocoa4iphone;
 			};
@@ -481,6 +482,7 @@
 					"\"$(SRCROOT)/ruby/ext/strscan\"",
 					"\"$(SRCROOT)/ruby/ext/syck\"",
 					"\"$(SRCROOT)/ruby/ext/thread\"",
+					"\"$(SRCROOT)/BridgeSupport\"",
 				);
 				PRODUCT_NAME = rubycocoa4iphone;
 			};

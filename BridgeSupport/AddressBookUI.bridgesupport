@@ -1,0 +1,42 @@
+<?xml version='1.0'?>
+<!DOCTYPE signatures SYSTEM "file://localhost/System/Library/DTDs/BridgeSupport.dtd">
+<signatures version='0.9'>
+<function name='ABCreateStringWithAddressDictionary'>
+<arg type='@'/>
+<arg type='B'/>
+<retval type='@'/>
+</function>
+<class name='ABPersonViewController'>
+<method selector='allowsEditing'>
+<retval type='B'/>
+</method>
+<method selector='setAllowsEditing:'>
+<arg type='B' index='0'/>
+</method>
+</class>
+<class name='ABUnknownPersonViewController'>
+<method selector='allowsActions'>
+<retval type='B'/>
+</method>
+<method selector='allowsAddingToAddressBook'>
+<retval type='B'/>
+</method>
+<method selector='setAllowsActions:'>
+<arg type='B' index='0'/>
+</method>
+<method selector='setAllowsAddingToAddressBook:'>
+<arg type='B' index='0'/>
+</method>
+</class>
+<class name='NSObject'>
+<method selector='peoplePickerNavigationController:shouldContinueAfterSelectingPerson:'>
+<retval type='B'/>
+</method>
+<method selector='peoplePickerNavigationController:shouldContinueAfterSelectingPerson:property:identifier:'>
+<retval type='B'/>
+</method>
+<method selector='personViewController:shouldPerformDefaultActionForPerson:property:identifier:'>
+<retval type='B'/>
+</method>
+</class>
+</signatures>

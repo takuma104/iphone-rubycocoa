@@ -11,6 +11,7 @@
 # Now structures are automatically handled via the metadata mechanism, but
 # the API is not compatible with what we used to have.
 
+=begin
 class OSX::NSRect
   class << self
     alias_method :orig_new, :new
@@ -89,3 +90,4 @@ class OSX::NSSize
   def -(v); OSX::NSSize.new(width - v, height - v); end
   def inspect; "#<#{self.class} width=#{width}, height=#{height}>"; end
 end
+=end

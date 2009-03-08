@@ -6,7 +6,7 @@
 # LGPL. See the COPYRIGHT file for more information.
 
 module OSX
-
+=begin
   # NSImage additions
   class NSImage
     def focus
@@ -18,4 +18,5 @@ module OSX
       end
     end
   end
+=end
 end
